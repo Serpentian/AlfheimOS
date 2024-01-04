@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    swww
+  ];
+
   wayland.windowManager.hyprland.settings = {
     monitor = [
       "DP-1, 3440x1440@120, 0x0, 1"
@@ -9,6 +13,7 @@
 
     exec-once = [
       "waybar"
+      "swww init; swww img ~/.dotfiles/wallpapers/evening-sky.png"
     ];
     
     general = {
