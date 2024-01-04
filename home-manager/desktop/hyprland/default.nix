@@ -6,7 +6,7 @@
     ./env.nix
     ./binds.nix
     ./scripts.nix
-    # ./rules.nix
+    ./rules.nix
     ./settings.nix
   ];
 

@@ -13,5 +13,5 @@ rec {
   secondary_background_rgba = "rgba(27,27,43,${opacity})";
   tertiary_background_rgba = "rgba(37,37,58,${opacity})";
 
-  opacity = "1";
+  opacity = "0.8";
 }
