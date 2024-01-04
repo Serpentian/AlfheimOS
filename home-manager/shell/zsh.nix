@@ -27,6 +27,7 @@
       mv = "mv -v";
       cp = "cp -vr";
       rm = "rm -rv";
+      w3md = "w3m https://lite.duckduckgo.com/lite/";
     };
     initExtra = "set -o emacs";
   };

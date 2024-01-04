@@ -18,6 +18,7 @@ in
   imports = 
     [
       ./desktop/hyprland
+      ./apps/w3m.nix
       ./apps/kitty.nix
       ./apps/git.nix
       ./apps/btop.nix
