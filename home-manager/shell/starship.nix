@@ -6,8 +6,7 @@
     enableZshIntegration = true;
     settings = {
       format = ''
-[┌─>](bold blue) $all
-[└─>](bold blue) $character
+[┌─>](bold blue) $all[└─>](bold blue) $character
       '';
 
       add_newline = true;
