@@ -6,7 +6,6 @@
   programs.git.userName = "Nikita Zheleztsov";
   programs.git.userEmail = "n.zheleztsov@proton.me";
   programs.git.extraConfig = {
-    init.defaultBranch = "main";
     core.editor = "nvim";
   };
 }
