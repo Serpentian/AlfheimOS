@@ -5,6 +5,7 @@
     [
       ./desktop/hyprland
       # ./shell/zsh.nix
+      ./apps/git.nix
     ];
 
   home = {
