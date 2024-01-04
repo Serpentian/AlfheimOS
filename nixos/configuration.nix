@@ -1,0 +1,69 @@
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [
+      # Hardware configuration.
+      ./hardware/hardware-configuration.nix
+      ./hardware/graphic.nix
+      ./hardware/sound.nix
+      ./hardware/boot.nix
+      # Window manager or desktop environment.
+      ./desktop/hyprland.nix
+    ];
+
+  # Network.
+  networking.hostName = "alfheim";
+  networking.dhcpcd.enable = true;
+
+  # Time.
+  time.timeZone = "Europe/Moscow";
+  services.chrony.enable = true;
+
+  # Locale.
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ALL = "en_US.UTF-8";
+  };
+
+  # Users. 
+  users.users.serpentian = {
+    isNormalUser = true;
+    description = "serpentian";
+    extraGroups = [ "wheel" ];
+  };
+
+  # List of globally installed packages.
+  environment.systemPackages = with pkgs; [
+    home-manager
+    pciutils
+    neovim
+    wget
+    git
+    zsh
+  ];
+
+  # Use zsh.
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
+  # Nix config.
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  system.autoUpgrade = {
+   enable = true;
+   channel = "https://nixos.org/channels/nixos-unstable";
+  };
+ 
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "23.11"; # Did you read the comment?
+}
