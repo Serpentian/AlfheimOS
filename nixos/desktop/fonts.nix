@@ -2,7 +2,7 @@
 
 {
   fonts.packages = with pkgs; [
-    nerdfonts
-    noto-fonts-cjk
+    # nerdfonts
+    # noto-fonts-cjk
   ];
 }
