@@ -19,6 +19,7 @@ in
     [
       ./desktop/hyprland
       ./apps/git.nix
+      ./apps/btop.nix
       ./shell/zsh.nix
     ];
 
