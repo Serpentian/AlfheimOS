@@ -2,7 +2,9 @@
 
 {
   fonts.packages = with pkgs; [
-    # nerdfonts
+    (nerdfonts.override { fonts = [
+      "JetBrainsMono"
+    ]; })
     # noto-fonts-cjk
   ];
 }
