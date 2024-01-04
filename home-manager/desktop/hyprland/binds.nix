@@ -30,14 +30,14 @@
 
       # Switch workspaces.
       "$mod,1,exec,hyprworkspace 1"
-      "$mod,2,exec,hyprworkspace 1"
-      "$mod,3,exec,hyprworkspace 1"
-      "$mod,4,exec,hyprworkspace 1"
-      "$mod,5,exec,hyprworkspace 1"
-      "$mod,6,exec,hyprworkspace 1"
-      "$mod,7,exec,hyprworkspace 1"
-      "$mod,8,exec,hyprworkspace 1"
-      "$mod,9,exec,hyprworkspace 1"
+      "$mod,2,exec,hyprworkspace 2"
+      "$mod,3,exec,hyprworkspace 3"
+      "$mod,4,exec,hyprworkspace 4"
+      "$mod,5,exec,hyprworkspace 5"
+      "$mod,6,exec,hyprworkspace 6"
+      "$mod,7,exec,hyprworkspace 7"
+      "$mod,8,exec,hyprworkspace 8"
+      "$mod,9,exec,hyprworkspace 9"
 
       # Move active window to a workspace.
       "$mod SHIFT, 1, movetoworkspace, 1"
