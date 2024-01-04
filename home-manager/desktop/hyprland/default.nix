@@ -2,7 +2,7 @@
 
 {
   imports = [
-    # ./bar.nix
+    ./bar.nix
     ./env.nix
     ./binds.nix
     ./scripts.nix
