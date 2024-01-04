@@ -13,7 +13,7 @@
 
     exec-once = [
       "waybar"
-      "swww init; swww img ~/.dotfiles/wallpapers/evening-sky.png"
+      "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
     ];
     
     general = {
