@@ -14,7 +14,12 @@
       # Window/Session actions.
       "$mod, Q, killactive,"
       "$mod, W, fullscreen,"
+      "$mod, E, togglefloating,"
       "$mod, delete, exit,"
+
+      # Dwindle
+      "$mod, V, togglesplit,"
+      "$mod, P, pseudo,"
 
       # Application shortcuts.
       "$mod, Return, exec, kitty"
@@ -24,6 +29,12 @@
       "$mod, l, movefocus, r"
       "$mod, k, movefocus, u"
       "$mod, j, movefocus, d"
+
+      # Swap windows with vim keys
+      "$mod SHIFT, h, swapwindow, l"
+      "$mod SHIFT, l, swapwindow, r"
+      "$mod SHIFT, k, swapwindow, u"
+      "$mod SHIFT, j, swapwindow, d"
 
       # Move monitor focus.
       "$mod, TAB, focusmonitor, +1"
