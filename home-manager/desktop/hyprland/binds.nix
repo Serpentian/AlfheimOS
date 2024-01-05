@@ -24,6 +24,11 @@
       # Application shortcuts.
       "$mod, Return, exec, kitty"
 
+      # Launcher
+      "$mod, A, exec, rofi -show drun"
+      "$mod, S, exec, rofi -show run"
+      "$mod, D, exec, rofi -show filebrowser"
+
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
       "$mod, l, movefocus, r"
@@ -61,10 +66,6 @@
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
       "$mod SHIFT, 0, movetoworkspace, 10"
-
-      # Special workspace (scratchpad)
-      "$mod, S, togglespecialworkspace, magic"
-      "$mod SHIFT, S, movetoworkspace, special:magic"
 
       # Scroll through existing workspaces with mod + scroll
       "$mod, mouse_down, workspace, e+1"

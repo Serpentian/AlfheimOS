@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./launcher.nix
     ./bar.nix
     ./env.nix
     ./binds.nix

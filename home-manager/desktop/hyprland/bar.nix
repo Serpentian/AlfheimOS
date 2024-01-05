@@ -7,6 +7,14 @@
     waybar
     playerctl    
     pavucontrol
+    (pkgs.writeScriptBin "rofi_launch" ''
+      #!/bin/sh
+      if pgrep -x rofi; then
+          pkill rofi
+      else
+          rofi -show drun
+      fi
+    '')
   ];
 
   #Overlays/Overrides
@@ -202,8 +210,8 @@
       };
       "custom/launcher"= {
         format= "";
-        # on-click= "bash $HOME/.config/rofi/launcher.sh";
-        # on-click-right= "bash $HOME/.config/rofi/run.sh"; 
+        on-click = "rofi_launch";
+        # on-click-right = "pkill rofi"; 
         tooltip= "false";
       };
     };
@@ -269,6 +277,7 @@
             #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward{
                 background: #${custom.palette.tertiary_background_hex};
                 font-weight: bold;
+		font-size: 16px;
                 margin: 5px 0px;
             }
             #tray, #pulseaudio, #network, #battery{
