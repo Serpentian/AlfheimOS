@@ -67,7 +67,7 @@
     input = {
       kb_layout = "us,ru";
       kb_options = "grp:win_space_toggle";
-      follow_mouse = false;
+      follow_mouse = true;
     };
 
     dwindle = {
