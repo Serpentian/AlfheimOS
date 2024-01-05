@@ -5,6 +5,7 @@
     [
       # Hardware configuration.
       ./hardware/hardware-configuration.nix
+      ./hardware/network.nix
       ./hardware/graphic.nix
       ./hardware/sound.nix
       ./hardware/boot.nix
@@ -15,6 +16,7 @@
   # Network.
   networking.hostName = "alfheim";
   networking.dhcpcd.enable = true;
+
 
   # Time.
   time.timeZone = "Europe/Moscow";
