@@ -51,6 +51,7 @@
   programs.zsh.enable = true;
 
   # Nix config.
+  nixpkgs.overlays = import ../lib/overlays.nix;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

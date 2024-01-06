@@ -35,6 +35,14 @@
       "$mod, k, movefocus, u"
       "$mod, j, movefocus, d"
 
+      # Music control
+      "$mod ALT, k, exec, pulsemixer --change-volume +5"
+      "$mod ALT, j, exec, pulsemixer --change-volume -5"
+      "$mod ALT, m, exec, pulsemixer --toggle-mute"
+      "$mod ALT, l, exec, playerctl next"
+      "$mod ALT, h, exec, playerctl previous"
+      "$mod ALT, p, exec, playerctl play-pause"
+
       # Swap windows with vim keys
       "$mod SHIFT, h, swapwindow, l"
       "$mod SHIFT, l, swapwindow, r"
