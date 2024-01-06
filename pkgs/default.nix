@@ -1,3 +1,3 @@
 { pkgs }: rec {
-  # _logiops = pkgs.callPackage ./logiops { };
+  _logiops = pkgs.callPackage ./logiops { };
 }
