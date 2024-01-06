@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./mako.nix
     ./launcher.nix
     ./bar.nix
     ./env.nix
