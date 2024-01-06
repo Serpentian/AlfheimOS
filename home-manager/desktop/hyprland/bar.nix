@@ -5,8 +5,8 @@
 {
   home.packages = with pkgs; [
     waybar
-    playerctl    
-    pavucontrol
+    playerctl
+    pulsemixer
     (pkgs.writeScriptBin "rofi_launch" ''
       #!/bin/sh
       if pgrep -x rofi; then
@@ -201,8 +201,8 @@
         };
         # on-scroll-up= "bash ~/.scripts/volume up";
         # on-scroll-down= "bash ~/.scripts/volume down";
-        scroll-step= 5;
-        on-click= "pavucontrol";
+        scroll-step = 5;
+        on-click = "kitty pulsemixer";
       };
       "custom/randwall"= {
         format= "󰏘";
