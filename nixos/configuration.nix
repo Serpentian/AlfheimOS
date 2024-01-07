@@ -43,6 +43,7 @@
     neovim
     wget
     git
+    gcc
     zsh
   ];
 

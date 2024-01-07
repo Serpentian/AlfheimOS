@@ -23,11 +23,12 @@
 
       # Application shortcuts.
       "$mod, Return, exec, kitty"
+      "$mod, D, exec, neovide"
+      "$mod, F, exec, firefox"
 
       # Launcher
       "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
       "$mod, S, exec, rofi -show run -kb-cancel Super_L"
-      "$mod, D, exec, rofi -show filebrowser -kb-cancel Super_L"
 
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"

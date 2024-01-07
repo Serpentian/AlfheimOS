@@ -32,6 +32,12 @@ in
   };
 
   home.packages = with pkgs; [
+    # Neovim specific packages.
+    neovide
+    ripgrep
+    lazygit
+    fd
+
     kitty
     firefox
     libreoffice-fresh
@@ -56,6 +62,12 @@ in
       XDG_DOTFILES_DIR = "${config.home.homeDirectory}/.dotfiles";
       XDG_BOOK_DIR = "${config.home.homeDirectory}/Media/Books";
     };
+  };
+
+  # Neovim linking. Don't like configuring NeoVim with Nix.
+  xdg.configFile.nvim = {
+    source = ../non-nix/nvim;
+    recursive = true;
   };
 
   home.sessionVariables = {
