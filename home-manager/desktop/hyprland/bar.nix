@@ -50,12 +50,16 @@
       ];
       modules-right= [
         "tray" 
-        "battery"
+        "hyprland/language"
         "pulseaudio" 
         "network"
         "clock" 
       ];
-      clock= {
+      "hyprland/language" = {
+        format-en = "en";
+	format-ru = "ru";
+      };
+      clock = {
         format = " {:%a, %d %b, %I:%M %p}";
         tooltip= "true";
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
@@ -280,14 +284,14 @@
                 background-size: 400% 400%;
             }
 
-            #tray, #pulseaudio, #network, #battery,
+            #tray, #pulseaudio, #network, #battery, #language,
             #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward{
                 background: #${custom.palette.tertiary_background_hex};
                 font-weight: bold;
 		font-size: 16px;
                 margin: 5px 0px;
             }
-            #tray, #pulseaudio, #network, #battery{
+            #tray, #pulseaudio, #network, #battery, #language {
                 color: #${custom.tertiary_accent};
                 border-radius: 10px 24px 10px 24px;
                 padding: 0 20px;
