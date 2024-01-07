@@ -12,7 +12,7 @@
       if pgrep -x rofi; then
           pkill rofi
       else
-          rofi -show drun
+          rofi -show drun -kb-cancel Super_L &
       fi
     '')
   ];
@@ -211,7 +211,8 @@
       };
       "custom/launcher"= {
         format= "";
-        on-click = "rofi_launch";
+	# See https://github.com/Alexays/Waybar/issues/1850.
+        on-click = "sleep 0.05 && rofi_launch";
         # on-click-right = "pkill rofi"; 
         tooltip= "false";
       };
