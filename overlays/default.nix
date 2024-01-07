@@ -3,5 +3,5 @@
  * other ".nix" files in this directory are automatically loaded.
  */
 final: prev: {
-  _logiops = final.callPackage ../pkgs/logiops {};
+  # _logiops = final.callPackage ../pkgs/logiops {};
 }

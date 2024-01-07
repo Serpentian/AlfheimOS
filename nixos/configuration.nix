@@ -13,7 +13,7 @@
       # Window manager or desktop environment.
       ./desktop/hyprland.nix
     ];
-
+  
   # Network.
   networking.hostName = "alfheim";
   networking.dhcpcd.enable = true;
