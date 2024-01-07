@@ -61,6 +61,11 @@
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt= " {:%d/%m}";
       };
+      "hyprland/workspaces" =  {
+        disable-scroll= false;
+        on-scroll-up= "hyprctl dispatch workspace r-1";
+        on-scroll-down= "hyprctl dispatch workspace r+1";
+      };
       "wlr/workspaces"= {
         active-only= false;
         all-outputs= false;
