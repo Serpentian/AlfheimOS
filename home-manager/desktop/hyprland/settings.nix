@@ -15,6 +15,8 @@
       "waybar"
       "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
       "input-remapper-control --command autoload"
+      # TODO: manage cursors in Nix
+      "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
       "spotifyd --no-daemon &"
       "[workspace 1 silent] firefox"
       "[workspace 2 silent] kitty spotify_player"
