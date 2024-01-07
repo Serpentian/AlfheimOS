@@ -79,9 +79,9 @@
       "$mod SHIFT, 9, movetoworkspace, 9"
       "$mod SHIFT, 0, movetoworkspace, 10"
 
-      # Scroll through existing workspaces with mod + scroll
-      "$mod, mouse_down, workspace, e+1"
-      "$mod, mouse_up, workspace, e-1"
+      # Scroll through monitor workspaces with mod + scroll
+      "$mod, mouse_down, workspace, r+1"
+      "$mod, mouse_up, workspace, r-1"
     ];
   };
 }
