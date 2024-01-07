@@ -11,6 +11,7 @@ return {
                 enabled = false;
             },
             integration = {
+                cmp = true,
                 mason = true,
                 treesitter = true,
                 notify = true,
