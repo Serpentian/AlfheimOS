@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ custom, config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -23,8 +23,8 @@
     general = {
       gaps_in = 5;
       gaps_out = 15;
-      border_size = 2;
-      "col.active_border" = "rgba(88888888)";
+      border_size = 3;
+      "col.active_border" = "rgba(${custom.primary_accent}50) rgba(${custom.secondary_accent}50) 45deg";
       "col.inactive_border" = "rgba(00000088)";
       allow_tearing = false;
     };
