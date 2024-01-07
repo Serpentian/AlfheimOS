@@ -18,16 +18,16 @@
       "$mod, delete, exit,"
 
       # Dwindle
-      "$mod, V, togglesplit,"
+      "$mod, O, togglesplit,"
       "$mod, P, pseudo,"
 
       # Application shortcuts.
       "$mod, Return, exec, kitty"
 
       # Launcher
-      "$mod, A, exec, rofi -show drun"
-      "$mod, S, exec, rofi -show run"
-      "$mod, D, exec, rofi -show filebrowser"
+      "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
+      "$mod, S, exec, rofi -show run -kb-cancel Super_L"
+      "$mod, D, exec, rofi -show filebrowser -kb-cancel Super_L"
 
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
