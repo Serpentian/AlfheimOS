@@ -72,6 +72,11 @@ in
     recursive = true;
   };
 
+  xdg.dataFile.icons = {
+    source = ../non-nix/icons;
+    recursive = true;
+  };
+
   home.sessionVariables = {
     EDITOR = "nvim";
     TERM = "kitty";
