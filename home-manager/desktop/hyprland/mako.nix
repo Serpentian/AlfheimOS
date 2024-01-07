@@ -11,5 +11,9 @@
     borderRadius = 15;
     margin = "15";
     padding = "10";
+    extraConfig = ''
+      [app-name="spotify_player"]
+      invisible=1
+    '';
   };
 }

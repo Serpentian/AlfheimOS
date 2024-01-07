@@ -10,6 +10,7 @@
       ./hardware/sound.nix
       ./hardware/mouse.nix
       ./hardware/boot.nix
+      ./apps/spotify.nix
       # Window manager or desktop environment.
       ./desktop/hyprland.nix
     ];

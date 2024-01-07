@@ -15,6 +15,7 @@
       "waybar"
       "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
       "input-remapper-control --command autoload"
+      "spotifyd"
     ];
     
     general = {

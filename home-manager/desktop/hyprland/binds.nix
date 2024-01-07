@@ -39,9 +39,9 @@
       "$mod ALT, k, exec, pulsemixer --change-volume +5"
       "$mod ALT, j, exec, pulsemixer --change-volume -5"
       "$mod ALT, m, exec, pulsemixer --toggle-mute"
-      "$mod ALT, l, exec, playerctl next"
-      "$mod ALT, h, exec, playerctl previous"
-      "$mod ALT, p, exec, playerctl play-pause"
+      "$mod ALT, l, exec, hyprmusic next"
+      "$mod ALT, h, exec, hyprmusic previous"
+      "$mod ALT, p, exec, hyprmusic play-pause"
 
       # Swap windows with vim keys
       "$mod SHIFT, h, swapwindow, l"
