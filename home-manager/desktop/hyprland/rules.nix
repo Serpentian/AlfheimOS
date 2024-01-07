@@ -7,8 +7,8 @@
       "ignorezero, waybar"
     ];
 
-    windowrulev2 = [
-      # To be added in the future.
+    windowrule = [
+      "float,title:^(swayimg)(.*)$"
     ];
   };
 }

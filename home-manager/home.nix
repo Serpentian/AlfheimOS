@@ -44,6 +44,8 @@ in
     krita
     obs-studio
     gimp-with-plugins
+    sway-contrib.grimshot
+    swayimg
   ];
 
   xdg.enable = true;

@@ -30,6 +30,9 @@
       "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
       "$mod, S, exec, rofi -show run -kb-cancel Super_L"
 
+      # Screenshot
+      "$mod SHIFT, S, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"
+
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
       "$mod, l, movefocus, r"
