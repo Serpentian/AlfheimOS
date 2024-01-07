@@ -58,6 +58,7 @@
       "hyprland/language" = {
         format-en = "en";
 	format-ru = "ru";
+	on-click = "hyprctl switchxkblayout holtek-rgb-gaming-keyboard next";
       };
       clock = {
         format = " {:%a, %d %b, %I:%M %p}";
