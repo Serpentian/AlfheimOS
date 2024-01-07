@@ -16,6 +16,8 @@
       "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
       "input-remapper-control --command autoload"
       "spotifyd"
+      "[workspace 1 silent] firefox"
+      "[workspace 2 silent] kitty spotify_player"
     ];
     
     general = {
