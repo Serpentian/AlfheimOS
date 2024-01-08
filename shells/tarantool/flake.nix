@@ -40,8 +40,11 @@
           mage
         ];
         shellHook = ''
-            export PATH=/home/serpentian/Programming/tnt/tarantool/build/src:/home/serpentian/Programming/tnt/tt:$PATH
+            export PATH=$HOME/Programming/tnt/tarantool/build/src:$HOME/Programming/tnt/tt:$PATH
         '';
+
+        # See https://github.com/NixOS/nixpkgs/issues/18995
+        hardeningDisable = [ "fortify" ];
       };
     });
 }
