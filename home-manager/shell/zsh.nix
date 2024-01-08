@@ -28,6 +28,8 @@
       cp = "cp -vr";
       rm = "rm -rv";
       w3md = "w3m https://lite.duckduckgo.com/lite/";
+      nix-tarantool = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
+      nix-python = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
     };
     initExtra = "set -o emacs";
   };
