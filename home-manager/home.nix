@@ -83,6 +83,7 @@ in
     BROWSER = "firefox";
   };
 
+  services.kdeconnect.enable = true;
   programs.home-manager.enable = true;
   home.stateVersion = "23.05";
 }
