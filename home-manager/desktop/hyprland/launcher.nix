@@ -1,6 +1,10 @@
 { custom, config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    rofi-power-menu
+  ];
+
   programs.rofi = {
     enable = true;
     cycle = false;
@@ -8,11 +12,11 @@
     font = "${custom.font}" + " 14";
     terminal = "kitty";
     extraConfig = {
-      modi = "drun,filebrowser,window,run";
+      modi = "drun,window,run,power-menu:rofi-power-menu";
       show-icons = true;
       display-drun = "";
       display-run = "";
-      display-filebrowser = "";
+      display-power-menu = "";
       display-window = "";
       drun-display-format = "{name}";
       window-format = "{w}{t}";

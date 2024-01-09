@@ -46,11 +46,6 @@ in
     sway-contrib.grimshot
     swayimg
     hyprpicker
-
-#    (catppuccin-kvantum.override {
-#     accent = "Lavender";
-#     variant = "Mocha";
-#    })
   ];
 
   xdg.enable = true;
