@@ -41,11 +41,16 @@ in
     kitty
     firefox
     libreoffice-fresh
-    krita
     obs-studio
     gimp-with-plugins
     sway-contrib.grimshot
     swayimg
+    hyprpicker
+
+#    (catppuccin-kvantum.override {
+#     accent = "Lavender";
+#     variant = "Mocha";
+#    })
   ];
 
   xdg.enable = true;
@@ -81,6 +86,15 @@ in
     EDITOR = "nvim";
     TERM = "kitty";
     BROWSER = "firefox";
+  };
+
+  qt.enable = true;
+  qt.platformTheme = "qtct";
+  qt.style.name = "kvantum";
+
+  xdg.configFile.Kvantum = {
+    source = ../non-nix/Kvantum;
+    recursive = true;
   };
 
   services.kdeconnect.enable = true;
