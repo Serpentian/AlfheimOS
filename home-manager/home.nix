@@ -97,6 +97,18 @@ in
     recursive = true;
   };
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Catppuccin-Mocha-Standard-Lavender-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "lavender" ];
+        size = "standard";
+        variant = "mocha";
+      };
+    };
+  };
+
   services.kdeconnect.enable = true;
   programs.home-manager.enable = true;
   home.stateVersion = "23.05";
