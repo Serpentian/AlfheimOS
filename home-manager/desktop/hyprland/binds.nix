@@ -67,6 +67,13 @@
       "$mod,8,exec,hyprworkspace 8"
       "$mod,9,exec,hyprworkspace 9"
 
+      "$mod CTRL, h, workspace, r-1"
+      "$mod CTRL, l, workspace, r+1"
+
+      # Scroll through monitor workspaces with mod + scroll
+      "$mod, mouse_down, workspace, r+1"
+      "$mod, mouse_up, workspace, r-1"
+
       # Move active window to a workspace.
       "$mod SHIFT, 1, movetoworkspace, 1"
       "$mod SHIFT, 2, movetoworkspace, 2"
@@ -78,10 +85,6 @@
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
       "$mod SHIFT, 0, movetoworkspace, 10"
-
-      # Scroll through monitor workspaces with mod + scroll
-      "$mod, mouse_down, workspace, r+1"
-      "$mod, mouse_up, workspace, r-1"
     ];
   };
   wayland.windowManager.hyprland.extraConfig = ''
