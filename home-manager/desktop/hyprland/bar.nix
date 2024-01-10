@@ -52,19 +52,20 @@
         "tray" 
         "hyprland/language"
         "pulseaudio" 
-        "network"
+        # "network"
         "clock" 
       ];
       "hyprland/language" = {
         format-en = "en";
-	format-ru = "ru";
-	on-click = "hyprctl switchxkblayout holtek-rgb-gaming-keyboard next";
+        format-ru = "ru";
+        on-click = "hyprctl switchxkblayout holtek-rgb-gaming-keyboard next";
       };
       clock = {
-        format = " {:%a, %d %b, %I:%M %p}";
+        # format = " {:%a, %d %b, %I:%M %p}";
+        format = "  {:%a, %d %b, %R}";
         tooltip= "true";
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= " {:%d/%m}";
+        format-alt= "  {:%d/%m}";
       };
       "hyprland/workspaces" =  {
         disable-scroll= false;
