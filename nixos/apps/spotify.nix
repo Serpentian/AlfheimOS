@@ -11,7 +11,7 @@
      username = "31oq5ubh3ntv55jfcjquzuymzofu"
      password_cmd = "cat /etc/spotify/password.key"
  
-     use_mpris = true
+     use_mpris = false
      bitrate = 320
  
      cache_path = "/home/serpentian/.cache/spotifyd"

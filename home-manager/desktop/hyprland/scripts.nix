@@ -62,7 +62,7 @@
       
       exec dbus-send                                                \
         --print-reply                                               \
-        --dest="org.mpris.MediaPlayer2.spotify_player" \
+        --dest="org.mpris.MediaPlayer2.''$(playerctl -l | head -n 1)" \
         /org/mpris/MediaPlayer2                                     \
         "org.mpris.MediaPlayer2.Player.$MEMBER"
     '')

@@ -24,6 +24,7 @@ in
       ./apps/kitty.nix
       ./apps/git.nix
       ./apps/btop.nix
+      ./apps/ranger.nix
       ./shell/zsh.nix
     ];
 
