@@ -10,13 +10,16 @@ return {
             dim_inactive = {
                 enabled = false;
             },
-            integration = {
+            integrations = {
                 cmp = true,
                 mason = true,
                 treesitter = true,
                 notify = true,
                 neotree = true,
                 noice = true,
+                window_picker = true,
+                which_key = true,
+                neotree = true,
             }
         }
         require("catppuccin").setup(settings)
