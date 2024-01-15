@@ -13,6 +13,7 @@
 
     exec-once = [
       "waybar"
+      "ags &"
       "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
       "input-remapper-control --command autoload"
       # TODO: manage cursors in Nix
@@ -21,7 +22,7 @@
       "[workspace 1 silent] firefox"
       "[workspace 2 silent] kitty spotify_player"
     ];
-    
+
     general = {
       gaps_in = 5;
       gaps_out = 15;

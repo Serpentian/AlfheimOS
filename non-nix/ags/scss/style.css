@@ -1,0 +1,9 @@
+* {
+  all: unset; }
+
+.corner {
+  background-color: #25253a;
+  border-radius: 25px; }
+
+.angle {
+  background-color: #25253a; }
