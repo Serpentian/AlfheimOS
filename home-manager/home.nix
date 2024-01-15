@@ -32,6 +32,7 @@ in
     homeDirectory = "/home/serpentian";
   };
 
+  nixpkgs.overlays = import ../lib/overlays.nix;
   home.packages = with pkgs; [
     # Neovim specific packages.
     ripgrep

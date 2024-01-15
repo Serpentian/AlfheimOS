@@ -2,11 +2,12 @@
 
 {
   home.packages = with pkgs; [
-    spotify-player
+    _spotify-player
   ];
 
   # enable_notify option doesn't work.
   home.file.".config/spotify-player/app.toml".text = ''
+    enable_notify = false
     theme = "dracula"
     client_id = "65b708073fc0480ea92a077233ca87bd"
     client_port = 8080
@@ -33,7 +34,6 @@
     enable_streaming = "Always"
     enable_cover_image_cache = true
     default_device = "spotify-player"
-    enable_notify = false
 
     [copy_command]
     command = "xclip"
