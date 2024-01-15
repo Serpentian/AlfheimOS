@@ -42,6 +42,8 @@
         ];
         shellHook = ''
             export PATH=$HOME/Programming/tnt/tarantool/build/src:$HOME/Programming/tnt/tt:$PATH
+            export CC=${pkgs.gcc}/bin/gcc
+            export CXX=${pkgs.gcc}/bin/c++
         '';
 
         # See https://github.com/NixOS/nixpkgs/issues/18995
