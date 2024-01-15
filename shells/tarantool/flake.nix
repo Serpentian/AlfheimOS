@@ -34,6 +34,7 @@
           python310Packages.pyyaml
           python310Packages.gevent
           python310Packages.six
+          lz4
 
           # TT building
           go

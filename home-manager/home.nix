@@ -35,7 +35,6 @@ in
 
   home.packages = with pkgs; [
     # Neovim specific packages.
-    neovide
     ripgrep
     lazygit
     fd
