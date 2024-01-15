@@ -45,7 +45,7 @@ export const RoundedCorner = (place, props) => Widget.DrawingArea({
 export const CornerTopleft = (monitor) => Widget.Window({
   name: `corner-${monitor}-topleft`,
   monitor,
-  layer: "top",
+  layer: "overlay",
   anchor: ["top", "left"],
   exclusivity: "normal",
   visible: true,
@@ -55,7 +55,7 @@ export const CornerTopleft = (monitor) => Widget.Window({
 export const CornerTopright = (monitor) => Widget.Window({
   name: `corner-${monitor}-topright`,
   monitor,
-  layer: "top",
+  layer: "overlay",
   anchor: ["top", "right"],
   exclusivity: "normal",
   visible: true,

@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     rofi-power-menu
+    nwg-drawer
   ];
 
   programs.rofi = {
@@ -25,7 +26,7 @@
       me-accept-entry = "MousePrimary";
     };
 
-    theme = let 
+    theme = let
       inherit (config.lib.formats.rasi) mkLiteral;
       img = "~/.dotfiles/non-nix/wallpapers/evening-sky-rofi.png";
     in {
@@ -52,7 +53,7 @@
           background-color = mkLiteral "transparent";
           background-image = mkLiteral "url(\"${img}\", height)";
       };
-      
+
       inputbar = {
           enabled = true;
           spacing = mkLiteral "0px";
@@ -69,7 +70,7 @@
           text-color = mkLiteral "#${custom.tertiary_accent}";
           background-color = mkLiteral "#${custom.palette.tertiary_background_hex}";
       };
-      
+
       listbox = {
           padding = mkLiteral "30px";
           spacing = mkLiteral "0px";
@@ -111,7 +112,7 @@
           background-color = mkLiteral "#${custom.secondary_accent}";
           text-color = mkLiteral "#${custom.background}";
       };
-      
+
       element = {
           enabled = true;
           spacing = mkLiteral "20px";
@@ -140,4 +141,41 @@
       };
     };
   };
+
+  home.file.".config/nwg-drawer/drawer.css".text = ''
+    window {
+        background-color: rgba (17, 17, 27, 0.80);
+        color: rgb(205, 214, 244)
+    }
+
+    /* search entry */
+    entry {
+        background-color: rgba (0, 0, 0, 0.2)
+    }
+
+    button, image {
+        background: none;
+        border: none
+    }
+
+    button:hover {
+        background-color: rgba (255, 255, 255, 0.1)
+    }
+
+    /* in case you wanted to give category buttons a different look */
+    #category-button {
+        margin: 0 10px 0 10px
+    }
+
+    #pinned-box {
+        padding-bottom: 5px;
+        border-bottom: 1px dotted gray
+    }
+
+    #files-box {
+        padding: 5px;
+        border: 1px dotted gray;
+        border-radius: 15px
+    }
+  '';
 }

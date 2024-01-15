@@ -7,14 +7,6 @@
     waybar
     playerctl
     pulsemixer
-    (pkgs.writeScriptBin "rofi_launch" ''
-      #!/bin/sh
-      if pgrep -x rofi; then
-          pkill rofi
-      else
-          rofi -show drun -kb-cancel Super_L &
-      fi
-    '')
   ];
 
   #Overlays/Overrides
@@ -215,8 +207,8 @@
       };
       "custom/launcher"= {
         format= "";
-	# See https://github.com/Alexays/Waybar/issues/1850.
-        on-click = "sleep 0.05 && rofi_launch";
+	    # See https://github.com/Alexays/Waybar/issues/1850.
+        on-click = "sleep 0.1 && nwg-drawer";
         # on-click-right = "pkill rofi";
         tooltip= "false";
       };
