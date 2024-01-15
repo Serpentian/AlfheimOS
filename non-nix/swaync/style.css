@@ -12,8 +12,7 @@
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(0, 128, 255);
 * {
-  font-family: "RobotoMono Nerd Font";
-  font-size: 16px; }
+  font-family: "RobotoMono Nerd Font"; }
 
 .notification-row {
   outline: none; }
@@ -219,7 +218,7 @@
 .widget-title {
   color: @text-color;
   margin: 8px;
-  font-size: 2rem;
+  font-size: 1.25rem;
   padding: 0 20px; }
 
 .widget-title > button {
@@ -301,15 +300,14 @@
   border-radius: 10px 24px 10px 24px;
   background-color: @noti-bg;
   border: 1px solid @noti-border-color;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
-  font-size: 30px; }
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3); }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
   background: @noti-bg;
   border-radius: 10px;
   padding: 15px;
   margin: 8px;
-  font-size: 20px; }
+  font-size: 30px; }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */ }

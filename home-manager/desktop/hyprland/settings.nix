@@ -19,7 +19,6 @@
       "swaync &"
       # TODO: manage cursors in Nix
       "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
-      "spotifyd --no-daemon &"
       "[workspace 1 silent] firefox"
       "[workspace 2 silent] kitty spotify_player"
     ];
