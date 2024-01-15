@@ -37,10 +37,10 @@
       margin-left= 0;
       margin-right= 0;
       modules-left= [
-        "custom/launcher" 
-        "custom/playerctl#backward" 
-        "custom/playerctl#play" 
-        "custom/playerctl#foward" 
+        "custom/launcher"
+        "custom/playerctl#backward"
+        "custom/playerctl#play"
+        "custom/playerctl#foward"
         "custom/playerlabel"
       ];
       modules-center= [
@@ -49,11 +49,12 @@
         "cava#right"
       ];
       modules-right= [
-        "tray" 
+        "tray"
         "hyprland/language"
-        "pulseaudio" 
+        "pulseaudio"
+        "custom/notification"
         # "network"
-        "clock" 
+        "clock"
       ];
       "hyprland/language" = {
         format-en = "en";
@@ -101,15 +102,15 @@
         monstercat = false;
         waves = false;
         input_delay = 2;
-        format-icons = [ 
-          "<span foreground='#${custom.primary_accent}'>▁</span>" 
-          "<span foreground='#${custom.primary_accent}'>▂</span>" 
-          "<span foreground='#${custom.primary_accent}'>▃</span>" 
-          "<span foreground='#${custom.primary_accent}'>▄</span>" 
-          "<span foreground='#${custom.secondary_accent}'>▅</span>" 
-          "<span foreground='#${custom.secondary_accent}'>▆</span>" 
-          "<span foreground='#${custom.secondary_accent}'>▇</span>" 
-          "<span foreground='#${custom.secondary_accent}'>█</span>" 
+        format-icons = [
+          "<span foreground='#${custom.primary_accent}'>▁</span>"
+          "<span foreground='#${custom.primary_accent}'>▂</span>"
+          "<span foreground='#${custom.primary_accent}'>▃</span>"
+          "<span foreground='#${custom.primary_accent}'>▄</span>"
+          "<span foreground='#${custom.secondary_accent}'>▅</span>"
+          "<span foreground='#${custom.secondary_accent}'>▆</span>"
+          "<span foreground='#${custom.secondary_accent}'>▇</span>"
+          "<span foreground='#${custom.secondary_accent}'>█</span>"
         ];
       };
       "cava#right" = {
@@ -126,19 +127,19 @@
         monstercat = false;
         waves = false;
         input_delay = 2;
-        format-icons = [ 
-          "<span foreground='#${custom.primary_accent}'>▁</span>" 
-          "<span foreground='#${custom.primary_accent}'>▂</span>" 
-          "<span foreground='#${custom.primary_accent}'>▃</span>" 
-          "<span foreground='#${custom.primary_accent}'>▄</span>" 
-          "<span foreground='#${custom.secondary_accent}'>▅</span>" 
-          "<span foreground='#${custom.secondary_accent}'>▆</span>" 
-          "<span foreground='#${custom.secondary_accent}'>▇</span>" 
-          "<span foreground='#${custom.secondary_accent}'>█</span>" 
+        format-icons = [
+          "<span foreground='#${custom.primary_accent}'>▁</span>"
+          "<span foreground='#${custom.primary_accent}'>▂</span>"
+          "<span foreground='#${custom.primary_accent}'>▃</span>"
+          "<span foreground='#${custom.primary_accent}'>▄</span>"
+          "<span foreground='#${custom.secondary_accent}'>▅</span>"
+          "<span foreground='#${custom.secondary_accent}'>▆</span>"
+          "<span foreground='#${custom.secondary_accent}'>▇</span>"
+          "<span foreground='#${custom.secondary_accent}'>█</span>"
         ];
       };
       "custom/playerctl#backward"= {
-        format= "󰙣 "; 
+        format= "󰙣 ";
         on-click= "hyprmusic previous";
         on-scroll-up = "playerctl volume .05+";
         on-scroll-down = "playerctl volume .05-";
@@ -192,19 +193,11 @@
         format-alt= "󰻠 {avg_frequency} GHz";
         interval= 5;
       };
-      network = {
-        format-wifi = "  {signalStrength}%";
-        format-ethernet = "󰈀 100% ";
-        tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
-        format-linked = "{ifname} (No IP)";
-        format-disconnected = "󰖪 0% ";
-        on-click = "firefox https://vpn.serpentian.net";
-      };
       tray= {
-        icon-size= 20;
-        spacing= 8;
+        icon-size = 20;
+        spacing = 8;
       };
-      pulseaudio= {
+      pulseaudio = {
         format= "{icon} {volume}%";
         format-muted= "󰝟";
         format-icons= {
@@ -224,8 +217,24 @@
         format= "";
 	# See https://github.com/Alexays/Waybar/issues/1850.
         on-click = "sleep 0.05 && rofi_launch";
-        # on-click-right = "pkill rofi"; 
+        # on-click-right = "pkill rofi";
         tooltip= "false";
+      };
+      "custom/notification" = {
+        tooltip = "false";
+        format = "{} {icon}";
+        format-icons = {
+            notification = "";
+            none = "";
+            dnd-notification = "";
+            dnd-none = "";
+        };
+        return-type = "json";
+        exec-if = "which swaync-client";
+        exec = "swaync-client -swb";
+        on-click = "sleep 0.1 && swaync-client -t -sw";
+        on-click-right = "sleep 0.1 && swaync-client -d -sw";
+        escape = true;
       };
     };
     style = ''
@@ -243,7 +252,7 @@
 
             #cava.left, #cava.right {
                 background: #${custom.palette.tertiary_background_hex};
-                margin: 5px; 
+                margin: 5px;
                 padding: 8px 16px;
                 color: #${custom.primary_accent};
             }
@@ -286,14 +295,14 @@
                 background-size: 400% 400%;
             }
 
-            #tray, #pulseaudio, #network, #battery, #language,
+            #tray, #pulseaudio, #network, #language, #custom-notification,
             #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward{
                 background: #${custom.palette.tertiary_background_hex};
                 font-weight: bold;
-		font-size: 16px;
+		        font-size: 16px;
                 margin: 5px 0px;
             }
-            #tray, #pulseaudio, #network, #battery, #language {
+            #tray, #pulseaudio, #network, #language, #custom-notification {
                 color: #${custom.tertiary_accent};
                 border-radius: 10px 24px 10px 24px;
                 padding: 0 20px;

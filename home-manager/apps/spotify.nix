@@ -34,14 +34,14 @@
     enable_cover_image_cache = true
     default_device = "spotify-player"
     enable_notify = false
-    
+
     [copy_command]
     command = "xclip"
     args = [
         "-sel",
         "c",
     ]
-    
+
     [device]
     name = "spotify-player"
     device_type = "speaker"

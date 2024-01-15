@@ -2,8 +2,8 @@
 
 {
   imports = [
+    ./notification.nix
     ./ags.nix
-    ./mako.nix
     ./launcher.nix
     ./bar.nix
     ./env.nix

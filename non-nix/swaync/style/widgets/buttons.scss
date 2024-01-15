@@ -1,0 +1,24 @@
+.widget-buttons-grid {
+  padding: 5px 15px;
+  margin: 20px 20px;
+  border-radius: 10px 24px 10px 24px;
+  background-color: #{"@noti-bg"};
+  border: $border;
+  box-shadow: $notification-shadow;
+  font-size: 30px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: #{"@noti-bg"};
+  border-radius: 10px;
+  padding: 15px;
+  margin: 8px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  /* style given to the active toggle button */
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background-color: #{"@mpris-button-hover"};
+}

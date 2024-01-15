@@ -1,0 +1,19 @@
+.widget-volume {
+  background: transparent;
+  box-shadow: none;
+  margin: 5px 0px;
+  border-radius: 10px 24px 10px 24px;
+  padding: 5px 20px;
+}
+
+.widget-volume > box > button {
+  background: transparent;
+  border: none;
+}
+
+.per-app-volume {
+  background-color: #{"@noti-bg-alt"};
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-radius: 12px;
+}

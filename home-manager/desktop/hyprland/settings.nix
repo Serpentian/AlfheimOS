@@ -16,6 +16,7 @@
       "ags &"
       "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
       "input-remapper-control --command autoload"
+      "swaync &"
       # TODO: manage cursors in Nix
       "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
       "spotifyd --no-daemon &"
@@ -24,8 +25,8 @@
     ];
 
     general = {
-      gaps_in = 5;
-      gaps_out = 15;
+      gaps_in = 8;
+      gaps_out = 16;
       border_size = 3;
       "col.active_border" = "rgba(${custom.primary_accent}50) rgba(${custom.secondary_accent}50) 45deg";
       "col.inactive_border" = "rgba(00000088)";

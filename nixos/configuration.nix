@@ -11,11 +11,10 @@
       ./hardware/mouse.nix
       ./hardware/boot.nix
       ./virtualization/docker.nix
-      ./apps/spotify.nix
       # Window manager or desktop environment.
       ./desktop/hyprland.nix
     ];
-  
+
   # Network.
   networking.hostName = "alfheim";
   networking.dhcpcd.enable = true;
@@ -30,7 +29,7 @@
     LC_ALL = "en_US.UTF-8";
   };
 
-  # Users. 
+  # Users.
   users.users.serpentian = {
     isNormalUser = true;
     description = "serpentian";
@@ -52,6 +51,9 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
+  # A lot of mpris packages require it.
+  services.gvfs.enable = true;
+
   # Nix config.
   nixpkgs.overlays = import ../lib/overlays.nix;
   nixpkgs.config.allowUnfree = true;
@@ -62,7 +64,7 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
- 
+
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
