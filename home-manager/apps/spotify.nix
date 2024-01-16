@@ -8,7 +8,7 @@
   # enable_notify option doesn't work.
   home.file.".config/spotify-player/app.toml".text = ''
     enable_notify = false
-    theme = "dracula"
+    theme = "Catppuccin-mocha"
     client_id = "65b708073fc0480ea92a077233ca87bd"
     client_port = 8080
     playback_format = """
@@ -49,5 +49,33 @@
     bitrate = 320
     audio_cache = true
     normalization = true
+  '';
+
+  home.file.".config/spotify-player/theme.toml".text = ''
+    # Catppuccin themes for Spotify-player
+    [[themes]]
+    name = "Catppuccin-mocha"
+    [themes.palette]
+    # background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    # black = "#1E1E2E"
+    blue = "#89B4FA"
+    cyan = "#89DCEB"
+    green = "#A6E3A1"
+    magenta = "#CBA6F7"
+    red = "#F38BA8"
+    white = "#CDD6F4"
+    yellow = "#F9E2AF"
+    # bright_black = "#1E1E2E"
+    bright_blue = "#89B4FA"
+    bright_cyan = "#89DCEB"
+    bright_green = "#A6E3A1"
+    bright_magenta = "#CBA6F7"
+    bright_red = "#F38BA8"
+    bright_white = "#CDD6F4"
+    bright_yellow = "#F9E2AF"
+
+    [themes.component_style]
+    selection = { bg = "#313244", modifiers = ["Bold"] }
   '';
 }
