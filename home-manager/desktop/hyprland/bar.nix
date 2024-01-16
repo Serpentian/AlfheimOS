@@ -7,6 +7,7 @@
     waybar
     playerctl
     pulsemixer
+    pamixer
   ];
 
   #Overlays/Overrides
@@ -190,15 +191,18 @@
         spacing = 8;
       };
       pulseaudio = {
-        format= "{icon} {volume}%";
+        format= "{format_source} {volume}%";
         format-muted= "󰝟";
+        format-source = "";
+        format-source-muted = "";
         format-icons= {
           default= ["󰕿" "󰖀" "󰕾"];
         };
         # on-scroll-up= "bash ~/.scripts/volume up";
         # on-scroll-down= "bash ~/.scripts/volume down";
         scroll-step = 5;
-        on-click = "kitty pulsemixer";
+        on-click-right = "kitty pulsemixer";
+        on-click = "pamixer --default-source -t";
       };
       "custom/randwall"= {
         format= "󰏘";

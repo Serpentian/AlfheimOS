@@ -42,7 +42,7 @@
       # Music control
       "$mod ALT, k, exec, pulsemixer --change-volume +5"
       "$mod ALT, j, exec, pulsemixer --change-volume -5"
-      "$mod ALT, m, exec, pulsemixer --toggle-mute"
+      "$mod ALT, m, exec, pamixer --default-source -t"
       "$mod ALT, l, exec, hyprmusic next"
       "$mod ALT, h, exec, hyprmusic previous"
       "$mod ALT, p, exec, hyprmusic play-pause"
@@ -101,7 +101,7 @@
     binde=,j,resizeactive,0 10
 
     # use reset to go back to the global submap
-    bind=,escape,submap,reset 
+    bind=,escape,submap,reset
 
     # will reset the submap, meaning end the current one and return to the global one
     submap=reset

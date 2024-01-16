@@ -33,6 +33,7 @@ in
   };
 
   nixpkgs.overlays = import ../lib/overlays.nix;
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     # Neovim specific packages.
     ripgrep
@@ -47,6 +48,8 @@ in
     sway-contrib.grimshot
     swayimg
     hyprpicker
+
+    vesktop
   ];
 
   xdg.enable = true;
