@@ -155,7 +155,12 @@
 
     button, image {
         background: none;
-        border: none
+        border: none;
+        color: rgb(205, 214, 244)
+    }
+
+    image {
+        padding-bottom: 10px;
     }
 
     button:hover {
@@ -168,7 +173,7 @@
     }
 
     #pinned-box {
-        padding-bottom: 5px;
+        padding-bottom: 15px;
         border-bottom: 1px dotted gray
     }
 

@@ -208,7 +208,7 @@
       "custom/launcher"= {
         format= "";
 	    # See https://github.com/Alexays/Waybar/issues/1850.
-        on-click = "sleep 0.1 && nwg-drawer";
+        on-click = "sleep 0.1 && nwg-drawer -nocats -is 75";
         # on-click-right = "pkill rofi";
         tooltip= "false";
       };

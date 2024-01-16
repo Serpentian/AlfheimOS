@@ -103,6 +103,14 @@ in
         variant = "mocha";
       };
     };
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+    font = {
+      name = "RobotoMono Nerd Font";
+      size = 12;
+    };
   };
 
   services.kdeconnect.enable = true;
