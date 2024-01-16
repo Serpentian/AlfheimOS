@@ -6,6 +6,18 @@
     nwg-drawer
   ];
 
+  # Hide entries.
+  xdg.desktopEntries.input-remapper-gtk.name = "InputRemapper";
+  xdg.desktopEntries.input-remapper-gtk.noDisplay = true;
+  xdg.desktopEntries.input-remapper-autoload.name = "InputRemapperAutoload";
+  xdg.desktopEntries.input-remapper-autoload.noDisplay = true;
+  xdg.desktopEntries.nvidia-settings.name = "NvidiaSettings";
+  xdg.desktopEntries.nvidia-settings.noDisplay = true;
+  xdg.desktopEntries.rofi.name = "Rofi";
+  xdg.desktopEntries.rofi.noDisplay = true;
+  xdg.desktopEntries.rofi-theme-selector.name = "RofiThemeSelector";
+  xdg.desktopEntries.rofi-theme-selector.noDisplay = true;
+
   programs.rofi = {
     enable = true;
     cycle = false;

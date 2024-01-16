@@ -87,15 +87,6 @@ in
     BROWSER = "firefox";
   };
 
-  qt.enable = true;
-  qt.platformTheme = "qtct";
-  qt.style.name = "kvantum";
-
-  xdg.configFile.Kvantum = {
-    source = ../non-nix/Kvantum;
-    recursive = true;
-  };
-
   gtk = {
     enable = true;
     theme = {
