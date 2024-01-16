@@ -24,6 +24,7 @@ in
       ./apps/git.nix
       ./apps/btop.nix
       ./apps/ranger.nix
+      ./apps/zathura.nix
       ./shell/zsh.nix
     ];
 
