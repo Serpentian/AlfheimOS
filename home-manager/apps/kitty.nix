@@ -1,4 +1,4 @@
-{...}:
+{custom, ...}:
 
 {
   programs.kitty = {
@@ -18,8 +18,8 @@
       cursor_underline_thickness = "1.5";
       disable_ligatures = "never";
       editor = "nvim";
-      font_family = "RobotoMono";
-      font_size = "12.0";
+      font_family = custom.font;
+      font_size = custom.fontsize;
       hide_window_decorations = "titlebar-only";
       inactive_tab_font_style = "normal";
       inactive_text_alpha = "1.0";

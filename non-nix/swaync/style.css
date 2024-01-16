@@ -12,7 +12,7 @@
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(0, 128, 255);
 * {
-  font-family: "RobotoMono Nerd Font"; }
+  font-family: "Hack Nerd Font"; }
 
 .notification-row {
   outline: none; }

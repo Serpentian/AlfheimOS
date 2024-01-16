@@ -2,7 +2,7 @@
 let
   # Variables to share accross configs
   custom = {
-    font = "RobotoMono Nerd Font";
+    font = "Hack Nerd Font";
     fontsize = "12";
     primary_accent = "cba6f7";
     secondary_accent= "89b4fa";
@@ -108,7 +108,7 @@ in
       package = pkgs.papirus-icon-theme;
     };
     font = {
-      name = "RobotoMono Nerd Font";
+      name = custom.font;
       size = 12;
     };
   };

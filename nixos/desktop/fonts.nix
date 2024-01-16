@@ -3,7 +3,7 @@
 {
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [
-      "RobotoMono"
+      "Hack"
     ]; })
     # noto-fonts-cjk
   ];
