@@ -25,6 +25,7 @@ in
       ./apps/btop.nix
       ./apps/ranger.nix
       ./apps/zathura.nix
+      ./apps/neofetch
       ./shell/zsh.nix
     ];
 

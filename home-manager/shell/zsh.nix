@@ -30,8 +30,11 @@
       w3md = "w3m https://lite.duckduckgo.com/lite/";
       nix-tarantool = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
       nix-python = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
+      neofetch = "neofetch --source ~/.dotfiles/home-manager/apps/neofetch/snufkin.txt";
     };
-    initExtra = "set -o emacs";
+    initExtra = ''
+      set -o emacs
+    '';
   };
 
   home.packages = with pkgs; [
