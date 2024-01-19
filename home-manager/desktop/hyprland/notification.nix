@@ -3,6 +3,7 @@
 {
     home.packages = with pkgs; [
         swaynotificationcenter
+        swayosd
     ];
 
     xdg.configFile.swaync = {

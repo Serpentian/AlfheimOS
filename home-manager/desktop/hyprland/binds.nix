@@ -10,6 +10,10 @@
       "$mod, mouse:273, resizewindow"
     ];
 
+    bindr = [
+      "CAPS, Caps_Lock, exec, swayosd-client --caps-lock"
+    ];
+
     bind = [
       # Window/Session actions.
       "$mod, Q, killactive,"
@@ -40,9 +44,9 @@
       "$mod, j, movefocus, d"
 
       # Music control
-      "$mod ALT, k, exec, pulsemixer --change-volume +5"
-      "$mod ALT, j, exec, pulsemixer --change-volume -5"
-      "$mod ALT, m, exec, pamixer --default-source -t"
+      "$mod ALT, k, exec, swayosd-client --output-volume raise"
+      "$mod ALT, j, exec, swayosd-client --output-volume lower"
+      "$mod ALT, m, exec, swayosd-client --input-volume mute-toggle"
       "$mod ALT, l, exec, hyprmusic next"
       "$mod ALT, h, exec, hyprmusic previous"
       "$mod ALT, p, exec, hyprmusic play-pause"
@@ -57,15 +61,15 @@
       "$mod, TAB, focusmonitor, +1"
 
       # Switch workspaces.
-      "$mod,1,exec,hyprworkspace 1"
-      "$mod,2,exec,hyprworkspace 2"
-      "$mod,3,exec,hyprworkspace 3"
-      "$mod,4,exec,hyprworkspace 4"
-      "$mod,5,exec,hyprworkspace 5"
-      "$mod,6,exec,hyprworkspace 6"
-      "$mod,7,exec,hyprworkspace 7"
-      "$mod,8,exec,hyprworkspace 8"
-      "$mod,9,exec,hyprworkspace 9"
+      "$mod, 1,exec,hyprworkspace 1"
+      "$mod, 2,exec,hyprworkspace 2"
+      "$mod, 3,exec,hyprworkspace 3"
+      "$mod, 4,exec,hyprworkspace 4"
+      "$mod, 5,exec,hyprworkspace 5"
+      "$mod, 6,exec,hyprworkspace 6"
+      "$mod, 7,exec,hyprworkspace 7"
+      "$mod, 8,exec,hyprworkspace 8"
+      "$mod, 9,exec,hyprworkspace 9"
 
       "$mod CTRL, h, workspace, r-1"
       "$mod CTRL, l, workspace, r+1"
