@@ -5,13 +5,13 @@
   networking.hostName = "alfheim";
   networking.dhcpcd.enable = true;
 
-  networking.firewall = { 
+  networking.firewall = {
       enable = true;
-      allowedTCPPortRanges = [ 
+      allowedTCPPortRanges = [
          { from = 1714; to = 1764; } # KDE Connect
       ];
 
-      allowedUDPPortRanges = [ 
+      allowedUDPPortRanges = [
          { from = 1714; to = 1764; } # KDE Connect
       ];
 
@@ -21,6 +21,7 @@
   # Enable WireGuard
   networking.wg-quick.interfaces = {
     wg0 = {
+      autostart = false;
       address = [ "10.200.200.3/32" ];
       privateKeyFile = "/etc/wireguard/private.key";
       dns = [ "10.200.200.1" ];
