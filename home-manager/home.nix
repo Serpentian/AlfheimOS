@@ -50,8 +50,6 @@ in
     sway-contrib.grimshot
     swayimg
     hyprpicker
-
-    vesktop
   ];
 
   xdg.enable = true;
