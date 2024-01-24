@@ -1,8 +1,12 @@
 * {
-  all: unset;
+    all: unset;
 }
 
-.corner {
-  background-color: rgb(37,37,58);
-  border-radius: 25px;
-}
+@import './variables';
+
+// Common scss
+@import './common/button';
+@import './common/menu';
+
+// Widgets scss
+@import './widgets/desktop';

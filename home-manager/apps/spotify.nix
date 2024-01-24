@@ -9,8 +9,8 @@
   home.file.".config/spotify-player/app.toml".text = ''
     enable_notify = false
     theme = "Catppuccin-mocha"
-    client_id = "65b708073fc0480ea92a077233ca87bd"
-    client_port = 8080
+    client_id = "567f94ac911c4c2c86c35aa69fb38759"
+    client_port = 8888
     playback_format = """
     {track} • {artists}
     {album}

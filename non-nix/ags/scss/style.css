@@ -1,9 +1,47 @@
 * {
   all: unset; }
 
+window.popup > * {
+  border: none;
+  box-shadow: none; }
+
+window.popup menu {
+  border-radius: 5px;
+  background-color: rgba(17, 17, 27, 0.8);
+  padding: 5px; }
+  window.popup menu separator {
+    background-color: #45475a; }
+  window.popup menu menuitem {
+    all: unset;
+    border-radius: 5px;
+    color: #cdd6f4;
+    background-color: #25253a;
+    box-shadow: inset 0 0 0 0px #45475a;
+    padding: 2.5px;
+    margin: 2.5px 0; }
+    window.popup menu menuitem:focus {
+      background-color: #313244;
+      color: #cdd6f4; }
+    window.popup menu menuitem:hover {
+      box-shadow: inset 0 0 0 0px #45475a;
+      background-color: #313244;
+      color: #cdd6f4; }
+    window.popup menu menuitem:active, window.popup menu menuitem.on, window.popup menu menuitem.active, window.popup menu menuitem:checked {
+      box-shadow: inset 0 0 0 0px #45475a; }
+      window.popup menu menuitem:active:hover, window.popup menu menuitem.on:hover, window.popup menu menuitem.active:hover, window.popup menu menuitem:checked:hover {
+        box-shadow: inset 0 0 0 0px #45475a, inset 0 0 0 99px #313244; }
+    window.popup menu menuitem:disabled {
+      box-shadow: none;
+      background-color: transparent;
+      color: rgba(205, 214, 244, 0.3); }
+    window.popup menu menuitem:first-child {
+      margin-top: 0; }
+    window.popup menu menuitem:last-child {
+      margin-bottom: 0; }
+
 .corner {
   background-color: #25253a;
   border-radius: 25px; }
 
-.angle {
-  background-color: #25253a; }
+.desktop-menu image {
+  margin-right: 6px; }
