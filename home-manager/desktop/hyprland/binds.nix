@@ -89,6 +89,8 @@
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
       "$mod SHIFT, 0, movetoworkspace, 10"
+      "$mod CTRL SHIFT, l, movetoworkspace, r+1"
+      "$mod CTRL SHIFT, h, movetoworkspace, r-1"
     ];
   };
   wayland.windowManager.hyprland.extraConfig = ''
