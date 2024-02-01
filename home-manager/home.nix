@@ -27,6 +27,7 @@ in
       ./apps/zathura.nix
       ./apps/neofetch
       ./shell/zsh.nix
+      ./hardware/mouse.nix
     ];
 
   home = {
