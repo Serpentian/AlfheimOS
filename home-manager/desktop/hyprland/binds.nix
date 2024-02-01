@@ -30,12 +30,15 @@
       "$mod, D, exec, neovide"
       "$mod, F, exec, firefox"
 
+      # Special workspace
+      "$mod, S, togglespecialworkspace"
+      "$mod SHIFT, S, movetoworkspacesilent, special"
+
       # Launcher
       "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
-      "$mod, S, exec, rofi -show run -kb-cancel Super_L"
 
       # Screenshot
-      "$mod SHIFT, S, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"
+      "$mod SHIFT, z, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"
 
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
@@ -79,18 +82,18 @@
       "$mod, mouse_up, workspace, r+1"
 
       # Move active window to a workspace.
-      "$mod SHIFT, 1, movetoworkspace, 1"
-      "$mod SHIFT, 2, movetoworkspace, 2"
-      "$mod SHIFT, 3, movetoworkspace, 3"
-      "$mod SHIFT, 4, movetoworkspace, 4"
-      "$mod SHIFT, 5, movetoworkspace, 5"
-      "$mod SHIFT, 6, movetoworkspace, 6"
-      "$mod SHIFT, 7, movetoworkspace, 7"
-      "$mod SHIFT, 8, movetoworkspace, 8"
-      "$mod SHIFT, 9, movetoworkspace, 9"
-      "$mod SHIFT, 0, movetoworkspace, 10"
-      "$mod CTRL SHIFT, l, movetoworkspace, r+1"
-      "$mod CTRL SHIFT, h, movetoworkspace, r-1"
+      "$mod SHIFT, 1, movetoworkspacesilent, 1"
+      "$mod SHIFT, 2, movetoworkspacesilent, 2"
+      "$mod SHIFT, 3, movetoworkspacesilent, 3"
+      "$mod SHIFT, 4, movetoworkspacesilent, 4"
+      "$mod SHIFT, 5, movetoworkspacesilent, 5"
+      "$mod SHIFT, 6, movetoworkspacesilent, 6"
+      "$mod SHIFT, 7, movetoworkspacesilent, 7"
+      "$mod SHIFT, 8, movetoworkspacesilent, 8"
+      "$mod SHIFT, 9, movetoworkspacesilent, 9"
+      "$mod SHIFT, 0, movetoworkspacesilent, 10"
+      "$mod CTRL SHIFT, l, movetoworkspacesilent, r+1"
+      "$mod CTRL SHIFT, h, movetoworkspacesilent, r-1"
     ];
   };
   wayland.windowManager.hyprland.extraConfig = ''

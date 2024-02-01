@@ -34,9 +34,11 @@
     };
 
     decoration = {
+      dim_special = 0.5;
       rounding = 25;
       blur = {
         enabled = true;
+        special = true;
         brightness = 1.0;
         contrast = 1.0;
         noise = 0.02;
@@ -59,6 +61,7 @@
         "winIn, 0.1, 1.1, 0.1, 1.1"
         "winOut, 0.3, -0.3, 0, 1"
         "liner, 1, 1, 1, 1"
+        "workIn, 0.72, -0.07, 0.41, 0.98"
       ];
       animation = [
         "windows, 1, 6, wind, slide"
@@ -69,6 +72,7 @@
         "borderangle, 1, 30, liner, loop"
         "fade, 1, 10, default"
         "workspaces, 1, 5, wind"
+        "specialWorkspace, 1, 5, workIn, slidevert"
       ];
     };
 
