@@ -17,7 +17,8 @@
     bind = [
       # Window/Session actions.
       "$mod, Q, killactive,"
-      "$mod, W, fullscreen,"
+      "$mod, W, fullscreen, 1"
+      "$mode SHIFT, W, fullscreen,"
       "$mod, E, togglefloating,"
       "$mod, delete, exit,"
 
