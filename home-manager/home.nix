@@ -53,6 +53,7 @@ in
     hyprpicker
 
     vesktop
+    distrobox
   ];
 
   xdg.enable = true;
