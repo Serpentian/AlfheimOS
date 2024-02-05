@@ -26,6 +26,7 @@ in
       ./apps/ranger.nix
       ./apps/zathura.nix
       ./apps/nemu.nix
+      ./apps/cava.nix
       ./apps/neofetch
       ./shell/zsh.nix
       ./hardware/mouse.nix
