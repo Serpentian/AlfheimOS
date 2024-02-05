@@ -36,8 +36,6 @@
           python310Packages.six
           lz4
 
-          etcd
-
           # TT building
           go
           mage

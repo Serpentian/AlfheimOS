@@ -10,7 +10,6 @@
       ./hardware/sound.nix
       ./hardware/mouse.nix
       ./hardware/boot.nix
-      ./gaming/steam.nix
       ./virtualization/docker.nix
       ./virtualization/nemu
       # Window manager or desktop environment.
