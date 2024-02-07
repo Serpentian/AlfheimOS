@@ -211,7 +211,7 @@
       "custom/launcher"= {
         format= "";
 	    # See https://github.com/Alexays/Waybar/issues/1850.
-        on-click = "sleep 0.1 && nwg-drawer -nocats -is 75";
+        on-click = "sleep 0.1 && nwg-drawer -nocats -is 75 -pbexit 'hyprctl dispatch exit' -pbpoweroff 'systemctl poweroff' -pbreboot 'systemctl reboot' -pbsleep 'systemctl suspend' -pbsize 60";
         # on-click-right = "pkill rofi";
         tooltip= "false";
       };

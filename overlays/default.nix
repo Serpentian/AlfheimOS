@@ -5,4 +5,5 @@
 final: prev: {
   _spotify-player = final.callPackage ../pkgs/spotify-player.nix {};
   _nemu = final.callPackage ../pkgs/nemu.nix {};
+  _nwg-drawer = final.callPackage ../pkgs/nwg-drawer.nix {};
 }

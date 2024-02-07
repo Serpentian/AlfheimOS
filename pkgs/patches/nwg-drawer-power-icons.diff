@@ -1,0 +1,33 @@
+diff --git a/main.go b/main.go
+index 97fa488..47900cd 100644
+--- a/main.go
++++ b/main.go
+@@ -586,23 +586,23 @@ func main() {
+ 		powerBarWrapper.PackStart(powerButtonsWrapper, true, false, 12)
+ 
+ 		if *pbLock != "" {
+-			btn := powerButton("/usr/share/nwg-drawer/img/lock.svg", *pbLock)
++			btn := powerButton("/home/serpentian/.nix-profile/share/nwg-drawer/img/lock.svg", *pbLock)
+ 			powerButtonsWrapper.PackStart(btn, true, false, 0)
+ 		}
+ 		if *pbExit != "" {
+-			btn := powerButton("/usr/share/nwg-drawer/img/exit.svg", *pbExit)
++			btn := powerButton("/home/serpentian/.nix-profile/share/nwg-drawer/img/exit.svg", *pbExit)
+ 			powerButtonsWrapper.PackStart(btn, true, false, 0)
+ 		}
+ 		if *pbReboot != "" {
+-			btn := powerButton("/usr/share/nwg-drawer/img/reboot.svg", *pbReboot)
++			btn := powerButton("/home/serpentian/.nix-profile/share/nwg-drawer/img/reboot.svg", *pbReboot)
+ 			powerButtonsWrapper.PackStart(btn, true, false, 0)
+ 		}
+ 		if *pbSleep != "" {
+-			btn := powerButton("/usr/share/nwg-drawer/img/sleep.svg", *pbSleep)
++			btn := powerButton("/home/serpentian/.nix-profile/share/nwg-drawer/img/sleep.svg", *pbSleep)
+ 			powerButtonsWrapper.PackStart(btn, true, false, 0)
+ 		}
+ 		if *pbPoweroff != "" {
+-			btn := powerButton("/usr/share/nwg-drawer/img/poweroff.svg", *pbPoweroff)
++			btn := powerButton("/home/serpentian/.nix-profile/share/nwg-drawer/img/poweroff.svg", *pbPoweroff)
+ 			powerButtonsWrapper.PackStart(btn, true, false, 0)
+ 		}
+ 	}

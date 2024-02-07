@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     rofi-power-menu
-    nwg-drawer
+    _nwg-drawer
   ];
 
   # Hide entries.

@@ -41,7 +41,7 @@ export default () => Widget.Menu({
                 children: [
                     Item('Shutdown', icons.powermenu.shutdown, () => Utils.execAsync('systemctl poweroff')),
                     Item('Reboot', icons.powermenu.reboot, () => Utils.execAsync('systemctl reboot')),
-                    Item('Log Out', icons.powermenu.logout, () => Utils.execAsync('pkill Hyprland')),
+                    Item('Log Out', icons.powermenu.logout, () => Utils.execAsync('hyprctl dispatch exit')),
                 ],
             }),
         }),
