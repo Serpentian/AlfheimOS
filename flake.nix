@@ -1,14 +1,6 @@
 {
     description = "Alfheim NixOs";
 
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        home-manager.url = "github:nix-community/home-manager/master";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        ags.url = "github:Aylur/ags";
-        hyprland.url = "github:hyprwm/Hyprland";
-    };
-
     outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
         inherit (self) outputs;
     in {
@@ -17,7 +9,7 @@
         nixosConfigurations = {
             alfheim = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs outputs;};
-                modules = [./nixos/configuration.nix];
+                modules = [./system/configuration.nix];
             };
         };
 
@@ -27,8 +19,16 @@
             "serpentian" = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
                 extraSpecialArgs = {inherit inputs outputs;};
-                modules = [./home-manager/home.nix];
+                modules = [./home/home.nix];
             };
         };
+    };
+
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        home-manager.url = "github:nix-community/home-manager/master";
+        home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        ags.url = "github:Aylur/ags";
+        hyprland.url = "github:hyprwm/Hyprland";
     };
 }
