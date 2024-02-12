@@ -41,7 +41,7 @@
           mage
         ];
         shellHook = ''
-            export PATH=$HOME/Programming/tnt/tarantool/build/src:$HOME/Programming/tnt/tt:$PATH
+            export PATH=$HOME/Programming/tnt/tarantool/src:$HOME/Programming/tnt/tt:$PATH
             export CC=${pkgs.gcc}/bin/gcc
             export CXX=${pkgs.gcc}/bin/c++
         '';
