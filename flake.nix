@@ -2,13 +2,12 @@
     description = "Alfheim NixOs";
 
     outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
-        inherit (self) outputs;
     in {
         # NixOS configuration entrypoint.
         # 'nixos-rebuild switch --flake .#your-hostname'
         nixosConfigurations = {
             alfheim = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs outputs;};
+                specialArgs = {inherit inputs;};
                 modules = [./system/configuration.nix];
             };
         };
@@ -18,7 +17,7 @@
         homeConfigurations = {
             "serpentian" = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                extraSpecialArgs = {inherit inputs outputs;};
+                extraSpecialArgs = {inherit inputs;};
                 modules = [./home/home.nix];
             };
         };
