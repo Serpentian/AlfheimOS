@@ -93,7 +93,7 @@ home-manager switch --flake .#user
 
 In the future several themes will be introduced, but now only one is supported:
 
-![Screen](./assets/screen.png)
+![Screen](./assets/catppuccin/overview.png)
 
 ## Credits
 * [librephoenix/nixos-config](https://github.com/librephoenix/nixos-config?tab=readme-ov-file) - The repo structure is heavily inspired by this repo.
