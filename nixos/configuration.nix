@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -38,6 +38,12 @@
     description = "serpentian";
     extraGroups = [ "wheel" ];
   };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs here.
+    stdenv.cc.cc
+  ];
 
   # List of globally installed packages.
   environment.systemPackages = with pkgs; [
