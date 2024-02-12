@@ -12,8 +12,10 @@
       ./hardware/boot.nix
       ./virtualization/docker.nix
       ./virtualization/nemu
+      ./gaming/steam.nix
       # Window manager or desktop environment.
       ./desktop/hyprland.nix
+      ./desktop/wayfire.nix
     ];
 
   # Network.

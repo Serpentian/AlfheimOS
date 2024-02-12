@@ -28,6 +28,20 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/serpentian/Games/ssd" =
+    {
+        device = "/dev/disk/by-uuid/43702a06-1dd1-4fe0-bf61-20b45a3545a2";
+        fsType = "ext4";
+        options = [ "defaults" "users" "exec"];
+    };
+
+  fileSystems."/home/serpentian/Games/hdd" =
+    {
+        device = "/dev/disk/by-uuid/8b9e0315-ae3f-47b6-a733-edba52aa8925";
+        fsType = "ext4";
+        options = [ "defaults" "users" "exec"];
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/58bae934-bc9c-47ba-ab6c-b22ed66ada5e"; }
     ];

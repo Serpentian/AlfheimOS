@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     pkgs.wayland
     pkgs.wl-clipboard
   ];
@@ -9,9 +9,11 @@
   # Configure xwayland
   services.xserver = {
     enable = true;
-    layout = "us,ru";
-    xkbVariant = "";
-    xkbOptions = "grp:win_space_toggle";
+    xkb = {
+        variant = "";
+        layout = "us,ru";
+        options = "grp:win_space_toggle";
+    };
   };
 
   # Enable display manager.
