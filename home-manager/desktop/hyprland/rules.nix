@@ -17,6 +17,17 @@
             "float,title:^(swayimg)(.*)$"
         ];
 
+        windowrulev2 = [
+            "keepaspectratio,class:^(firefox)$,title:^(Picture-in-Picture)$"
+            "noborder,class:^(firefox)$,title:^(Picture-in-Picture)$"
+            "fakefullscreen,class:^(firefox)$,title:^(Firefox)$"
+            "fakefullscreen,class:^(firefox)$,title:^(Picture-in-Picture)$"
+            "pin,class:^(firefox)$,title:^(Firefox)$"
+            "pin,class:^(firefox)$,title:^(Picture-in-Picture)$"
+            "float,class:^(firefox)$,title:^(Firefox)$"
+            "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+        ];
+
         workspace = [
             "special,gapsin:24,gapsout:64"
         ];
