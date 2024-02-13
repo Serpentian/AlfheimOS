@@ -11,7 +11,7 @@
             locale = "en_US.UTF-8"; # Select locale
             name = "Nikita Zheleztsov"; # Name (git config)
             email = "n.zheleztsov@proton.me"; # Email (git config)
-            dotfilesDir = "~/.dotfiles"; # Absolute path of the local repo
+            dotfilesDir = ".dotfiles"; # Absolute path of the local repo
             theme = "catppuccin-mocha"; # Selected theme from themes directory (./themes/)
             wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
 
