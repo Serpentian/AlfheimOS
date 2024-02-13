@@ -18,6 +18,7 @@
           # Tarantool dependencies
           git
           gcc
+          clang
           c-ares
           gnumake
           cmake
