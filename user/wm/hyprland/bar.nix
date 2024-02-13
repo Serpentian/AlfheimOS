@@ -1,4 +1,4 @@
-{ custom, config, pkgs, ... }:
+{ custom, config, pkgs, settings, ... }:
 
 # justinlime/dotfiles. This is a masterpiece!
 
@@ -236,7 +236,7 @@
             * {
                 border: none;
                 border-radius: 0px;
-                font-family: ${custom.font};
+                font-family: ${settings.font};
                 font-size: 14px;
                 min-height: 0;
             }

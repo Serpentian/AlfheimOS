@@ -2,23 +2,57 @@
     description = "Alfheim NixOs";
 
     outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
+        settings = {
+            system = "x86_64-linux";
+            hostname = "alfheim"; # Hostname
+            username = "serpentian"; # Ssername
+            profile = "work"; # Select from profiles directory
+            timezone = "Europe/Moscow"; # Select timezone
+            locale = "en_US.UTF-8"; # Select locale
+            name = "Nikita Zheleztsov"; # Name (git config)
+            email = "n.zheleztsov@proton.me"; # Email (git config)
+            dotfilesDir = "~/.dotfiles"; # Absolute path of the local repo
+            theme = "catppuccin-mocha"; # Selected theme from themes directory (./themes/)
+            wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
+
+            font = "Hack Nerd Font"; # Selected font
+            fontPkg = (pkgs.nerdfonts.override { fonts = [ "Hack"]; }); # Selected font
+            fontSize = 12; # Font size
+
+            icons = "Papirus";
+            iconsPkg = pkgs.papirus-icon-theme;
+
+            editor = "nvim"; # Default editor
+            browser = "firefox"; # Default browser; must select one from ./user/app/browser/
+            term = "kitty"; # Default terminal command
+
+            enableVPN = true; # Whether to include VPN configuration
+        };
+
+        pkgs = import nixpkgs {system = settings.system;};
     in {
         # NixOS configuration entrypoint.
-        # 'nixos-rebuild switch --flake .#your-hostname'
+        # 'nixos-rebuild switch --flake .#hostname
         nixosConfigurations = {
-            alfheim = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs;};
-                modules = [./system/configuration.nix];
+            ${settings.hostname} = nixpkgs.lib.nixosSystem {
+                modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix") ];
+                specialArgs = {
+                    inherit inputs;
+                    inherit settings;
+                };
             };
         };
 
         # Standalone home-manager configuration entrypoint.
-        # 'home-manager switch --flake .#your-username@your-hostname'
+        # 'home-manager switch --flake .#username
         homeConfigurations = {
-            "serpentian" = home-manager.lib.homeManagerConfiguration {
-                pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                extraSpecialArgs = {inherit inputs;};
-                modules = [./home/home.nix];
+            ${settings.username} = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.${settings.system};
+                modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/home.nix") ];
+                extraSpecialArgs = {
+                    inherit inputs;
+                    inherit settings;
+                };
             };
         };
     };

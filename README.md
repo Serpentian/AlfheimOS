@@ -14,6 +14,9 @@
 This repository is home to the Nix code that builds my systems. Issues, PRs
 and questions are welcome!
 
+The dots are still WIP! Please, don't use them, if you don't know, how to work
+with Nix.
+
 ## Modules
 
 The config is modular, you can either specify settings inside [`flake.nix`](https://github.com/Serpentian/AlfheimOS/blob/master/flake.nix) or/and
@@ -61,7 +64,7 @@ Once the variables are set, then switch into the system configuration by running
 
 ```
 cd ~/.dotfiles
-sudo nixos-rebuild switch --flake .#system
+sudo nixos-rebuild switch --flake .
 ```
 
 Home manager can be installed with:
@@ -86,7 +89,7 @@ installed with:
 
 ```
 cd ~/.dotfiles
-home-manager switch --flake .#user
+home-manager switch --flake .
 ```
 
 ## Themes

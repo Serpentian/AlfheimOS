@@ -1,4 +1,4 @@
-{ custom, config, pkgs, ... }:
+{ config, pkgs, custom, settings, ... }:
 
 {
   home.packages = with pkgs; [
@@ -22,7 +22,7 @@
     enable = true;
     cycle = false;
     package = pkgs.rofi-wayland;
-    font = "${custom.font}" + " 14";
+    font = "${settings.font}" + " 14";
     terminal = "kitty";
     extraConfig = {
       modi = "drun,window,run,power-menu:rofi-power-menu";

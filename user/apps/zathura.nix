@@ -1,10 +1,10 @@
-{ custom, pkgs, lib, ... }:
+{ pkgs, lib, settings, ... }:
 
 {
     programs.zathura = {
         enable = true;
         options = {
-             font = "${custom.font} ${custom.fontsize}";
+             font = "${settings.font} 12";
              default-fg = "#CDD6F4";
              default-bg = "#1E1E2E";
 

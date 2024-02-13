@@ -1,0 +1,6 @@
+{ ... }:
+{
+    imports = [
+        ../work/home.nix
+    ];
+}
