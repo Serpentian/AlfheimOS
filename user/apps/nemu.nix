@@ -26,6 +26,8 @@ db = /home/serpentian/.local/share/nemu/nemu.db
 # if not set VTE's default cursor style will be used
 # cursor_style = 1
 
+err_color = 11111b
+
 [viewer]
 # default protocol (1 - spice, 0 - vnc)
 spice_default = 1
