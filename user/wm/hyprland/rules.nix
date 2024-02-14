@@ -26,6 +26,8 @@
             "pin,class:^(firefox)$,title:^(Picture-in-Picture)$"
             "float,class:^(firefox)$,title:^(Firefox)$"
             "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+
+            "nofullscreenrequest,class:^(neovide)$,title:^(Neovide)$"
         ];
 
         workspace = [
