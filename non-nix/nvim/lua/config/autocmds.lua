@@ -1,6 +1,3 @@
--- Autocmds are automatically loaded on the VeryLazy event
--- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
--- Add any additional autocmds here
 local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
@@ -19,7 +16,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.api.nvim_create_autocmd('FileType', {
     group = augroup("tabs"),
-    pattern = { "c" },
+    pattern = { "*.c", "*.h", "*.cpp", "*.cc"},
     callback = function()
         vim.opt.expandtab = false  -- don't convert tabs to spaces
         vim.opt.tabstop = 8        -- insert 8 spaces for a tab

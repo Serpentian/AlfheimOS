@@ -11,17 +11,20 @@ return {
                 enabled = false;
             },
             integrations = {
-                cmp = true,
-                mason = true,
+                gitsigns = true,
                 treesitter = true,
-                notify = true,
-                neotree = true,
-                noice = true,
-                window_picker = true,
+                nvimtree = true,
                 which_key = true,
-                neotree = true,
             }
         }
+        if vim.g.neovide then
+            settings.transparent_background = false
+            settings.custom_highlights = function(colors)
+                return {
+                    Normal = { bg = "#11111b" },
+                }
+            end
+        end
         require("catppuccin").setup(settings)
         vim.cmd.colorscheme("catppuccin")
     end,

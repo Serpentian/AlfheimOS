@@ -29,6 +29,7 @@ in
     nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     home.packages = with pkgs; [
+        neovide
         # Neovim specific packages.
         ripgrep
         lazygit
@@ -65,10 +66,10 @@ in
     };
 
     # Neovim linking. Don't like configuring NeoVim with Nix.
-    #xdg.configFile.nvim = {
-    #    source = ../../non-nix/nvim;
-    #    recursive = true;
-    #};
+    xdg.configFile.nvim = {
+        source = ../../non-nix/nvim;
+        recursive = true;
+    };
 
     xdg.dataFile.icons = {
         source = ../../non-nix/icons;

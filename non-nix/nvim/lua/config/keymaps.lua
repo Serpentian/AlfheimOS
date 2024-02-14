@@ -1,13 +1,23 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Move to window using the <Space-w> hjkl keys
-vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Go to left window", remap = true })
-vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Go to lower window", remap = true })
-vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Go to upper window", remap = true })
-vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Go to right window", remap = true })
+-- Window management
+vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Go to left window", remap = true})
+vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Go to lower window", remap = true})
+vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Go to upper window", remap = true})
+vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Go to right window", remap = true})
+vim.keymap.set("n", "<leader>wq", "<C-W>c", { desc = "Delete window", remap = true })
+vim.keymap.set("n", "<leader>ws", "<C-W>s", { desc = "Split window below", remap = true })
+vim.keymap.set("n", "<leader>wv", "<C-W>v", { desc = "Split window right", remap = true })
 
--- Switch buffers with <Space-b>
-vim.keymap.set("n", "<leader>bh", "[b", { desc = "Prev buffer", remap = true })
-vim.keymap.set("n", "<leader>bl", "]b", { desc = "Next buffer", remap = true })
+-- lazy
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+
+-- tabs
+vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
+vim.keymap.set("n", "<leader><tab>l", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+vim.keymap.set("n", "<leader><tab>h", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- quit
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
