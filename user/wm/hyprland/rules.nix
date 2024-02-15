@@ -27,7 +27,8 @@
             "float,class:^(firefox)$,title:^(Firefox)$"
             "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
 
-            "nofullscreenrequest,class:^(neovide)$,title:^(Neovide)$"
+            "stayfocused, title:^()$,class:^(steam)$"
+            "minsize 1 1, title:^()$,class:^(steam)$"
         ];
 
         workspace = [
