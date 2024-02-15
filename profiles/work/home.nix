@@ -45,6 +45,7 @@ in
 
         vesktop
         distrobox
+        mpv
     ];
 
     xdg.enable = true;
