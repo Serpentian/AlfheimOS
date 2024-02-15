@@ -14,12 +14,6 @@
         layout = "us,ru";
         options = "grp:win_space_toggle";
     };
-  };
-
-  # Enable display manager.
-  services.gnome.gnome-keyring.enable = true;
-  services.xserver.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
+    displayManager.startx.enable = true;
   };
 }
