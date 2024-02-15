@@ -5,6 +5,5 @@
     imports = [
         ../work/configuration.nix
         ../../system/hardware-configuration.nix
-        ../../system/gaming/steam.nix
     ];
 }

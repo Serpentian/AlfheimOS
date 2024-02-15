@@ -1,10 +1,11 @@
 { inputs, config, pkgs, ... }:
 
 {
-    imports = [
+    imports =
+        [
         ./wayland.nix
-        ./fonts.nix
-    ];
+            ./fonts.nix
+        ];
 
     programs.wayfire = {
         enable = true;

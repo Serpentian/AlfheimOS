@@ -18,8 +18,8 @@
 
   # Enable display manager.
   services.gnome.gnome-keyring.enable = true;
-  services.xserver.displayManager.gdm = {
+  services.xserver.displayManager.sddm = {
     enable = true;
-    wayland = true;
+    wayland.enable = true;
   };
 }
