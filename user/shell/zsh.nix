@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./starship.nix
-    ];
+  ];
 
   programs.zsh = {
     enable = true;

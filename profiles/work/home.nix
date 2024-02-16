@@ -16,6 +16,8 @@ in
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/neofetch
+        ../../user/apps/nvim.nix
+        # ../../user/apps/swaync.nix
         ../../user/shell/zsh.nix
         ../../user/hardware/mouse.nix
     ];
@@ -29,23 +31,19 @@ in
     nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     home.packages = with pkgs; [
-        neovide
-        # Neovim specific packages.
-        ripgrep
-        lazygit
-        fd
-
-        kitty
-        firefox
-        libreoffice-fresh
-        obs-studio
-        gimp-with-plugins
         sway-contrib.grimshot
-        swayimg
-
-        vesktop
+        libreoffice-fresh
+        gimp-with-plugins
+        obs-studio
         distrobox
+        swayimg
+        vesktop
         mpv
+
+        # These packages are compulsury.
+        settings.editorPkg
+        settings.browserPkg
+        settings.termPkg
     ];
 
     xdg.enable = true;
@@ -64,12 +62,6 @@ in
             XDG_DOTFILES_DIR = "${config.home.homeDirectory}/${settings.dotfilesDir}";
             XDG_BOOK_DIR = "${config.home.homeDirectory}/Media/Books";
         };
-    };
-
-    # Neovim linking. Don't like configuring NeoVim with Nix.
-    xdg.configFile.nvim = {
-        source = ../../non-nix/nvim;
-        recursive = true;
     };
 
     xdg.dataFile.icons = {

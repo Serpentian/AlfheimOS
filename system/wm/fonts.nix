@@ -1,10 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, settings, ... }:
 
 {
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [
-      "Hack"
-    ]; })
-    # noto-fonts-cjk
-  ];
+    fonts.packages = with pkgs; [
+        settings.fontPkg
+    ];
 }

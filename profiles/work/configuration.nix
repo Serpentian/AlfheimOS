@@ -53,10 +53,9 @@
     environment.systemPackages = with pkgs; [
         home-manager
         pciutils
-        neovim
         wget
         git
-        zsh
+        vim
     ];
 
     # A lot of mpris packages require it.
