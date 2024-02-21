@@ -36,6 +36,7 @@ in
         gimp-with-plugins
         obs-studio
         distrobox
+        rtorrent
         swayimg
         vesktop
         mpv
