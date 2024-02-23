@@ -53,6 +53,7 @@
     environment.systemPackages = with pkgs; [
         home-manager
         pciutils
+        go-mtpfs
         wget
         git
         vim

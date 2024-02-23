@@ -17,7 +17,7 @@
     {metadata}"""
     tracks_playback_limit = 50
     app_refresh_duration_in_ms = 32
-    playback_refresh_duration_in_ms = 0
+    playback_refresh_duration_in_ms = 2000
     cover_image_refresh_duration_in_ms = 2000
     page_size_in_rows = 20
     play_icon = "▶"
