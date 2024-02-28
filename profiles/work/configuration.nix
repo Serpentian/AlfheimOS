@@ -13,6 +13,8 @@
         (if settings.enableVPN then ../../system/security/vpn.nix else null)
     ];
 
+    boot.kernelPackages = pkgs.linuxPackages_zen;
+
     nixpkgs.overlays = import ../../lib/overlays.nix; # Add packages from the pkgs dir
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
