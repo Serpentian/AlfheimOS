@@ -5,7 +5,7 @@ in
 {
     _module.args = { inherit custom; };
     imports = [
-        (./. + "../../../user/wm" + ("/" + settings.wm) + ".nix")
+        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
         ../../user/apps/w3m.nix
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix

@@ -14,6 +14,8 @@
         layout = "us,ru";
         options = "grp:win_space_toggle";
     };
-    displayManager.startx.enable = true;
+    displayManager.gdm = {
+        enable = true;
+    };
   };
 }

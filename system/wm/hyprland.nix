@@ -1,17 +1,16 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./wayland.nix
-      ./fonts.nix
+    imports = [
+        ./common/wayland.nix
+        ./common/fonts.nix
     ];
 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    programs = {
+        hyprland = {
+            enable = true;
+            xwayland.enable = true;
+            package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+        };
     };
-  };
 }

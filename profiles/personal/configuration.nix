@@ -7,6 +7,6 @@
         ../work/configuration.nix
 
         ../../system/gaming/steam.nix
-        (./. + "../../../system/wm"+("/"+settings.gamingWm)+".nix")
+        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 }

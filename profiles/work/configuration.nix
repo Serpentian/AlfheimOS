@@ -9,8 +9,8 @@
         ../../system/security/firewall.nix
         ../../system/security/virtualization/docker.nix
         ../../system/security/virtualization/nemu
-        (./. + "../../../system/wm"+("/"+settings.wm)+".nix")
         (if settings.enableVPN then ../../system/security/vpn.nix else null)
+        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
