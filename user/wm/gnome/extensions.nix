@@ -15,6 +15,7 @@
                 "appindicatorsupport@rgcjonas.gmail.com"
                 "flypie@schneegans.github.com" # Must be downloaded manually!
                 "user-theme@gnome-shell-extensions.gcampax.github.com"
+                "useless-gaps@pimsnel.com" # Waiting to be updated at Nix. Manually.
             ];
         };
 
