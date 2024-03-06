@@ -39,6 +39,7 @@ in
         rtorrent
         swayimg
         vesktop
+        krita
         mpv
 
         # These packages are compulsury.
