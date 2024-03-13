@@ -33,13 +33,15 @@ err_color = 11111b
 spice_default = 1
 
 # vnc client path.
-vnc_bin = /nix/store/xhn0cjcx1wkzvzn5d77gigbpdzfbanzs-tigervnc-1.13.1/bin/vncviewer
+# vnc_bin = /nix/store/xhn0cjcx1wkzvzn5d77gigbpdzfbanzs-tigervnc-1.13.1/bin/vncviewer
+vnc_bin = /run/current-system/sw/bin/vncviewer
 
 # vnc client args (%t - title, %p - port)
 vnc_args = :%p
 
 # spice client path.
-spice_bin = /nix/store/05wxwgmz9j2lq1xnshg3hfig1djdj36q-virt-viewer-11.0/bin/remote-viewer
+# spice_bin = /nix/store/05wxwgmz9j2lq1xnshg3hfig1djdj36q-virt-viewer-11.0/bin/remote-viewer
+spice_bin = /run/current-system/sw/bin/remote-viewer
 
 # spice client args (%t - title, %p - port)
 spice_args = --title %t spice://127.0.0.1:%p
@@ -49,7 +51,7 @@ listen_any = 0
 
 [qemu]
 # path to directory, where QEMU binary can be found.
-qemu_bin_path = /nix/store/06pbfqb9q17z5bqsisz317nl2jm682f0-qemu-8.2.0/bin
+qemu_bin_path = /run/current-system/sw/bin
 
 # comma separated QEMU system targets installed.
 targets = x86_64,i386

@@ -28,16 +28,23 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/serpentian/Games/ssd" =
+  fileSystems."/home/serpentian/Drives/ssd" =
     {
-        device = "/dev/disk/by-uuid/43702a06-1dd1-4fe0-bf61-20b45a3545a2";
+        device = "/dev/disk/by-uuid/a0cede19-b4ed-4362-a5ef-17a5c6b3ada3";
         fsType = "ext4";
         options = [ "defaults" "users" "exec"];
     };
 
-  fileSystems."/home/serpentian/Games/hdd" =
+  fileSystems."/home/serpentian/Drives/hdd" =
     {
-        device = "/dev/disk/by-uuid/8b9e0315-ae3f-47b6-a733-edba52aa8925";
+        device = "/dev/disk/by-uuid/c597db7a-c96b-48cc-b449-af327c3ab0cf";
+        fsType = "ext4";
+        options = [ "defaults" "users" "exec"];
+    };
+
+  fileSystems."/home/serpentian/Drives/nvme" =
+    {
+        device = "/dev/disk/by-uuid/d9a12b25-5efa-4aba-8c1a-b268a0b56670";
         fsType = "ext4";
         options = [ "defaults" "users" "exec"];
     };

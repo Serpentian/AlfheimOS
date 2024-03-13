@@ -28,7 +28,7 @@
       rm = "rm -rv";
       w3md = "w3m https://lite.duckduckgo.com/lite/";
       nix-tarantool = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
-      nix-python = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
+      nix-python = "nix develop ~/.dotfiles/shells/python -c zsh";
       neofetch = "neofetch --source ~/.dotfiles/user/apps/neofetch/snufkin.txt";
     };
     initExtra = ''

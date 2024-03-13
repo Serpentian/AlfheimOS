@@ -4,21 +4,27 @@ let
   nixpkgs = import <nixpkgs> { config = config.nixpkgs.config; };
 in {
 
-  imports = [
-    ./module.nix
-  ];
+    environment.systemPackages = with pkgs; [
+        virt-viewer
+        tigervnc
+        qemu
+    ];
 
-  programs.nemu = {
-    package = pkgs._nemu;
-    enable = true;
-    vhostNetGroup = "vhost";
-    macvtapGroup = "vhost";
-    usbGroup = "usb";
-    users = {
-      serpentian = {
-        autoAddVeth = true;
-        autoStartDaemon = true;
-      };
+    imports = [
+        ./module.nix
+    ];
+
+    programs.nemu = {
+        package = pkgs._nemu;
+        enable = true;
+        vhostNetGroup = "vhost";
+        macvtapGroup = "vhost";
+        usbGroup = "usb";
+        users = {
+            serpentian = {
+                autoAddVeth = true;
+                autoStartDaemon = true;
+            };
+        };
     };
-  };
 }

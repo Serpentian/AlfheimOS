@@ -33,13 +33,12 @@ in
     home.packages = with pkgs; [
         sway-contrib.grimshot
         libreoffice-fresh
-        gimp-with-plugins
         obs-studio
         distrobox
         rtorrent
         swayimg
         vesktop
-        krita
+        gimp
         mpv
 
         # These packages are compulsury.
