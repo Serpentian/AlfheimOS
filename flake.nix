@@ -69,6 +69,7 @@
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         ags.url = "github:Aylur/ags";
+        matugen.url = "github:InioX/matugen";
         hyprland.url = "github:hyprwm/Hyprland";
     };
 }

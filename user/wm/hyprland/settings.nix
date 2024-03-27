@@ -12,14 +12,14 @@
     ];
 
     exec-once = [
-      "waybar"
-      "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
+      "ags &"
+      # "waybar"
+      # "swww init; swww img ~/.dotfiles/non-nix/wallpapers/evening-sky.png"
       "input-remapper-control --command autoload"
-      "swaync &"
-      "swayosd-server &"
+      # "swaync &"
+      # "swayosd-server &"
       # TODO: manage cursors in Nix
       "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
-      "ags &"
       "[workspace 1 silent] firefox"
       "[workspace 2 silent] kitty btop"
       "[workspace 2 silent] kitty spotify_player"

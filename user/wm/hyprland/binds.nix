@@ -36,7 +36,8 @@
       "$mod SHIFT, S, movetoworkspacesilent, special"
 
       # Launcher
-      "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
+      # "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
+      "$mod, A, exec, ags -t launcher"
 
       # Screenshot
       "$mod SHIFT, z, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"
@@ -48,9 +49,9 @@
       "$mod, j, movefocus, d"
 
       # Music control
-      "$mod ALT, k, exec, swayosd-client --output-volume raise"
-      "$mod ALT, j, exec, swayosd-client --output-volume lower"
-      "$mod ALT, m, exec, swayosd-client --input-volume mute-toggle"
+      "$mod ALT, k, exec, pulsemixer --change-volume +5"
+      "$mod ALT, j, exec, pulsemixer --change-volume -5"
+      "$mod ALT, m, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'C922' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
       "$mod ALT, l, exec, hyprmusic next"
       "$mod ALT, h, exec, hyprmusic previous"
       "$mod ALT, p, exec, hyprmusic play-pause"
