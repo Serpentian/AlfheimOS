@@ -15,6 +15,8 @@ in
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
+        ../../user/apps/khal.nix
+        ../../user/apps/vdirsyncer.nix
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
         # ../../user/apps/swaync.nix
@@ -38,7 +40,6 @@ in
         rtorrent
         swayimg
         vesktop
-        pass
         gimp
         mpv
 

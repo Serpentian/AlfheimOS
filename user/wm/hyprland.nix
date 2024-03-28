@@ -2,10 +2,7 @@
 
 {
     imports = [
-        ./hyprland/notification.nix
         ./hyprland/ags.nix
-        ./hyprland/launcher.nix
-        ./hyprland/bar.nix
         ./hyprland/env.nix
         ./hyprland/binds.nix
         ./hyprland/scripts.nix

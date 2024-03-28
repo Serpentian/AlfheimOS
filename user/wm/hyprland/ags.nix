@@ -6,19 +6,8 @@ in {
     asztal
     bun
     dart-sass
-    fd
-    brightnessctl
-    swww
-    inputs.matugen.packages.${system}.default
-    slurp
-    wf-recorder
-    wl-clipboard
-    wayshot
-    swappy
-    hyprpicker
-    pavucontrol
-    networkmanager
     gtk3
+    pulsemixer
   ];
 
   programs.ags = {

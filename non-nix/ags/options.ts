@@ -87,8 +87,6 @@ const options = mkOptions(OPTIONS, {
                 "cava",
                 "expander",
                 "systray",
-                // "colorpicker",
-                // "screenrecord",
                 "system",
                 // "battery",
                 "date",

@@ -1,6 +1,4 @@
-import BatteryBar from "./buttons/BatteryBar"
 import Cava from "./buttons/Cava"
-import ColorPicker from "./buttons/ColorPicker"
 import Date from "./buttons/Date"
 import Launcher from "./buttons/Launcher"
 import Media from "./buttons/Media"
@@ -9,7 +7,6 @@ import SysTray from "./buttons/SysTray"
 import SystemIndicators from "./buttons/SystemIndicators"
 import Taskbar from "./buttons/Taskbar"
 import Workspaces from "./buttons/Workspaces"
-import ScreenRecord from "./buttons/ScreenRecord"
 import options from "options"
 
 const { start, center, end } = options.bar.layout
@@ -18,9 +15,7 @@ const pos = options.bar.position.bind()
 export type BarWidget = keyof typeof widget
 
 const widget = {
-    battery: BatteryBar,
     cava: Cava,
-    colorpicker: ColorPicker,
     date: Date,
     launcher: Launcher,
     media: Media,
@@ -29,7 +24,6 @@ const widget = {
     system: SystemIndicators,
     taskbar: Taskbar,
     workspaces: Workspaces,
-    screenrecord: ScreenRecord,
     expander: () => Widget.Box({ expand: true }),
 }
 
