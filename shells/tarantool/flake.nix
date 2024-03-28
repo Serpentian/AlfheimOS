@@ -47,6 +47,8 @@
             # Cluster management
             export PATH=$HOME/Programming/tnt/tarantool/test-run:$PATH
             export PATH=$HOME/Programming/tnt/tt:$PATH
+            # Lint check
+            export PATH=$HOME/Programming/tnt/checkpatch:$PATH
             # Use gcc for compilation
             export CC=${pkgs.gcc}/bin/gcc
             export CXX=${pkgs.gcc}/bin/c++
