@@ -12,7 +12,6 @@ in
         ../../user/apps/git.nix
         ../../user/apps/btop.nix
         ../../user/apps/ranger.nix
-        ../../user/apps/calcurse.nix
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
@@ -39,6 +38,7 @@ in
         rtorrent
         swayimg
         vesktop
+        pass
         gimp
         mpv
 

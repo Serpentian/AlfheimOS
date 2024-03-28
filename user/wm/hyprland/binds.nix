@@ -10,10 +10,6 @@
       "$mod, mouse:273, resizewindow"
     ];
 
-    bindr = [
-      "CAPS, Caps_Lock, exec, swayosd-client --caps-lock"
-    ];
-
     bind = [
       # Window/Session actions.
       "$mod, Q, killactive,"
@@ -37,7 +33,7 @@
 
       # Launcher
       # "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
-      "$mod, A, exec, ags -t launcher"
+      "$mod SHIFT, A, exec, ags -t launcher"
 
       # Screenshot
       "$mod SHIFT, z, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"
@@ -106,10 +102,10 @@
     submap=resize
 
     # sets repeatable binds for resizing the active window
-    binde=,l,resizeactive,10 0
-    binde=,h,resizeactive,-10 0
-    binde=,k,resizeactive,0 -10
-    binde=,j,resizeactive,0 10
+    binde=,l,resizeactive,30 0
+    binde=,h,resizeactive,-30 0
+    binde=,k,resizeactive,0 -30
+    binde=,j,resizeactive,0 30
 
     # use reset to go back to the global submap
     bind=,escape,submap,reset
