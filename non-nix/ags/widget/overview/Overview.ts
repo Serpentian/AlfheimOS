@@ -7,6 +7,7 @@ const hyprland = await Service.import("hyprland")
 
 const Overview = (ws: number) => {
     if (ws === 0) {
+        // Not hyprland.workspaces.length intentionally. This works better.
         ws = bash("hyprctl workspaces | awk '/workspace ID/ {print }' | sort -n | tail -1")
     }
     return Widget.Box({
