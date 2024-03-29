@@ -3,21 +3,22 @@ import { clock, uptime } from "lib/variables"
 import options from "options"
 import powermenu, { Action } from "service/powermenu"
 
+const { image, size, username } = options.quicksettings.avatar
+
 function up(up: number) {
     const h = Math.floor(up / 60)
     const m = Math.floor(up % 60)
     return `${h}h ${m < 10 ? "0" + m : m}m`
 }
 
-const Clock = () => Widget.Box({
-    class_name: "clock-box",
-    vertical: true,
-    children: [
-        Widget.Label({
-            class_name: "clock",
-            label: clock.bind().as(t => t.format("%H:%M")!),
-        }),
-    ],
+const Avatar = () => Widget.Box({
+    class_name: "avatar",
+    css: Utils.merge([image.bind(), size.bind()], (img, size) => `
+        min-width: ${size}px;
+        min-height: ${size}px;
+        background-image: url('${img}');
+        background-size: cover;
+    `),
 })
 
 const SysButton = (action: Action) => Widget.Button({
@@ -28,7 +29,18 @@ const SysButton = (action: Action) => Widget.Button({
 
 export const Header = () => Widget.Box(
     { class_name: "header horizontal" },
-    Clock(),
+    Avatar(),
+    Widget.Box({
+        vertical: true,
+        vpack: "center",
+        children: [
+            Widget.Box([
+                // Widget.Icon({ icon: icons.ui.time }),
+                // Widget.Label({ label: uptime.bind().as(up) }),
+                Widget.Label({label: username }),
+            ]),
+        ],
+    }),
     Widget.Box({ hexpand: true }),
     Widget.Button({
         vpack: "center",

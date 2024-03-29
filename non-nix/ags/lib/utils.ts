@@ -21,7 +21,7 @@ export function icon(name: string | null, fallback = icons.missing) {
     if (Utils.lookUpIcon(icon))
         return icon
 
-    print(`no icon substitute "${icon}" for "${name}", fallback: "${fallback}"`)
+    // print(`no icon substitute "${icon}" for "${name}", fallback: "${fallback}"`)
     return fallback
 }
 
@@ -111,7 +111,6 @@ export function createSurfaceFromWidget(widget: Gtk.Widget) {
 }
 
 export function barAssignPosition(self: Gtk.Widget, pos: string) {
-    console.log(pos)
     if (pos == "start") {
         self.toggleClassName("start")
     } else if (pos == "center") {

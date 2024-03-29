@@ -49,15 +49,15 @@ const Settings = () => Widget.Box({
             ],
         }),
         Row([DarkModeToggle, DND]),
-        Widget.Box({
-            class_name: "calendar",
-            children: [
-                Widget.Calendar({
-                    hexpand: true,
-                    hpack: "center",
-                }),
-            ],
-        }),
+//        Widget.Box({
+//            class_name: "calendar",
+//            children: [
+//                Widget.Calendar({
+//                    hexpand: true,
+//                    hpack: "center",
+//                }),
+//            ],
+//        }),
         Widget.Box({
             visible: media.as(l => l.length > 0),
             child: Media(),
