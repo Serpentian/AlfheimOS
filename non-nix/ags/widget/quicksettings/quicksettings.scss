@@ -221,7 +221,7 @@ window#quicksettings .quicksettings {
     .notifications {
         .header {
             margin-bottom: $spacing;
-            margin-right: $spacing;
+            // margin-right: $spacing;
 
             >label {
                 margin-left: $radius * .5;
@@ -238,7 +238,7 @@ window#quicksettings .quicksettings {
         }
 
         .notification-list {
-            margin-right: $spacing;
+            // margin-right: $spacing;
         }
 
         .notification {
