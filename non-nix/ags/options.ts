@@ -106,7 +106,7 @@ const options = mkOptions(OPTIONS, {
         },
         date: {
             format: opt("  %a, %d %b, %R"),
-            action: opt(() => App.toggleWindow("quicksettings")),
+            action: opt(() => App.toggleWindow("calendarsettings")),
         },
         battery: {
             bar: opt<"hidden" | "regular" | "whole">("regular"),
@@ -202,6 +202,11 @@ const options = mkOptions(OPTIONS, {
             coverSize: opt(100),
             blacklist: opt(["kdeconnect"]),
         },
+    },
+
+    calendarsettings: {
+        position: opt<"left" | "center" | "right">("right"),
+        width: opt(380),
     },
 
     datemenu: {

@@ -218,18 +218,6 @@ window#quicksettings .quicksettings {
         @include calendar;
     }
 
-    .clock-box {
-        padding: $padding;
-
-        .clock {
-            font-size: 3em;
-        }
-
-        .uptime {
-            color: transparentize($fg, 0.2);
-        }
-    }
-
     .notifications {
         .header {
             margin-bottom: $spacing;

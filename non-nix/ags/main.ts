@@ -13,18 +13,20 @@ import SettingsDialog from "widget/settings/SettingsDialog"
 import Verification from "widget/powermenu/Verification"
 import { forMonitors } from "lib/utils"
 import { setupQuickSettings } from "widget/quicksettings/QuickSettings"
+import { setupCalendarSettings } from "widget/calendarsettings/CalendarSettings"
 import hyprland from "lib/hyprland"
 
 App.config({
     onConfigParsed: () => {
         setupQuickSettings()
+        setupCalendarSettings()
         hyprland()
     },
     closeWindowDelay: {
         "launcher": options.transition.value,
         "overview": options.transition.value,
         "quicksettings": options.transition.value,
-        "datemenu": options.transition.value,
+        "calendarsettings": options.transition.value,
     },
     windows: () => [
         ...forMonitors(Bar),
