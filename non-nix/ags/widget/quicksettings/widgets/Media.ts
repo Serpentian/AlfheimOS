@@ -93,12 +93,13 @@ const Player = (player: MprisPlayer) => {
         }),
     })
 
+
     const playPause = Widget.Button({
-        class_name: "play-pause",
+        class_name: "media-btn play-pause",
         on_clicked: () => player.playPause(),
         visible: player.bind("can_play"),
-        child: Widget.Icon({
-            icon: player.bind("play_back_status").as(s => {
+        child: Widget.Label({
+            label: player.bind("play_back_status").as(s => {
                 switch (s) {
                     case "Playing": return icons.mpris.playing
                     case "Paused":
@@ -109,15 +110,17 @@ const Player = (player: MprisPlayer) => {
     })
 
     const prev = Widget.Button({
+        class_name: "media-btn",
         on_clicked: () => player.previous(),
         visible: player.bind("can_go_prev"),
-        child: Widget.Icon(icons.mpris.prev),
+        child: Widget.Label(icons.mpris.prev),
     })
 
     const next = Widget.Button({
+        class_name: "media-btn",
         on_clicked: () => player.next(),
         visible: player.bind("can_go_next"),
-        child: Widget.Icon(icons.mpris.next),
+        child: Widget.Label(icons.mpris.next),
     })
 
     return Widget.Box(
