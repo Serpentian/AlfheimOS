@@ -76,6 +76,7 @@ export default (monitor: number, pos: string) => PanelButton({
     on_scroll_up: () => audio.speaker.volume += 0.02,
     on_scroll_down: () => audio.speaker.volume -= 0.02,
     setup: self => { barAssignPosition(self, pos) },
+    class_name: "systemindicators",
     child: Widget.Box([
         LayoutIndicator(),
         MessageIndicator(),

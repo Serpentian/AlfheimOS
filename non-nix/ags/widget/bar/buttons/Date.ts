@@ -7,7 +7,7 @@ const { format, action } = options.bar.date
 const time = Utils.derive([clock, format], (c, f) => c.format(f) || "")
 
 export default (monitor: number, pos: string) => PanelButton({
-    window: "quicksettings",
+    window: "calendarsettings",
     on_clicked: action.bind(),
     setup: self => { barAssignPosition(self, pos) },
     child: Widget.Label({
