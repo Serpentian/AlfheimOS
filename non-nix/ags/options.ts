@@ -7,7 +7,8 @@ import icons from "lib/icons"
 const options = mkOptions(OPTIONS, {
     autotheme: opt(false),
 
-    wallpaper: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers/evening-sky.png`, { persistent: true }),
+    wallpaper: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers/dark/evening-sky.png`, { persistent: true }),
+    wallpaper_dir: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers`),
 
     theme: {
         dark: {
@@ -87,10 +88,9 @@ const options = mkOptions(OPTIONS, {
                 "cava",
                 "expander",
                 "systray",
+                "wallpapers",
                 "system",
-                // "battery",
                 "date",
-                // "powermenu",
             ]),
         },
         launcher: {

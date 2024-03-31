@@ -12,7 +12,7 @@ class CavaService extends Service {
     constructor() {
         super()
         this.#proc = Utils.subprocess(
-            ['bash', '-c', '~/.dotfiles/non-nix/ags/scripts/cava.sh'],
+            ['bash', '-c', `${App.configDir}/scripts/cava.sh`],
             (output) => this.#onChange(output),
             (err) => logError(err),
         )

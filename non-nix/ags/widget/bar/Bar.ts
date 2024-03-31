@@ -7,6 +7,7 @@ import SysTray from "./buttons/SysTray"
 import SystemIndicators from "./buttons/SystemIndicators"
 import Taskbar from "./buttons/Taskbar"
 import Workspaces from "./buttons/Workspaces"
+import Wallpapers from "./buttons/Wallpapers"
 import options from "options"
 
 const { start, center, end } = options.bar.layout
@@ -24,6 +25,7 @@ const widget = {
     system: SystemIndicators,
     taskbar: Taskbar,
     workspaces: Workspaces,
+    wallpapers: Wallpapers,
     expander: () => Widget.Box({ expand: true }),
 }
 
