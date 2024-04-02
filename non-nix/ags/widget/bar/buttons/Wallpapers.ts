@@ -1,6 +1,7 @@
 import PanelButton from "../PanelButton"
 import { barAssignPosition } from "lib/utils"
 import options from "options"
+import icons from "lib/icons"
 import { setWallpaper } from "lib/swww"
 import { dependencies, sh} from "lib/utils"
 
@@ -15,7 +16,7 @@ export default (monitor: number, pos: string) => {
 
     return PanelButton({
         setup: self => { barAssignPosition(self, pos) },
-        child: Widget.Label("󰸉"),
+        child: Widget.Icon(icons.ui.wallpaper),
         on_clicked: () => {
             const path = wallpaper_dir.value.concat('/', scheme)
             Utils.subprocess(

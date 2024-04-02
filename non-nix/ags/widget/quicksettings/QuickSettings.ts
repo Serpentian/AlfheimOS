@@ -4,6 +4,7 @@ import { Volume, Microhone, SinkSelector, AppMixer } from "./widgets/Volume"
 // Bluetooth is not used for now.
 import { BluetoothToggle, BluetoothDevices } from "./widgets/Bluetooth"
 import { DND } from "./widgets/DND"
+import { CycleWallpaper } from "./widgets/Wallpaper"
 import { DarkModeToggle } from "./widgets/DarkMode"
 import { Media } from "./widgets/Media"
 import PopupWindow from "widget/PopupWindow"
@@ -48,7 +49,8 @@ const Settings = () => Widget.Box({
                 Microhone(),
             ],
         }),
-        Row([DarkModeToggle, DND]),
+        Row([DarkModeToggle, CycleWallpaper]),
+        Row([DND]),
 //        Widget.Box({
 //            class_name: "calendar",
 //            children: [

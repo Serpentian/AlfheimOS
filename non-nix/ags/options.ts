@@ -88,7 +88,7 @@ const options = mkOptions(OPTIONS, {
                 "cava",
                 "expander",
                 "systray",
-                "wallpapers",
+                // "wallpapers",
                 "system",
                 "date",
             ]),

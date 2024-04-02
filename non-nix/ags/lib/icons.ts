@@ -40,6 +40,7 @@ export default {
         toolbars: "toolbars-symbolic",
         warning: "dialog-warning-symbolic",
         avatar: "avatar-default-symbolic",
+        wallpaper: "wallpaper-symbolic",
         arrow: {
             right: "pan-end-symbolic",
             left: "pan-start-symbolic",
