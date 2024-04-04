@@ -40,6 +40,7 @@ in
         rtorrent
         swayimg
         vesktop
+        drawio
         gimp
         mpv
 
