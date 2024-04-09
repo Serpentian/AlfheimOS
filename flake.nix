@@ -71,5 +71,6 @@
         ags.url = "github:Aylur/ags";
         matugen.url = "github:InioX/matugen";
         hyprland.url = "github:hyprwm/Hyprland";
+        superfile.url = "github:MHNightCat/superfile";
     };
 }

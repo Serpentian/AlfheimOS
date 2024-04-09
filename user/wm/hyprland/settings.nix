@@ -9,11 +9,17 @@
     monitor = [
       "DP-1, 3440x1440@120, 0x0, 1"
       "HDMI-A-2,1920x1080@120,3440x100, 1"
+      "HEADLESS-2,1920x1080@60,-1920x100, 1"
+      "HEADLESS-3,1280x800@60,1080x1440, 1"
     ];
 
     exec-once = [
       "ags &"
       "input-remapper-control --command autoload"
+      "hyprctl output create headless"
+      "wayvnc -S /tmp/wayvnc-1 -g -o HEADLESS-2 -f 60 -d 0.0.0.0 5900"
+      "hyprctl output create headless"
+      "wayvnc -S /tmp/wayvnc-2 -g -o HEADLESS-3 -f 60 -d 0.0.0.0 5901"
       # TODO: manage cursors in Nix
       "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
       "[workspace 1 silent] firefox"
