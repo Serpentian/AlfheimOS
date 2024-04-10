@@ -20,9 +20,9 @@ in
         ../../user/apps/vdirsyncer.nix
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
-        # ../../user/apps/swaync.nix
         ../../user/shell/zsh.nix
         ../../user/hardware/mouse.nix
+        ../../user/apps/mangohud.nix
     ];
 
     home = {
