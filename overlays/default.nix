@@ -4,5 +4,4 @@
  */
 final: prev: {
   _nemu = final.callPackage ../pkgs/nemu.nix {};
-  _nwg-drawer = final.callPackage ../pkgs/nwg-drawer.nix {};
 }
