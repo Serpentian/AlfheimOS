@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    _spotify-player
+    spotify-player
   ];
 
   # enable_notify option doesn't work.
