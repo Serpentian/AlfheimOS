@@ -1,17 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-        rocmPackages.clr.icd
-        pkgs.amdvlk
-    ];
-    extraPackages32 = with pkgs; [
-        driversi686Linux.amdvlk
-    ];
-  };
+    hardware.opengl = {
+        # radv: an open-source Vulkan driver from freedesktop
+        driSupport = true;
+        driSupport32Bit = true;
+    };
 
-  services.xserver.videoDrivers = ["amdgpu"];
+    environment.variables = {
+        AMD_VULKAN_ICD = "RADV";
+    };
 }
