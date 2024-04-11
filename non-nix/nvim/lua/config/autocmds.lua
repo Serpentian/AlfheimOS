@@ -4,7 +4,7 @@ end
 
 vim.api.nvim_create_autocmd('FileType', {
     group = augroup("spaces"),
-    pattern = { "*" },
+    pattern = { "*.lua", "*.nix"},
     callback = function()
         vim.opt.expandtab = true   -- convert tabs to spaces
         vim.opt.tabstop = 4        -- insert 8 spaces for a tab
