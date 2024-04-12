@@ -34,7 +34,7 @@
       border_size = 3;
       "col.active_border" = "rgba(${custom.primary_accent}50) rgba(${custom.secondary_accent}50) 45deg";
       "col.inactive_border" = "rgba(00000000)";
-      allow_tearing = false;
+      allow_tearing = true;
     };
 
     decoration = {
@@ -96,6 +96,7 @@
 
     misc = {
       force_default_wallpaper = -1;
+      vrr = 2;
     };
   };
 }
