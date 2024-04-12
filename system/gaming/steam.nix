@@ -27,5 +27,6 @@
         gamescope
         gamemode
         mangohud
+        lutris
     ];
 }
