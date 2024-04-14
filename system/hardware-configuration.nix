@@ -42,13 +42,6 @@
         options = [ "defaults" "users" "exec"];
     };
 
-  fileSystems."/home/serpentian/Drives/nvme" =
-    {
-        device = "/dev/disk/by-uuid/d9a12b25-5efa-4aba-8c1a-b268a0b56670";
-        fsType = "ext4";
-        options = [ "defaults" "users" "exec"];
-    };
-
   swapDevices =
     [ { device = "/dev/disk/by-uuid/3143b8ce-adf7-43d7-aaa3-011d5ad8021a"; }
     ];
