@@ -29,6 +29,9 @@
 
             "stayfocused, title:^()$,class:^(steam)$"
             "minsize 1 1, title:^()$,class:^(steam)$"
+
+            "float,class:^(moe.launcher.the-honkers-railway-launcher)$"
+            "float,class:^(lutris)$"
         ];
 
         workspace = [
