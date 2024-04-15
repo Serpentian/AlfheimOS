@@ -24,7 +24,7 @@
 
       # Application shortcuts.
       "$mod, Return, exec, kitty"
-      "$mod, D, exec, neovide"
+      "$mod, D, exec, neovide --no-vsync"
       "$mod, F, exec, firefox"
 
       # Special workspace
