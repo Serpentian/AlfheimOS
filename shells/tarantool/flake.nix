@@ -13,6 +13,7 @@
     {
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
+          luajitPackages.luacheck
           gdb
 
           # Tarantool dependencies
