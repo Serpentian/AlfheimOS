@@ -9,12 +9,13 @@
         # Honkai
         libadwaita
         gnome2.pango
+        (mangohud.override { lowerBitnessSupport = true; })
+        gamemode # LD_PRELOAD error otherwise
         gtk4
       ];
-       extraPkgs = pkgs: [
-         # List package dependencies here
-         wine
-       ];
+      extraPkgs = pkgs: [
+        wine
+      ];
     })
   ];
 

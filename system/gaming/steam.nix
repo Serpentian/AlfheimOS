@@ -24,9 +24,8 @@
     };
 
     environment.systemPackages = with pkgs; [
+        (mangohud.override { lowerBitnessSupport = true; })
         gamescope
         gamemode
-        mangohud
-        lutris
     ];
 }
