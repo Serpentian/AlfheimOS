@@ -7,7 +7,7 @@
         ../../system/hardware/desktop/mouse.nix
         ../../system/hardware/desktop/printing.nix
         ../../system/hardware/desktop/boot.nix
-        ../../system/security/firewall.nix
+        ../../system/security/desktop/firewall.nix
         ../../system/security/virtualization/docker.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
