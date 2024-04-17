@@ -3,21 +3,15 @@
     imports = [
         ./hardware-configuration.nix
         ../../system/hardware/sound.nix
-        ../../system/hardware/desktop/graphic.nix
-        ../../system/hardware/desktop/mouse.nix
-        ../../system/hardware/desktop/printing.nix
-        ../../system/hardware/desktop/boot.nix
-        ../../system/security/desktop/firewall.nix
+        ../../system/hardware/laptop/boot.nix
+        ../../system/security/laptop/firewall.nix
         ../../system/security/virtualization/docker.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
-        ../../system/gaming/steam.nix
-        ../../system/gaming/lutris.nix
-	../../system/security/vpn.nix	
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     nixpkgs.overlays = import ../../lib/overlays.nix; # Add packages from the pkgs dir
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
@@ -25,7 +19,7 @@
 
     # Netorking
     networking.hostName = settings.hostname;
-    networking.dhcpcd.enable = true;
+    networking.networkmanager.enable = true;
 
     # Timezone
     time.timeZone = settings.timezone;

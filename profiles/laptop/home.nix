@@ -6,7 +6,6 @@ in
     _module.args = { inherit custom; };
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
         ../../user/apps/w3m.nix
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
@@ -21,8 +20,6 @@ in
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
-        ../../user/hardware/desktop/mouse.nix
-        ../../user/apps/mangohud.nix
     ];
 
     home = {
@@ -42,7 +39,6 @@ in
         rtorrent
         swayimg
         vesktop
-        wayvnc
         drawio
         gimp
         mpv
