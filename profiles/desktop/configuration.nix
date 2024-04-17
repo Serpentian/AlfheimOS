@@ -2,11 +2,11 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ../../system/hardware/graphic.nix
-        ../../system/hardware/sound.nix
-        ../../system/hardware/mouse.nix
+        ../../system/hardware/desktop/graphic.nix
+        ../../system/hardware/desktop/sound.nix
+        ../../system/hardware/desktop/mouse.nix
+        ../../system/hardware/desktop/printing.nix
         ../../system/hardware/boot.nix
-        ../../system/hardware/printing.nix
         ../../system/security/firewall.nix
         ../../system/security/virtualization/docker.nix
         ../../system/security/virtualization/nemu
