@@ -1,7 +1,7 @@
 { pkgs, lib, settings, ... }:
 {
     imports = [
-        ../../system/hardware-configuration.nix
+        ./hardware-configuration.nix
         ../../system/hardware/graphic.nix
         ../../system/hardware/sound.nix
         ../../system/hardware/mouse.nix
