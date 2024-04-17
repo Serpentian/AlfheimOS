@@ -6,7 +6,7 @@
         ../../system/hardware/desktop/sound.nix
         ../../system/hardware/desktop/mouse.nix
         ../../system/hardware/desktop/printing.nix
-        ../../system/hardware/boot.nix
+        ../../system/hardware/desktop/boot.nix
         ../../system/security/firewall.nix
         ../../system/security/virtualization/docker.nix
         ../../system/security/virtualization/nemu
