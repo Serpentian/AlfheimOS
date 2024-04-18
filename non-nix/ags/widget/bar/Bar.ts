@@ -8,6 +8,7 @@ import SystemIndicators from "./buttons/SystemIndicators"
 import Taskbar from "./buttons/Taskbar"
 import Workspaces from "./buttons/Workspaces"
 import Wallpapers from "./buttons/Wallpapers"
+import BatteryBar from "./buttons/BatteryBar"
 import options from "options"
 
 const { start, center, end } = options.bar.layout
@@ -16,6 +17,7 @@ const pos = options.bar.position.bind()
 export type BarWidget = keyof typeof widget
 
 const widget = {
+    battery: BatteryBar,
     cava: Cava,
     date: Date,
     launcher: Launcher,

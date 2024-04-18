@@ -89,6 +89,7 @@ const options = mkOptions(OPTIONS, {
                 "expander",
                 "systray",
                 // "wallpapers",
+                "battery",
                 "system",
                 "date",
             ]),
@@ -109,7 +110,7 @@ const options = mkOptions(OPTIONS, {
             action: opt(() => App.toggleWindow("calendarsettings")),
         },
         battery: {
-            bar: opt<"hidden" | "regular" | "whole">("regular"),
+            bar: opt<"hidden" | "regular" | "whole">("hidden"),
             charging: opt("#00D787"),
             percentage: opt(true),
             blocks: opt(7),
