@@ -85,6 +85,14 @@
       kb_layout = "us,ru";
       kb_options = "grp:win_space_toggle";
       follow_mouse = true;
+      touchpad = {
+          natural_scroll = true;
+      };
+    };
+
+    gestures = {
+        workspace_swipe = true;
+        workspace_swipe_distance = 200;
     };
 
     dwindle = {
