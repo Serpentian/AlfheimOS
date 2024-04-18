@@ -29,6 +29,4 @@
     browserPkg = pkgs.firefox;
     term = "kitty"; # Default terminal command
     termPkg = pkgs.kitty;
-
-    enableVPN = true; # Whether to include VPN configuration
 }
