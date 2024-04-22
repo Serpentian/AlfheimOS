@@ -32,6 +32,8 @@
 
             "float,class:^(moe.launcher.the-honkers-railway-launcher)$"
             "float,class:^(lutris)$"
+            "size 1880 990,class:^(lutris)$"
+            "center,class:^(lutris)$"
         ];
 
         workspace = [
