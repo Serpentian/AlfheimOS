@@ -17,6 +17,7 @@
         wine
       ];
     })
+    wine64
   ];
 
   networking.hosts = {
