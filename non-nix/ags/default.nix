@@ -34,7 +34,7 @@ let
     fd
     fzf
     swww
-    inputs.matugen.packages.${system}.default # DROP IT.
+    # inputs.matugen.packages.${system}.default # DROP IT.
     inputs.hyprland.packages.${system}.default
     wl-clipboard
     gtk3
