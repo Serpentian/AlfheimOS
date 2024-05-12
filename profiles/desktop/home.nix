@@ -37,7 +37,6 @@ in
         sway-contrib.grimshot
         libreoffice-fresh
         obs-studio
-        distrobox
         tty-clock
         rtorrent
         swayimg

@@ -8,12 +8,12 @@
         ../../system/hardware/desktop/printing.nix
         ../../system/hardware/desktop/boot.nix
         ../../system/security/desktop/firewall.nix
-        ../../system/security/virtualization/docker.nix
+        ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
         ../../system/gaming/steam.nix
         ../../system/gaming/lutris.nix
-	../../system/security/vpn.nix	
+        ../../system/security/vpn.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
     ];
 
