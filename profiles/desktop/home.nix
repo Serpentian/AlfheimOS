@@ -39,6 +39,7 @@ in
         obs-studio
         tty-clock
         rtorrent
+        cpulimit
         swayimg
         vesktop
         wayvnc
