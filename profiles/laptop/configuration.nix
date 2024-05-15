@@ -3,6 +3,7 @@
     imports = [
         ./hardware-configuration.nix
         ../../system/hardware/sound.nix
+        ../../system/hardware/bluetooth.nix
         ../../system/hardware/laptop/boot.nix
         ../../system/security/laptop/firewall.nix
         ../../system/security/virtualization/general.nix

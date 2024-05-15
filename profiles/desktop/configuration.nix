@@ -3,6 +3,7 @@
     imports = [
         ./hardware-configuration.nix
         ../../system/hardware/sound.nix
+        ../../system/hardware/bluetooth.nix
         ../../system/hardware/desktop/graphic.nix
         ../../system/hardware/desktop/mouse.nix
         ../../system/hardware/desktop/printing.nix
@@ -25,7 +26,7 @@
 
     # Netorking
     networking.hostName = settings.hostname;
-    networking.dhcpcd.enable = true;
+    networking.networkmanager.enable = true;
 
     # Timezone
     time.timeZone = settings.timezone;
