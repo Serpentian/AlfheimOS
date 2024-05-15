@@ -8,6 +8,7 @@ in {
     dart-sass
     gtk3
     pulsemixer
+    networkmanager
   ];
 
   programs.ags = {

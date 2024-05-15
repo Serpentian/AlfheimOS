@@ -34,8 +34,8 @@ let
     fd
     fzf
     swww
-    # inputs.matugen.packages.${system}.default # DROP IT.
     inputs.hyprland.packages.${system}.default
+    networkmanager
     wl-clipboard
     gtk3
   ];

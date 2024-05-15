@@ -1,7 +1,7 @@
 import type Gtk from "gi://Gtk?version=3.0"
 import { Header } from "./widgets/Header"
 import { Volume, Microhone, SinkSelector, AppMixer } from "./widgets/Volume"
-// Bluetooth is not used for now.
+import { NetworkToggle, WifiSelection } from "./widgets/Network"
 import { BluetoothToggle, BluetoothDevices } from "./widgets/Bluetooth"
 import { DND } from "./widgets/DND"
 import { CycleWallpaper } from "./widgets/Wallpaper"
@@ -49,6 +49,10 @@ const Settings = () => Widget.Box({
                 Microhone(),
             ],
         }),
+        Row(
+            [NetworkToggle, BluetoothToggle],
+            [WifiSelection, BluetoothDevices],
+        ),
         Row([DarkModeToggle, CycleWallpaper]),
         Row([DND]),
 //        Widget.Box({
