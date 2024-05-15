@@ -16,7 +16,6 @@
 
     exec-once = [
       "ags &"
-      "input-remapper-control --command autoload"
       # "hyprctl output create headless"
       # "wayvnc -S /tmp/wayvnc-1 -g -o HEADLESS-2 -f 60 -d 0.0.0.0 5900"
       # "hyprctl output create headless"
@@ -88,6 +87,11 @@
       touchpad = {
           natural_scroll = true;
       };
+    };
+
+    device = {
+        name = "logitech-usb-receiver-mouse";
+        sensitivity = -1.0;
     };
 
     gestures = {
