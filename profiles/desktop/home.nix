@@ -21,7 +21,6 @@ in
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
-        ../../user/hardware/desktop/mouse.nix
         ../../user/apps/mangohud.nix
     ];
 

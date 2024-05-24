@@ -78,6 +78,7 @@
       # Scroll through monitor workspaces with mod + scroll
       "$mod, mouse_down, workspace, r-1"
       "$mod, mouse_up, workspace, r+1"
+      "$mod, mouse:274, killactive,"
 
       # Move active window to a workspace.
       "$mod SHIFT, 1, movetoworkspace, 1"

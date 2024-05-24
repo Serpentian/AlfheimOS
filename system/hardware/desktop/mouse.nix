@@ -31,7 +31,7 @@ devices: ({
       target: false;
     };
 
-    dpi: 7000;
+    dpi: 4000;
 
     thumbwheel: {
       divert: true;
