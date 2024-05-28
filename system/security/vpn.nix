@@ -2,7 +2,7 @@
 {
     networking.wg-quick.interfaces = {
         wg0 = {
-            autostart = false;
+            autostart = true;
             address = [ "10.200.200.3/32" ];
             privateKeyFile = "/etc/wireguard/private.key";
             dns = [ "10.200.200.1" ];
@@ -16,6 +16,4 @@
             }];
         };
     };
-
-    services.v2raya.enable = true;
 }
