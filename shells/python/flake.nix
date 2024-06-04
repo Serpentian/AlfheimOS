@@ -13,10 +13,10 @@
     {
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
-            python311
-            python311Packages.pip
-            python311Packages.virtualenv
-            python311Packages.jupyterlab
+            python310
+            python310Packages.pip
+            python310Packages.virtualenv
+            python310Packages.jupyterlab
         ];
 
         # See https://github.com/NixOS/nixpkgs/issues/18995
