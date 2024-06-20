@@ -29,6 +29,7 @@
       w3md = "w3m https://lite.duckduckgo.com/lite/";
       nix-tarantool = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
       nix-python = "nix develop ~/.dotfiles/shells/python -c zsh";
+      nix-lampray = "nix develop ~/.dotfiles/shells/lampray -c zsh";
       neofetch = "neofetch --source ~/.dotfiles/user/apps/neofetch/snufkin.txt";
     };
     initExtra = ''
