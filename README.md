@@ -54,12 +54,12 @@ To get the hardware configuration on a new system, either copy from
 
 ```
 cd ~/.dotfiles
-sudo nixos-generate-config --show-hardware-config > system/hardware-configuration.nix
+sudo nixos-generate-config --show-hardware-config > profiles/desktop/hardware-configuration.nix
 ```
 
 Don't use my hardware configuration, your system won't boot!
 
-Now, it's time to configure `flake.nix` (and probably profiles) to your liking.
+Now, it's time to configure `settings.nix` (and probably profiles) to your liking.
 Once the variables are set, then switch into the system configuration by running:
 
 ```
