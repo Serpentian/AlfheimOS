@@ -7,14 +7,14 @@
         # List library dependencies here
 
         # Honkai
-        libadwaita
-        gnome2.pango
-        (mangohud.override { lowerBitnessSupport = true; })
-        gamemode # LD_PRELOAD error otherwise
-        gtk4
+        # libadwaita
+        # gnome2.pango
+        # (mangohud.override { lowerBitnessSupport = true; })
+        # gamemode # LD_PRELOAD error otherwise
+        # gtk4
       ];
       extraPkgs = pkgs: [
-        wine
+        # wine
       ];
     })
     wine64

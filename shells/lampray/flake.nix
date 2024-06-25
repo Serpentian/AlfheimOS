@@ -18,7 +18,7 @@
         shellHook = ''
             export PATH=$HOME/Drives/hdd/bg3_mods:$PATH
         '';
-        LD_LIBRARY_PATH = "${nixpkgs.lib.makeLibraryPath [pkgs.SDL2 pkgs.lz4]}";
+        LD_LIBRARY_PATH = "${nixpkgs.lib.makeLibraryPath [pkgs.SDL2 pkgs.lz4 pkgs.p7zip]}";
         # See https://github.com/NixOS/nixpkgs/issues/18995
         hardeningDisable = [ "fortify" ];
       };
