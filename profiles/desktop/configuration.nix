@@ -17,6 +17,7 @@
         ../../system/gaming/aagl.nix
         ../../system/security/vpn.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
+        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
