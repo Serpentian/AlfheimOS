@@ -3,7 +3,7 @@
 {
     hardware.opengl = {
         # radv: an open-source Vulkan driver from freedesktop
-        driSupport = true;
+        # driSupport = true;
         driSupport32Bit = true;
     };
 
