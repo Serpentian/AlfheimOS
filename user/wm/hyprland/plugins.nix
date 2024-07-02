@@ -13,7 +13,7 @@
             enable_gesture = true # laptop touchpad
             gesture_fingers = 3  # 3 or 4
             gesture_distance = 300 # how far is the "max"
-            gesture_positive = true # positive = swipe down. Negative = swipe up.
+            gesture_negative = true # positive = swipe down. Negative = swipe up.
         }
     }
   '';
