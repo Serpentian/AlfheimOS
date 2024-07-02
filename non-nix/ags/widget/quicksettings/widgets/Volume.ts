@@ -1,6 +1,6 @@
 import { type Stream } from "types/service/audio"
 import { Arrow, Menu } from "../ToggleButton"
-import { dependencies, icon, sh } from "lib/utils"
+import { dependencies, icon, sh, run_sh } from "lib/utils"
 import icons from "lib/icons.js"
 const audio = await Service.import("audio")
 
@@ -108,8 +108,8 @@ const SinkItem = (stream: Stream) => Widget.Button({
 
 const SettingsButton = () => Widget.Button({
     on_clicked: () => {
-        if (dependencies("pavucontrol"))
-            sh("pavucontrol")
+        if (dependencies("pulsemixer"))
+            run_sh("pulsemixer")
     },
     hexpand: true,
     child: Widget.Box({

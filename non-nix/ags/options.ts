@@ -10,6 +10,8 @@ const options = mkOptions(OPTIONS, {
     wallpaper: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers/dark/evening-sky.png`, { persistent: true }),
     wallpaper_dir: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers`),
 
+    default_terminal: opt("kitty"),
+
     theme: {
         dark: {
             primary: {
@@ -194,7 +196,7 @@ const options = mkOptions(OPTIONS, {
         },
         width: opt(380),
         position: opt<"left" | "center" | "right">("right"),
-        networkSettings: opt("gtk-launch gnome-control-center"),
+        networkSettings: opt("nmtui"),
         media: {
             monochromeIcon: opt(true),
             coverSize: opt(100),

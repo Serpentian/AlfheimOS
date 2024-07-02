@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type Application } from "types/service/applications"
 import icons, { substitutes } from "./icons"
+import options from "options"
 import Gtk from "gi://Gtk?version=3.0"
 import Gdk from "gi://Gdk"
 import GLib from "gi://GLib?version=2.0"
@@ -44,6 +45,13 @@ export async function bash(strings: TemplateStringsArray | string, ...values: un
  */
 export async function sh(cmd: string | string[]) {
     return Utils.execAsync(cmd).catch(err => {
+        console.error(typeof cmd === "string" ? cmd : cmd.join(" "), err)
+        return ""
+    })
+}
+
+export async function run_sh(cmd: string | string[]) {
+    return Utils.execAsync([options.default_terminal.value, cmd]).catch(err => {
         console.error(typeof cmd === "string" ? cmd : cmd.join(" "), err)
         return ""
     })
