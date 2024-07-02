@@ -128,6 +128,9 @@ $button-radius: $radius;
 
     .media-btn {
         background-color: $widget-bg;
+        background-image: none;
+        border: none;
+        box-shadow: none;
         padding: 0;
 
         label {
