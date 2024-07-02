@@ -22,6 +22,7 @@ in
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
         ../../user/apps/mangohud.nix
+        ../../themes/catppuccin.nix
     ];
 
     home = {

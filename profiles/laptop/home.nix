@@ -20,6 +20,7 @@ in
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
+        ../../themes/catppuccin.nix
     ];
 
     home = {
