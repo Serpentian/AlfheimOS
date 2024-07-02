@@ -6,15 +6,10 @@ const audio = await Service.import("audio")
 
 type Type = "microphone" | "speaker"
 
-const VolumeIndicator = (type: Type = "speaker") => Widget.Button({
+const VolumeIndicator = (type: Type = "speaker", icon) => Widget.Button({
     vpack: "center",
     on_clicked: () => audio[type].is_muted = !audio[type].is_muted,
-    child: Widget.Icon({
-        icon: audio[type].bind("icon_name")
-            .as(i => icon(i || "", icons.audio.mic.high)),
-        tooltipText: audio[type].bind("volume")
-            .as(vol => `Volume: ${Math.floor(vol * 100)}%`),
-    }),
+    child: icon,
 })
 
 const VolumeSlider = (type: Type = "speaker") => Widget.Slider({
@@ -33,7 +28,14 @@ const VolumeSlider = (type: Type = "speaker") => Widget.Slider({
 export const Volume = () => Widget.Box({
     class_name: "volume",
     children: [
-        VolumeIndicator("speaker"),
+        VolumeIndicator("speaker", Widget.Icon({
+            icon: audio.speaker.bind("volume").as(vol => {
+                const { muted, low, medium, high, overamplified } = icons.audio.volume
+                const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]] as const
+                const icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
+                return audio.speaker.is_muted ? muted : icon
+            })
+        })),
         VolumeSlider("speaker"),
         Widget.Box({
             vpack: "center",
@@ -51,7 +53,17 @@ export const Microhone = () => Widget.Box({
     class_name: "slider horizontal",
     visible: audio.bind("recorders").as(a => a.length > 0),
     children: [
-        VolumeIndicator("microphone"),
+        VolumeIndicator("microphone", Widget.Icon()
+            .hook(audio, self => self.visible =
+                audio.recorders.length > 0
+                || audio.microphone.stream?.is_muted
+                || audio.microphone.is_muted)
+            .hook(audio.microphone, self => {
+                const vol = audio.microphone.stream!.is_muted ? 0 : audio.microphone.volume
+                const { muted, low, medium, high } = icons.audio.mic
+                const cons = [[67, high], [34, medium], [1, low], [0, muted]] as const
+                self.icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
+            })),
         VolumeSlider("microphone"),
     ],
 })
