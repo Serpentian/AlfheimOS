@@ -53,7 +53,7 @@ const Settings = () => Widget.Box({
             [NetworkToggle, BluetoothToggle],
             [WifiSelection, BluetoothDevices],
         ),
-        Row([DarkModeToggle, CycleWallpaper]),
+        // Row([DarkModeToggle, CycleWallpaper]),
         Row([DND]),
 //        Widget.Box({
 //            class_name: "calendar",

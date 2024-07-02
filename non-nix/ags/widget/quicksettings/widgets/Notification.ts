@@ -86,7 +86,6 @@ const Placeholder = () => Widget.Box({
     visible: notifs.as(n => n.length === 0),
     children: [
         Widget.Icon(icons.notifications.silent),
-        Widget.Label("Your inbox is empty"),
     ],
 })
 

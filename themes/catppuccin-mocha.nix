@@ -20,6 +20,7 @@
         primary_background_rgba = "rgba(17,17,27,${opacity})";
         secondary_background_rgba = "rgba(27,27,43,${opacity})";
         tertiary_background_rgba = "rgba(37,37,58,${opacity})";
+        foreground_rgb = "rgb(205,214,244)";
 
         opacity = "0.8";
     };

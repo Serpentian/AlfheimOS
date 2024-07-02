@@ -9,6 +9,7 @@
         ./hyprland/rules.nix
         ./hyprland/settings.nix
         ./hyprland/plugins.nix
+        ./hyprland/hyprlock.nix
     ];
 
     wayland.windowManager.hyprland = {
@@ -16,7 +17,6 @@
         package = pkgs.hyprland;
         systemd.enable = true;
         plugins = [
-            # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
             pkgs.hyprlandPlugins.hyprexpo
         ];
     };
