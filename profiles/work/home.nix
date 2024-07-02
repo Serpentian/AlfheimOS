@@ -20,7 +20,7 @@ in
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
-        ../../user/theme/catppuccin.nix
+        ../../themes/catppuccin.nix
     ];
 
     home = {
