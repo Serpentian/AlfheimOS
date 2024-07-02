@@ -20,6 +20,7 @@ in
         ../../user/apps/neofetch
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
+        ../../user/theme/catppuccin.nix
     ];
 
     home = {
@@ -79,7 +80,12 @@ in
 
     gtk = {
         enable = true;
-        theme = custom.gtkTheme;
+        catppuccin = {
+            enable = true;
+            flavor = "mocha";
+            accent = "lavender";
+        };
+        # theme = custom.gtkTheme;
         iconTheme = {
             name = settings.icons;
             package = settings.iconsPkg;

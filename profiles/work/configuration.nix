@@ -9,6 +9,7 @@
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
+        ../../system/theme/catppuccin.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
     ];
 

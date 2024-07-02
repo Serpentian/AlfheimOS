@@ -9,7 +9,10 @@
         # 'nixos-rebuild switch --flake .#hostname
         nixosConfigurations = {
             ${settings.hostname} = nixpkgs.lib.nixosSystem {
-                modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix") ];
+                modules = [
+                    (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix")
+                    inputs.catppuccin.nixosModules.catppuccin
+                ];
                 specialArgs = {
                     inherit inputs;
                     inherit settings;
@@ -22,7 +25,10 @@
         homeConfigurations = {
             ${settings.username} = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.${settings.system};
-                modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/home.nix") ];
+                modules = [
+                    (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")
+                    inputs.catppuccin.homeManagerModules.catppuccin
+                ];
                 extraSpecialArgs = {
                     inherit inputs;
                     inherit settings;
@@ -40,5 +46,6 @@
         aagl.url = "github:ezKEa/aagl-gtk-on-nix";
         aagl.inputs.nixpkgs.follows = "nixpkgs";
         superfile.url = "github:yorukot/superfile";
+        catppuccin.url = "github:catppuccin/nix";
     };
 }

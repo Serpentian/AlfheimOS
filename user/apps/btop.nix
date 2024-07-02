@@ -11,7 +11,7 @@ in
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "catppuccin-mocha";
+      # color_theme = "catppuccin-mocha";
       theme_background = false;
       vim_keys = true;
       update_ms = 500;
