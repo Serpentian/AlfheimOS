@@ -7,7 +7,7 @@ const systemtray = await Service.import("systemtray")
 const { ignore } = options.bar.systray
 
 const SysTrayItem = (item: TrayItem) => PanelButton({
-    class_name: "tray-item",
+    class_name: "tray-item end",
     child: Widget.Icon({ icon: item.bind("icon") }),
     tooltip_markup: item.bind("tooltip_markup"),
     setup: self => {
@@ -34,7 +34,9 @@ const SysTrayItem = (item: TrayItem) => PanelButton({
         btn, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null),
 })
 
-export default () => Widget.Box()
-    .bind("children", systemtray, "items", i => i
+export default (monitor: number, pos: string) => Widget.Box({
+    children: systemtray.bind("items").as(items => items
         .filter(({ id }) => !ignore.value.includes(id))
-        .map(SysTrayItem))
+        .map(SysTrayItem)
+    ),
+});
