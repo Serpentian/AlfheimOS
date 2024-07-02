@@ -39,5 +39,6 @@
         hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
         aagl.url = "github:ezKEa/aagl-gtk-on-nix";
         aagl.inputs.nixpkgs.follows = "nixpkgs";
+        superfile.url = "github:yorukot/superfile";
     };
 }

@@ -12,7 +12,7 @@ in
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
         ../../user/apps/btop.nix
-        ../../user/apps/ranger.nix
+        ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
