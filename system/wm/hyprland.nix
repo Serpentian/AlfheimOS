@@ -6,6 +6,11 @@
         ./common/fonts.nix
     ];
 
+    environment.systemPackages = with pkgs; [
+        brightnessctl
+        pactl
+    ];
+
     programs = {
         hyprland = {
             enable = true;

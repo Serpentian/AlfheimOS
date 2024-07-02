@@ -10,6 +10,15 @@
       "$mod, mouse:273, resizewindow"
     ];
 
+    binde = [
+        ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
+        ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
+        ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        "$mod ALT, k, exec, pulsemixer --change-volume +5"
+        "$mod ALT, j, exec, pulsemixer --change-volume -5"
+    ];
+
     bind = [
       # Window/Session actions.
       "$mod, Q, killactive,"
@@ -45,9 +54,9 @@
       "$mod, j, movefocus, d"
 
       # Music control
-      "$mod ALT, k, exec, pulsemixer --change-volume +5"
-      "$mod ALT, j, exec, pulsemixer --change-volume -5"
-      "$mod ALT, m, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'C922' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
+      "$mod ALT, m, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
+      ", XF86AudioMicMute, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
+      ",XF86AudioMute, exec, pulsemixer --id $(pulsemixer --list-sinks | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
       "$mod ALT, l, exec, hyprmusic next"
       "$mod ALT, h, exec, hyprmusic previous"
       "$mod ALT, p, exec, hyprmusic play-pause"
