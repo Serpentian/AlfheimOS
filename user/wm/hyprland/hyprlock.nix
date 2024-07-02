@@ -3,13 +3,14 @@
 {
     programs.hyprlock.enable = true;
     programs.hyprlock.settings = {
+        path = "screenshot";
         general = {
             grace = 0;
             ignore_empty_input = true;
         };
 
         background = {
-            path = "${config.home.homeDirectory}/${settings.dotfilesDir}/non-nix/wallpapers/dark/evening-sky.png";
+            path = "screenshot";
             blur_passes = 3;
             blur_size = 10;
             brightness = 1.0;
@@ -38,7 +39,7 @@
 label {
     monitor =
     text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") </big></b>"
-    color = "${custom.palette.foreground_rgb}";
+    color = ${custom.palette.foreground_rgb}
 
     font_size = 64
     font_family = JetBrains Mono Nerd Font 10
@@ -51,7 +52,7 @@ label {
 label {
     monitor =
     text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
-    color = "${custom.palette.foreground_rgb}";
+    color = ${custom.palette.foreground_rgb}
 
     font_size = 24
     font_family = JetBrains Mono Nerd Font 10
