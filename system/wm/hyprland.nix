@@ -8,7 +8,6 @@
 
     environment.systemPackages = with pkgs; [
         brightnessctl
-        pactl
     ];
 
     programs = {
