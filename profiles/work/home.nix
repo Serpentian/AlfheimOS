@@ -34,11 +34,12 @@ in
     home.packages = with pkgs; [
         sway-contrib.grimshot
         libreoffice-fresh
+        yubikey-manager
         obs-studio
         tty-clock
         rtorrent
         swayimg
-        vesktop
+        openvpn
         drawio
         gimp
         mpv
