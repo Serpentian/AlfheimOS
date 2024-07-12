@@ -1,9 +1,9 @@
 {pkgs, ...}:
 rec {
     system = "x86_64-linux";
-    hostname = "jotunheim"; # Hostname
+    hostname = "alfheim"; # Hostname
     username = "serpentian"; # Ssername
-    profile = "work"; # Select from profiles directory
+    profile = "desktop"; # Select from profiles directory
     timezone = "Europe/Moscow"; # Select timezone
     locale = "en_US.UTF-8"; # Select locale
     name = "Nikita Zheleztsov"; # Name (git config)

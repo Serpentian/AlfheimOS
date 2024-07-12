@@ -2,6 +2,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ../../themes/stylix.nix
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/laptop/boot.nix
@@ -9,7 +10,6 @@
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
-        ../../themes/catppuccin.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
     ];
 

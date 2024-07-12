@@ -3,6 +3,7 @@
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
         # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        ../../themes/stylix.nix
         ../../user/apps/w3m.nix
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
@@ -80,17 +81,11 @@
     services.kdeconnect.enable = true;
     programs.home-manager.enable = true;
 
-    colorScheme = inputs.nix-colors.colorSchemes.${settings.theme};
-
     gtk = {
         enable = true;
         iconTheme = {
             name = settings.icons;
             package = settings.iconsPkg;
-        };
-        font = {
-            name = settings.font;
-            size = settings.fontSize;
         };
     };
 
