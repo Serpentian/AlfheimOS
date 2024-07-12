@@ -16,9 +16,9 @@
         ../../user/apps/khal.nix
         ../../user/apps/vdirsyncer.nix
         ../../user/apps/neofetch
-        ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
         ../../user/apps/mangohud.nix
+        ../../user/apps/neovim
     ];
 
     home = {
@@ -44,7 +44,7 @@
         mpv
 
         # These packages are compulsury.
-        settings.editorPkg
+        # settings.editorPkg
         settings.browserPkg
         settings.termPkg
     ];

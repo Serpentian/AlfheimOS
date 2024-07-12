@@ -43,6 +43,7 @@
           mage
         ];
         shellHook = ''
+            export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib
             export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local
             export PATH=$TARANTOOL_DIR/bin:$PATH
             # Cluster management
@@ -51,8 +52,10 @@
             # Lint check
             export PATH=$HOME/Programming/tnt/checkpatch:$PATH
             # Use gcc for compilation
-            export CC=${pkgs.gcc}/bin/gcc
-            export CXX=${pkgs.gcc}/bin/c++
+            # export CC=${pkgs.gcc}/bin/gcc
+            # export CXX=${pkgs.gcc}/bin/c++
+            export CC=${pkgs.clang}/bin/clang
+            export CXX=${pkgs.clang}/bin/clang++
         '';
 
         # See https://github.com/NixOS/nixpkgs/issues/18995
