@@ -1,39 +1,11 @@
 import PanelButton from "../PanelButton"
 import icons from "lib/icons"
-import asusctl from "service/asusctl"
 
 const notifications = await Service.import("notifications")
 const bluetooth = await Service.import("bluetooth")
 const audio = await Service.import("audio")
 const network = await Service.import("network")
-const powerprof = await Service.import("powerprofiles")
-
-const ProfileIndicator = () => {
-    const visible = asusctl.available
-        ? asusctl.bind("profile").as(p => p !== "Balanced")
-        : powerprof.bind("active_profile").as(p => p !== "balanced")
-
-    const icon = asusctl.available
-        ? asusctl.bind("profile").as(p => icons.asusctl.profile[p])
-        : powerprof.bind("active_profile").as(p => icons.powerprofile[p])
-
-    return Widget.Icon({ visible, icon })
-}
-
-const ModeIndicator = () => {
-    if (!asusctl.available) {
-        return Widget.Icon({
-            setup(self) {
-                Utils.idle(() => self.visible = false)
-            },
-        })
-    }
-
-    return Widget.Icon({
-        visible: asusctl.bind("mode").as(m => m !== "Hybrid"),
-        icon: asusctl.bind("mode").as(m => icons.asusctl.mode[m]),
-    })
-}
+const hyprland = await Service.import('hyprland')
 
 const MicrophoneIndicator = () => Widget.Icon()
     .hook(audio, self => self.visible =
@@ -81,6 +53,19 @@ const AudioIndicator = () => Widget.Icon()
         self.icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
     })
 
+const LayoutIndicator = () => Widget.Label({label: 'en'})
+    .hook(hyprland, (self, kb, layout) => {
+        if (!layout) {
+            return
+        }
+
+        if (layout.includes('English')) {
+            self.label = `en`
+        } else if (layout.includes('Russian')) {
+            self.label = `ru`
+        }
+    }, "keyboard-layout")
+
 export default (pos: string) => PanelButton({
     window: "quicksettings",
     on_clicked: () => App.toggleWindow("quicksettings"),
@@ -91,8 +76,7 @@ export default (pos: string) => PanelButton({
             self.toggleClassName(pos)
     },
     child: Widget.Box([
-        ProfileIndicator(),
-        ModeIndicator(),
+        LayoutIndicator(),
         DNDIndicator(),
         BluetoothIndicator(),
         NetworkIndicator(),

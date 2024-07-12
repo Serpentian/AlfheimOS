@@ -169,7 +169,6 @@ window#quicksettings .quicksettings {
 
     .media {
         @include spacing;
-        @include media-btn;
 
         .player {
             @include media;

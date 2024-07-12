@@ -44,6 +44,7 @@ type ArrowToggleButtonProps = {
     deactivate: () => void
     activateOnArrow?: boolean
     connection: [GObject.Object, () => boolean]
+    visible?: boolean
 }
 export const ArrowToggleButton = ({
     name,
@@ -53,8 +54,10 @@ export const ArrowToggleButton = ({
     deactivate,
     activateOnArrow = true,
     connection: [service, condition],
+    is_visible = true,
 }: ArrowToggleButtonProps) => Widget.Box({
     class_name: "toggle-button",
+    visible: is_visible,
     setup: self => self.hook(service, () => {
         self.toggleClassName("active", condition())
     }),
