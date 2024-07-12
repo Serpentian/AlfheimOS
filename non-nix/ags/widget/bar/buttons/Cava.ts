@@ -1,19 +1,15 @@
 import cava from "service/cava"
 import PanelButton from "../PanelButton"
-import { barAssignPosition } from "lib/utils"
 import options from "options"
 
+const mpris = await Service.import("mpris")
+
 const {
-    dark,
-    light,
-    scheme,
+    palette,
 } = options.theme
 
-const t = (dark: Opt<any> | string, light: Opt<any> | string) =>
-    scheme.value === "dark" ? `${dark}` : `${light}`
-
-const primary = t(dark.primary.bg, light.primary.bg)
-const secondary = t(dark.secondary.bg, light.secondary.bg)
+const primary = palette.primary.bg
+const secondary = palette.secondary.bg
 
 // Pango’s text markup language
 function formatIcons(input) {
@@ -22,28 +18,28 @@ function formatIcons(input) {
     let icon;
     switch (char) {
       case '▁':
-        icon = `<span foreground='${secondary}'>▁</span>`;
+        icon = `<span foreground='${primary}'>▁</span>`;
         break;
       case '▂':
-        icon = `<span foreground='${secondary}'>▂</span>`;
+        icon = `<span foreground='${primary}'>▂</span>`;
         break;
       case '▃':
-        icon = `<span foreground='${secondary}'>▃</span>`;
+        icon = `<span foreground='${primary}'>▃</span>`;
         break;
       case '▄':
-        icon = `<span foreground='${secondary}'>▄</span>`;
+        icon = `<span foreground='${primary}'>▄</span>`;
         break;
       case '▅':
-        icon = `<span foreground='${primary}'>▅</span>`;
+        icon = `<span foreground='${secondary}'>▅</span>`;
         break;
       case '▆':
-        icon = `<span foreground='${primary}'>▆</span>`;
+        icon = `<span foreground='${secondary}'>▆</span>`;
         break;
       case '▇':
-        icon = `<span foreground='${primary}'>▇</span>`;
+        icon = `<span foreground='${secondary}'>▇</span>`;
         break;
       case '█':
-        icon = `<span foreground='${primary}'>█</span>`;
+        icon = `<span foreground='${secondary}'>█</span>`;
         break;
       default:
         icon = char;
@@ -54,12 +50,24 @@ function formatIcons(input) {
   return output;
 }
 
-export default (monitor: number, pos: string) => PanelButton({
-    window: "cava",
-    setup: self => { barAssignPosition(self, pos) },
-    child: Widget.Label({use_markup: true})
-        .hook(cava, self => {
-            const data = formatIcons(cava.output)
-            self.label = data
-        }, "output-changed")
-})
+export default (pos: string) => {
+    const btn = PanelButton({
+        window: "cava",
+        setup: self => {
+            if (pos != null)
+                self.toggleClassName(pos)
+        },
+        child: Widget.Label({use_markup: true})
+            .hook(cava, self => {
+                const data = formatIcons(cava.output)
+                self.label = data
+            }, "output-changed")
+    })
+
+    const update = () => {
+        btn.visible = !!mpris.players[0];
+    }
+
+    return btn
+        .hook(mpris, update, "notify::players")
+}

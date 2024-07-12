@@ -1,27 +1,47 @@
 import PanelButton from "../PanelButton"
 import icons from "lib/icons"
+import asusctl from "service/asusctl"
 
 const notifications = await Service.import("notifications")
-// const bluetooth = await Service.import("bluetooth")
+const bluetooth = await Service.import("bluetooth")
 const audio = await Service.import("audio")
 const network = await Service.import("network")
-const hyprland = await Service.import('hyprland')
-import { barAssignPosition, sh} from "lib/utils"
+const powerprof = await Service.import("powerprofiles")
 
-const MessageIndicator = () => {
+const ProfileIndicator = () => {
+    const visible = asusctl.available
+        ? asusctl.bind("profile").as(p => p !== "Balanced")
+        : powerprof.bind("active_profile").as(p => p !== "balanced")
+
+    const icon = asusctl.available
+        ? asusctl.bind("profile").as(p => icons.asusctl.profile[p])
+        : powerprof.bind("active_profile").as(p => icons.powerprofile[p])
+
+    return Widget.Icon({ visible, icon })
+}
+
+const ModeIndicator = () => {
+    if (!asusctl.available) {
+        return Widget.Icon({
+            setup(self) {
+                Utils.idle(() => self.visible = false)
+            },
+        })
+    }
+
     return Widget.Icon({
-        visible: notifications.bind("notifications").as(n => n.length > 0),
-        icon: icons.notifications.message,
+        visible: asusctl.bind("mode").as(m => m !== "Hybrid"),
+        icon: asusctl.bind("mode").as(m => icons.asusctl.mode[m]),
     })
 }
 
 const MicrophoneIndicator = () => Widget.Icon()
     .hook(audio, self => self.visible =
         audio.recorders.length > 0
-        || audio.microphone.stream?.is_muted
-        || audio.microphone.is_muted)
+        || audio.microphone.is_muted
+        || false)
     .hook(audio.microphone, self => {
-        const vol = audio.microphone.stream!.is_muted ? 0 : audio.microphone.volume
+        const vol = audio.microphone.is_muted ? 0 : audio.microphone.volume
         const { muted, low, medium, high } = icons.audio.mic
         const cons = [[67, high], [34, medium], [1, low], [0, muted]] as const
         self.icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
@@ -35,9 +55,9 @@ const DNDIndicator = () => Widget.Icon({
 const BluetoothIndicator = () => Widget.Overlay({
     class_name: "bluetooth",
     passThrough: true,
+    visible: bluetooth.bind("enabled"),
     child: Widget.Icon({
         icon: icons.bluetooth.enabled,
-        visible: bluetooth.bind("enabled"),
     }),
     overlay: Widget.Label({
         hpack: "end",
@@ -47,40 +67,35 @@ const BluetoothIndicator = () => Widget.Overlay({
     }),
 })
 
-const AudioIndicator = () => Widget.Icon({
-    icon: audio.speaker.bind("volume").as(vol => {
-        const { muted, low, medium, high, overamplified } = icons.audio.volume
-        const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]] as const
-        const icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
-        return audio.speaker.is_muted ? muted : icon
-    }),
+const NetworkIndicator = () => Widget.Icon().hook(network, self => {
+    const icon = network[network.primary || "wifi"]?.icon_name
+    self.icon = icon || ""
+    self.visible = !!icon
 })
 
-const LayoutIndicator = () => Widget.Label({label: 'en'})
-    .hook(hyprland, (self, kb, layout) => {
-        if (!layout) {
-            return
-        }
+const AudioIndicator = () => Widget.Icon()
+    .hook(audio.speaker, self => {
+        const vol = audio.speaker.is_muted ? 0 : audio.speaker.volume
+        const { muted, low, medium, high, overamplified } = icons.audio.volume
+        const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]] as const
+        self.icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
+    })
 
-        if (layout.includes('English')) {
-            self.label = `en`
-        } else if (layout.includes('Russian')) {
-            self.label = `ru`
-        }
-    }, "keyboard-layout")
-
-export default (monitor: number, pos: string) => PanelButton({
+export default (pos: string) => PanelButton({
     window: "quicksettings",
-    on_primary_click: () => App.toggleWindow("quicksettings"),
-    on_secondary_click: () => audio.microphone.is_muted = !audio.microphone.is_muted,
+    on_clicked: () => App.toggleWindow("quicksettings"),
     on_scroll_up: () => audio.speaker.volume += 0.02,
     on_scroll_down: () => audio.speaker.volume -= 0.02,
-    setup: self => { barAssignPosition(self, pos) },
-    class_name: "systemindicators",
+    setup: self => {
+        if (pos != null)
+            self.toggleClassName(pos)
+    },
     child: Widget.Box([
-        LayoutIndicator(),
-        MessageIndicator(),
+        ProfileIndicator(),
+        ModeIndicator(),
         DNDIndicator(),
+        BluetoothIndicator(),
+        NetworkIndicator(),
         AudioIndicator(),
         MicrophoneIndicator(),
     ]),

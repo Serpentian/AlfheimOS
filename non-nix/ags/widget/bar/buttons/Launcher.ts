@@ -1,7 +1,6 @@
 import PanelButton from "../PanelButton"
 import options from "options"
 import nix from "service/nix"
-import { barAssignPosition } from "lib/utils"
 
 const { icon, label, action } = options.bar.launcher
 
@@ -36,18 +35,19 @@ function Spinner() {
     })
 }
 
-export default (monitor: number, pos: string) => PanelButton({
+export default (pos: string) => PanelButton({
     window: "launcher",
     on_clicked: action.bind(),
-    setup: self => { barAssignPosition(self, pos) },
-    child: Widget.Box({
-        children: [
-            Spinner(),
-            Widget.Label({
-                class_name: label.colored.bind().as(c => c ? "colored" : ""),
-                visible: label.label.bind().as(v => !!v),
-                label: label.label.bind(),
-            }),
-        ]
-    }),
+    setup: self => {
+        if (pos != null)
+            self.toggleClassName(pos)
+    },
+    child: Widget.Box([
+        Spinner(),
+        Widget.Label({
+            class_name: label.colored.bind().as(c => c ? "colored" : ""),
+            visible: label.label.bind().as(v => !!v),
+            label: label.label.bind(),
+        }),
+    ]),
 })

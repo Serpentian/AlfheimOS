@@ -93,13 +93,12 @@ const Player = (player: MprisPlayer) => {
         }),
     })
 
-
     const playPause = Widget.Button({
-        class_name: "media-btn play-pause",
+        class_name: "play-pause",
         on_clicked: () => player.playPause(),
         visible: player.bind("can_play"),
-        child: Widget.Label({
-            label: player.bind("play_back_status").as(s => {
+        child: Widget.Icon({
+            icon: player.bind("play_back_status").as(s => {
                 switch (s) {
                     case "Playing": return icons.mpris.playing
                     case "Paused":
@@ -110,17 +109,15 @@ const Player = (player: MprisPlayer) => {
     })
 
     const prev = Widget.Button({
-        class_name: "media-btn",
         on_clicked: () => player.previous(),
         visible: player.bind("can_go_prev"),
-        child: Widget.Label(icons.mpris.prev),
+        child: Widget.Icon(icons.mpris.prev),
     })
 
     const next = Widget.Button({
-        class_name: "media-btn",
         on_clicked: () => player.next(),
         visible: player.bind("can_go_next"),
-        child: Widget.Label(icons.mpris.next),
+        child: Widget.Icon(icons.mpris.next),
     })
 
     return Widget.Box(
@@ -149,13 +146,8 @@ const Player = (player: MprisPlayer) => {
     )
 }
 
-export const Media = () => {
-    const filteredPlayers = players.emitter.players.filter(player => {
-        return !media.blacklist.getValue().some(bl => player.bus_name.includes(bl));
-    });
-    return Widget.Box({
-        vertical: true,
-        class_name: "media vertical",
-        children: filteredPlayers.map(Player),
-    })
-}
+export const Media = () => Widget.Box({
+    vertical: true,
+    class_name: "media vertical",
+    children: players.as(p => p.map(Player)),
+})

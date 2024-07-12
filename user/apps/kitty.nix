@@ -1,14 +1,10 @@
-{settings, ...}:
-
+{settings, lib, ...}:
 {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
     shellIntegration.enableZshIntegration = true;
     settings = {
       active_tab_font_style = "bold";
-      background = "#11111b";
-      background_opacity = "0.8";
       bold_font = "auto";
       bold_italic_font = "auto";
       confirm_os_window_close = 0;
@@ -27,15 +23,13 @@
       placement_strategy = "center";
       resize_in_steps = "yes";
       scrollback_lines = 10000;
-      tab_bar_edge = "bottom";
-      tab_bar_min_tabs = 1;
-      tab_bar_style = "powerline";
-      tab_powerline_style = "slanted";
-      tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
       touch_scroll_multiplier = "1.0";
       wheel_scroll_multiplier = "5.0";
       window_margin_width = 0;
       window_padding_width = 15;
+      scrollback_pager = ''
+        bash -c 'vim --not-a-term +"terminal ++curwin cat "<(cat) +"KittyScrollback INPUT_LINE_NUMBER CURSOR_LINE CURSOR_COLUMN"'
+      '';
     };
     keybindings = {
       "ctrl+shift+v" = "paste_from_clipboard";

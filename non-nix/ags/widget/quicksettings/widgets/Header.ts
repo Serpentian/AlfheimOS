@@ -1,9 +1,10 @@
 import icons from "lib/icons"
-import { clock, uptime } from "lib/variables"
+import { uptime } from "lib/variables"
 import options from "options"
 import powermenu, { Action } from "service/powermenu"
 
-const { image, size, username } = options.quicksettings.avatar
+const battery = await Service.import("battery")
+const { image, size } = options.quicksettings.avatar
 
 function up(up: number) {
     const h = Math.floor(up / 60)
@@ -34,10 +35,16 @@ export const Header = () => Widget.Box(
         vertical: true,
         vpack: "center",
         children: [
+            Widget.Box({
+                visible: battery.bind("available"),
+                children: [
+                    Widget.Icon({ icon: battery.bind("icon_name") }),
+                    Widget.Label({ label: battery.bind("percent").as(p => `${p}%`) }),
+                ],
+            }),
             Widget.Box([
-                // Widget.Icon({ icon: icons.ui.time }),
-                // Widget.Label({ label: uptime.bind().as(up) }),
-                Widget.Label({label: username }),
+                Widget.Icon({ icon: icons.ui.time }),
+                Widget.Label({ label: uptime.bind().as(up) }),
             ]),
         ],
     }),
@@ -52,10 +59,5 @@ export const Header = () => Widget.Box(
         },
     }),
     SysButton("logout"),
-    Widget.Button({
-        vpack: "center",
-        child: Widget.Icon(icons.powermenu["shutdown"]),
-        on_clicked: () => App.toggleWindow("powermenu")
-    }),
-    // SysButton("shutdown"),
+    SysButton("shutdown"),
 )

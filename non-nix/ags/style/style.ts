@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
 import { type Opt } from "lib/option"
 import options from "options"
-import { bash, dependencies, sh } from "lib/utils"
+import { bash, dependencies } from "lib/utils"
 
 const deps = [
     "font",
     "theme",
+    "bar.corners",
     "bar.flatButtons",
     "bar.position",
     "bar.battery.charging",
@@ -13,10 +14,8 @@ const deps = [
 ]
 
 const {
-    dark,
-    light,
+    palette,
     blur,
-    scheme,
     padding,
     spacing,
     radius,
@@ -28,25 +27,21 @@ const {
 const popoverPaddingMultiplier = 1.6
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const t = (dark: Opt<any> | string, light: Opt<any> | string) => scheme.value === "dark"
-    ? `${dark}` : `${light}`
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const $ = (name: string, value: string | Opt<any>) => `$${name}: ${value};`
 
 const variables = () => [
-    $("bg", blur.value ? `transparentize(${t(dark.bg, light.bg)}, ${blur.value / 100})` : t(dark.bg, light.bg)),
-    $("fg", t(dark.fg, light.fg)),
+    $("bg", blur.value ? `transparentize(${palette.bg}, ${blur.value / 100})` : palette.bg),
+    $("fg", palette.fg),
 
-    $("primary-bg", t(dark.primary.bg, light.primary.bg)),
-    $("primary-fg", t(dark.primary.fg, light.primary.fg)),
-    $("secondary-bg", t(dark.secondary.bg, light.secondary.bg)),
-    $("secondary-fg", t(dark.secondary.fg, light.secondary.fg)),
+    $("primary-bg", palette.primary.bg),
+    $("primary-fg", palette.primary.fg),
 
-    $("error-bg", t(dark.error.bg, light.error.bg)),
-    $("error-fg", t(dark.error.fg, light.error.fg)),
+    $("secondary-bg", palette.secondary.bg),
+    $("secondary-fg", palette.secondary.fg),
 
-    $("scheme", scheme),
+    $("error-bg", palette.error.bg),
+    $("error-fg", palette.error.fg),
+
     $("padding", `${padding}pt`),
     $("spacing", `${spacing}pt`),
     $("radius", `${radius}px`),
@@ -54,20 +49,21 @@ const variables = () => [
 
     $("shadows", `${shadows}`),
 
-    $("widget-bg", `transparentize(${t(dark.widget, light.widget)}, ${widget.opacity.value / 100})`),
+    $("widget-bg", `transparentize(${palette.widget}, ${widget.opacity.value / 100})`),
 
-    $("hover-bg", `transparentize(${t(dark.widget, light.widget)}, ${(widget.opacity.value * .9) / 100})`),
-    $("hover-fg", `lighten(${t(dark.fg, light.fg)}, 8%)`),
+    $("hover-bg", `transparentize(${palette.widget}, ${(widget.opacity.value * .9) / 100})`),
+    $("hover-fg", `lighten(${palette.fg}, 8%)`),
 
     $("border-width", `${border.width}px`),
-    $("border-color", `transparentize(${t(dark.border, light.border)}, ${border.opacity.value / 100})`),
+    $("border-color", `transparentize(${palette.border}, ${border.opacity.value / 100})`),
     $("border", "$border-width solid $border-color"),
 
-    $("active-gradient", `linear-gradient(to right, ${t(dark.primary.bg, light.primary.bg)}, darken(${t(dark.primary.bg, light.primary.bg)}, 4%))`),
-    $("shadow-color", t("rgba(0,0,0,.6)", "rgba(0,0,0,.4)")),
-    $("text-shadow", t("2pt 2pt 2pt $shadow-color", "none")),
+    $("active-gradient", `linear-gradient(to right, ${palette.primary.bg}, darken(${palette.primary.bg}, 4%))`),
+    $("shadow-color", "rgba(0,0,0,.6)"),
+    $("text-shadow", "2pt 2pt 2pt $shadow-color"),
+    $("box-shadow", "2pt 2pt 2pt 0 $shadow-color, inset 0 0 0 $border-width $border-color"),
 
-    $("popover-border-color", `transparentize(${t(dark.border, light.border)}, ${Math.max(((border.opacity.value - 1) / 100), 0)})`),
+    $("popover-border-color", `transparentize(${palette.border}, ${Math.max(((border.opacity.value - 1) / 100), 0)})`),
     $("popover-padding", `$padding * ${popoverPaddingMultiplier}`),
     $("popover-radius", radius.value === 0 ? "0" : "$radius + $popover-padding"),
 
@@ -79,6 +75,7 @@ const variables = () => [
     $("bar-battery-blocks", options.bar.battery.blocks),
     $("bar-position", options.bar.position),
     $("hyprland-gaps-multiplier", options.hyprland.gaps),
+    $("screen-corner-multiplier", `${options.bar.corners.value * 0.01}`),
 ]
 
 async function resetCss() {
@@ -87,28 +84,25 @@ async function resetCss() {
 
     try {
         const vars = `${TMP}/variables.scss`
+        const scss = `${TMP}/main.scss`
+        const css = `${TMP}/main.css`
+
+        const fd = await bash(`fd ".scss" ${App.configDir}`)
+        const files = fd.split(/\s+/)
+        const imports = [vars, ...files].map(f => `@import '${f}';`)
+
         await Utils.writeFile(variables().join("\n"), vars)
+        await Utils.writeFile(imports.join("\n"), scss)
+        await bash`sass ${scss} ${css}`
 
-        const fd = await sh(`fd ".scss" ${App.configDir}`)
-        const files = fd.split(/\s+/).map(f => `@import '${f}';`)
-        const scss = [`@import '${vars}';`, ...files].join("\n")
-        const css = await bash`echo "${scss}" | sass --stdin`
-        const file = `${TMP}/style.css`
-
-        await Utils.writeFile(css, file)
-
-        App.resetCss()
-        App.applyCss(file)
+        App.applyCss(css, true)
     } catch (error) {
-        logError(error)
+        error instanceof Error
+            ? logError(error)
+            : console.error(error)
     }
 }
 
-await sh(`fd "scss" ${App.configDir} -t f`).then(files => {
-    files.split(/\s+/).forEach(file => {
-        Utils.monitorFile(file, resetCss)
-    })
-})
-
+Utils.monitorFile(`${App.configDir}/style`, resetCss)
 options.handler(deps, resetCss)
 await resetCss()

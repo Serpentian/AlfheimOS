@@ -1,27 +1,27 @@
-{ inputs
-, writeShellScript
-, system
-, stdenv
-, cage
-, swww
-, esbuild
-, dart-sass
-, fd
-, fzf
-, brightnessctl
-, accountsservice
-, slurp
-, wf-recorder
-, wl-clipboard
-, wayshot
-, swappy
-, hyprpicker
-, pavucontrol
-, networkmanager
-, gtk3
-, which
-}:
-let
+{
+  inputs,
+  writeShellScript,
+  system,
+  stdenv,
+  cage,
+  swww,
+  esbuild,
+  dart-sass,
+  fd,
+  fzf,
+  brightnessctl,
+  accountsservice,
+  slurp,
+  wf-recorder,
+  wl-clipboard,
+  wayshot,
+  swappy,
+  hyprpicker,
+  pavucontrol,
+  networkmanager,
+  gtk3,
+  which,
+}: let
   name = "asztal";
 
   ags = inputs.ags.packages.${system}.default.override {
@@ -33,10 +33,17 @@ let
     dart-sass
     fd
     fzf
+    brightnessctl
     swww
-    inputs.hyprland.packages.${system}.default
-    networkmanager
+    # inputs.matugen.packages.${system}.default
+    slurp
+    wf-recorder
     wl-clipboard
+    wayshot
+    swappy
+    hyprpicker
+    pavucontrol
+    networkmanager
     gtk3
   ];
 
@@ -68,13 +75,14 @@ let
       cp -f main.js $out/config.js
     '';
   };
-in stdenv.mkDerivation {
-  inherit name;
-  src = config;
+in
+  stdenv.mkDerivation {
+    inherit name;
+    src = config;
 
-  installPhase = ''
-    mkdir -p $out/bin
-    cp -r . $out
-    cp ${desktop} $out/bin/${name}
-  '';
-}
+    installPhase = ''
+      mkdir -p $out/bin
+      cp -r . $out
+      cp ${desktop} $out/bin/${name}
+    '';
+  }

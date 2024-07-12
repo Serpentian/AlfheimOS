@@ -10,8 +10,8 @@
         nixosConfigurations = {
             ${settings.hostname} = nixpkgs.lib.nixosSystem {
                 modules = [
+                    inputs.stylix.nixosModules.stylix
                     (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix")
-                    inputs.catppuccin.nixosModules.catppuccin
                 ];
                 specialArgs = {
                     inherit inputs;
@@ -27,7 +27,8 @@
                 pkgs = nixpkgs.legacyPackages.${settings.system};
                 modules = [
                     (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")
-                    inputs.catppuccin.homeManagerModules.catppuccin
+                    inputs.stylix.homeManagerModules.stylix
+                    inputs.nixvim.homeManagerModules.nixvim
                 ];
                 extraSpecialArgs = {
                     inherit inputs;
@@ -42,10 +43,22 @@
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         ags.url = "github:Aylur/ags";
-        hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+        hyprland = {
+            type = "git";
+            url = "https://github.com/hyprwm/Hyprland";
+            submodules = true;
+        };
         aagl.url = "github:ezKEa/aagl-gtk-on-nix";
         aagl.inputs.nixpkgs.follows = "nixpkgs";
         superfile.url = "github:yorukot/superfile";
-        catppuccin.url = "github:catppuccin/nix";
+        stylix.url = "github:danth/stylix";
+        nixvim = {
+            url = "github:nix-community/nixvim";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        hyprland-plugins = {
+            url = "github:hyprwm/hyprland-plugins";
+            inputs.hyprland.follows = "hyprland";
+        };
     };
 }

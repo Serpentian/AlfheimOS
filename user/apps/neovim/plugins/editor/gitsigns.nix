@@ -1,0 +1,79 @@
+{
+    programs.nixvim.plugins.gitsigns = {
+        enable = true;
+        settings = {
+            current_line_blame = false;
+            signs = {
+                add = {
+                    text = "▎";
+                };
+                change = {
+                    text = "▎";
+                };
+                delete = {
+                    text = "";
+                };
+                topdelete = {
+                    text = "";
+                };
+                changedelete = {
+                    text = "▎";
+                };
+                untracked = {
+                    text = "▎";
+                };
+            };
+        };
+    };
+
+    programs.nixvim.keymaps = [
+    {
+        mode = ["n"];
+        key = "<leader>ghl";
+        options = {desc = "Next hunk";};
+        action = ":Gitsigns next_hunk<cr>";
+    }
+    {
+        mode = ["n"];
+        key = "<leader>ghh";
+        options = {desc = "Previous hunk";};
+        action = ":Gitsigns prev_hunk<cr>";
+    }
+    {
+        mode = ["n" "v"];
+        key = "<leader>ghs";
+        options = {desc = "Stage hunk";};
+        action = ":Gitsigns stage_hunk<cr>";
+    }
+    {
+        mode = ["n" "v"];
+        key = "<leader>ghr";
+        options = {desc = "Reset hunk";};
+        action = ":Gitsigns reset_hunk<cr>";
+    }
+    {
+        mode = "n";
+        key = "<leader>ghp";
+        action = ":Gitsigns preview_hunk<CR>";
+        options = {desc = "Preview hunk";};
+    }
+    {
+        mode = "n";
+        key = "<leader>ghu";
+        action = ":Gitsigns undo_stage_hunk<CR>";
+        options = {desc = "Undo stage hunk";};
+    }
+    {
+        mode = "n";
+        key = "<leader>ghb";
+        action = ":Gitsigns blame_line<CR>";
+        options = {desc = "Blame line";};
+    }
+    {
+        mode = "n";
+        key = "<leader>ghd";
+        action = ":Gitsigns diffthis<CR>";
+        options = {desc = "Diff This";};
+    }
+    ];
+}

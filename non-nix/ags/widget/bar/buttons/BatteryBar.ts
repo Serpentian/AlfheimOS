@@ -1,7 +1,6 @@
 import icons from "lib/icons"
 import options from "options"
 import PanelButton from "../PanelButton"
-import { barAssignPosition } from "lib/utils"
 
 const battery = await Service.import("battery")
 const { bar, percentage, blocks, width, low } = options.bar.battery
@@ -76,7 +75,7 @@ const Regular = () => Widget.Box({
     ],
 })
 
-export default (monitor: number, pos: string) => PanelButton({
+export default (pos: string) => PanelButton({
     class_name: "battery-bar",
     hexpand: false,
     on_clicked: () => { percentage.value = !percentage.value },
@@ -89,8 +88,9 @@ export default (monitor: number, pos: string) => PanelButton({
     setup: self => self
         .hook(bar, w => w.toggleClassName("bar-hidden", bar.value === "hidden"))
         .hook(battery, w => {
+            if (pos != null)
+                self.toggleClassName(pos)
             w.toggleClassName("charging", battery.charging || battery.charged)
             w.toggleClassName("low", battery.percent < low.value)
-            barAssignPosition(self, pos)
         }),
 })

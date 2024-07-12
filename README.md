@@ -11,11 +11,12 @@
         <img src="https://img.shields.io/badge/NixOS-23.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"></a>
 </p>
 
+
 This repository is home to the Nix code that builds my systems. Issues, PRs
 and questions are welcome!
 
-The dots are still WIP! Please, don't use them, if you don't know, how to work
-with Nix.
+If you are from Lemmy or Reddit and want to check config from the screenshot,
+please, go to [this branch](https://github.com/Serpentian/AlfheimOS/tree/catppuccin-reddit);
 
 ## Modules
 

@@ -68,3 +68,26 @@
         @include button-disabled;
     }
 }
+
+@mixin media-btn() {
+    .media-btn {
+        background-color: $secondary-bg;
+        background-image: none;
+        border-radius: 50%;
+        border: none;
+        box-shadow: none;
+        padding: 0 $spacing * .2;
+        margin: 0 $spacing * .3;
+
+        image {
+            color: $secondary-fg;
+        }
+    }
+
+    .play-pause {
+        background-color: $primary-bg;
+        image {
+            color: $primary-fg;
+        }
+    }
+}

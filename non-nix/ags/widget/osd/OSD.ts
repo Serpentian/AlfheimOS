@@ -1,6 +1,7 @@
 import { icon } from "lib/utils"
 import icons from "lib/icons"
 import Progress from "./Progress"
+import brightness from "service/brightness"
 import options from "options"
 
 const audio = await Service.import("audio")
@@ -40,6 +41,14 @@ function OnScreenProgress(vertical: boolean) {
     }
 
     return revealer
+        .hook(brightness, () => show(
+            brightness.screen,
+            icons.brightness.screen,
+        ), "notify::screen")
+        .hook(brightness, () => show(
+            brightness.kbd,
+            icons.brightness.keyboard,
+        ), "notify::kbd")
         .hook(audio.speaker, () => show(
             audio.speaker.volume,
             icon(audio.speaker.icon_name || "", icons.audio.type.speaker),

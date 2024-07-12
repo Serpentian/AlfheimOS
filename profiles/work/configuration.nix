@@ -2,6 +2,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ../../themes/stylix.nix
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/desktop/boot.nix
@@ -9,9 +10,9 @@
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
-        ../../system/apps/tlp.nix
-        ../../themes/catppuccin.nix
+        # ../../system/apps/tlp.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
+        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -66,6 +67,8 @@
     # A lot of mpris packages require it.
     services.gvfs.enable = true;
     services.upower.enable = true;
+
+    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

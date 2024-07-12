@@ -1,12 +1,10 @@
-{ config, pkgs, settings, ...}:
-let
-    custom = import (./. + "../../../themes/" + ("/" + settings.theme) + ".nix") {inherit pkgs;};
-in
+{ config, pkgs, settings, inputs, ...}:
 {
-    _module.args = { inherit custom; };
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        ../../user/apps/w3m.nix
+        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # ../../user/apps/w3m.nix
+        ../../themes/stylix.nix
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
@@ -17,10 +15,11 @@ in
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
         ../../user/apps/vdirsyncer.nix
+        # ../../user/apps/qutebrowser.nix
+        ../../user/apps/ssh.nix
         ../../user/apps/neofetch
-        ../../user/apps/nvim.nix
+        ../../user/apps/neovim
         ../../user/shell/zsh.nix
-        ../../themes/catppuccin.nix
     ];
 
     home = {
@@ -37,6 +36,7 @@ in
         yubikey-manager
         obs-studio
         tty-clock
+        teleport
         rtorrent
         swayimg
         openvpn
@@ -45,7 +45,7 @@ in
         mpv
 
         # These packages are compulsury.
-        settings.editorPkg
+        # settings.editorPkg
         settings.browserPkg
         settings.termPkg
     ];
@@ -79,25 +79,16 @@ in
         BROWSER = settings.browser;
     };
 
+    services.kdeconnect.enable = true;
+    programs.home-manager.enable = true;
+
     gtk = {
         enable = true;
-        catppuccin = {
-            enable = true;
-            flavor = "mocha";
-            accent = "lavender";
-        };
-        # theme = custom.gtkTheme;
         iconTheme = {
             name = settings.icons;
             package = settings.iconsPkg;
         };
-        font = {
-            name = settings.font;
-            size = settings.fontSize;
-        };
     };
 
-    services.kdeconnect.enable = true;
-    programs.home-manager.enable = true;
     home.stateVersion = "23.05";
 }

@@ -3,7 +3,6 @@ import PanelButton from "../PanelButton"
 import options from "options"
 import icons from "lib/icons"
 import { icon } from "lib/utils"
-import { barAssignPosition } from "lib/utils"
 
 const mpris = await Service.import("mpris")
 const { length, direction, preferred, monochrome, format } = options.bar.media
@@ -47,47 +46,12 @@ const Content = (player: MprisPlayer) => {
         }),
     })
 
-//    const playericon = Widget.Icon({
-//        icon: Utils.merge([player.bind("entry"), monochrome.bind()], (entry => {
-//            const name = `${entry}${monochrome.value ? "-symbolic" : ""}`
-//            return icon(name, icons.fallback.audio)
-//        })),
-//    })
-
-    const playPause = Widget.Button({
-        class_name: "media-btn play-pause",
-        on_clicked: () => player.playPause(),
-        visible: player.bind("can_play"),
-        child: Widget.Label({
-            label: player.bind("play_back_status").as(s => {
-                switch (s) {
-                    case "Playing": return icons.mpris.playing
-                    case "Paused":
-                    case "Stopped": return icons.mpris.stopped
-                }
-            }),
-        }),
+    const playericon = Widget.Icon({
+        icon: Utils.merge([player.bind("entry"), monochrome.bind()], (entry => {
+            const name = `${entry}${monochrome.value ? "-symbolic" : ""}`
+            return icon(name, icons.fallback.audio)
+        })),
     })
-
-    const prev = Widget.Button({
-        class_name: "media-btn",
-        on_clicked: () => player.previous(),
-        visible: player.bind("can_go_prev"),
-        child: Widget.Label(icons.mpris.prev),
-    })
-
-    const next = Widget.Button({
-        class_name: "media-btn",
-        on_clicked: () => player.next(),
-        visible: player.bind("can_go_next"),
-        child: Widget.Label(icons.mpris.next),
-    })
-
-    const playericon = Widget.Box([
-        prev,
-        playPause,
-        next,
-    ])
 
     return Widget.Box({
         attribute: { revealer },
@@ -96,13 +60,16 @@ const Content = (player: MprisPlayer) => {
     })
 }
 
-export default (monitor: number, pos: string) => {
+export default (pos: string) => {
     let player = getPlayer()
 
     const btn = PanelButton({
         class_name: "media",
         child: Widget.Icon(icons.fallback.audio),
-        setup: self => { barAssignPosition(self, pos) },
+        setup: self => {
+            if (pos != null)
+                self.toggleClassName(pos)
+        },
     })
 
     const update = () => {

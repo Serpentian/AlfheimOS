@@ -1,105 +1,84 @@
-import { type BarWidget } from "widget/bar/Bar"
 import { opt, mkOptions } from "lib/option"
-import { distro } from "lib/variables"
 import { icon } from "lib/utils"
 import icons from "lib/icons"
 
+const nix = JSON.parse(
+    Utils.readFile(Utils.CACHE_DIR + "/options-nix.json") || '{}')
+
 const options = mkOptions(OPTIONS, {
-    autotheme: opt(false),
-
-    wallpaper: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers/dark/evening-sky.png`, { persistent: true }),
-    wallpaper_dir: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers`),
-
-    default_terminal: opt("kitty"),
+    wallpaper: opt(nix?.wallpaper || ""),
 
     theme: {
-        dark: {
+        palette: {
             primary: {
-                bg: opt("#89b4fa"),
-                fg: opt("#11111b"),
+                bg: opt(nix?.theme?.palette?.primary?.bg || "#51a4e7"),
+                fg: opt(nix?.theme?.palette?.primary?.fg || "#141414"),
             },
             secondary: {
-                bg: opt("#cba6f7"),
-                fg: opt("#11111b"),
+                bg: opt(nix?.theme?.palette?.secondary?.bg || "#51a4e7"),
+                fg: opt(nix?.theme?.palette?.secondary?.fg || "#141414"),
             },
             error: {
-                bg: opt("#e55f86"),
-                fg: opt("#141414"),
+                bg: opt(nix?.theme?.palette?.error?.bg || "#e55f86"),
+                fg: opt(nix?.theme?.palette?.error?.fg || "#141414"),
             },
-            bg: opt("#11111b"),
-            fg: opt("#cdd6f4"),
-            widget: opt("#25253a"),
-            border: opt("#eeeeee"),
-        },
-        light: {
-            primary: {
-                bg: opt("#426ede"),
-                fg: opt("#eeeeee"),
-            },
-            secondary: {
-                bg: opt("#cba6f7"),
-                fg: opt("#11111b"),
-            },
-            error: {
-                bg: opt("#b13558"),
-                fg: opt("#eeeeee"),
-            },
-            bg: opt("#fffffa"),
-            fg: opt("#080808"),
-            widget: opt("#25253a"),
-            border: opt("#080808"),
+            bg: opt(nix?.theme?.palette?.bg || "#171717"),
+            fg: opt(nix?.theme?.palette?.fg || "#eeeeee"),
+            widget: opt(nix?.theme?.palette?.widget || "#eeeeee"),
+            border: opt(nix?.theme?.palette?.border || "#eeeeee"),
         },
 
-        blur: opt(36),
-        scheme: opt<"dark" | "light">("dark"),
-        widget: { opacity: opt(0) },
+        blur: opt(nix?.theme?.blur || 0),
+        widget: { opacity: opt(nix?.widget?.opacity || 0) },
         border: {
-            width: opt(1),
-            opacity: opt(96),
+            width: opt(nix?.theme?.border?.width || 0),
+            opacity: opt(nix?.theme?.border?.opacity || 0),
         },
 
-        shadows: opt(false),
+        shadows: opt(nix?.theme?.shadows || false),
         padding: opt(7),
         spacing: opt(12),
-        radius: opt(15),
+        radius: opt(nix?.theme?.radius || 0),
     },
 
     transition: opt(200),
 
     font: {
-        size: opt(12),
-        name: opt("JetBrains Mono"),
+        size: opt(nix?.font?.size || 12),
+        name: opt(nix?.font?.name || "Ubuntu Nerd Font"),
     },
 
     bar: {
-        flatButtons: opt(false),
+        curved: opt(nix?.bar?.curved || false),
+        flatButtons: opt(nix?.bar?.flatButtons || false),
         position: opt<"top" | "bottom">("top"),
-        corners: opt(true),
+        corners: opt(50),
+        transparent: opt(false),
         layout: {
-            start: opt<BarWidget[]>([
+            start: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "launcher",
-                "media",
-                // "taskbar",
-                "expander",
-                "cava"
-            ]),
-            center: opt<BarWidget[]>([
                 "workspaces",
+                // "taskbar",
+                "media",
+                "expander",
+                "cava",
             ]),
-            end: opt<BarWidget[]>([
+            center: opt<Array<import("widget/bar/Bar").BarWidget>>([
+                "date",
+            ]),
+            end: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "cava",
                 "expander",
-                "systray",
-                // "wallpapers",
                 "battery",
+                "systray",
                 "system",
-                "date",
+                "powermenu",
             ]),
         },
         launcher: {
             icon: {
-                colored: opt(true),
-                icon: opt(icon(distro, icons.ui.search)),
+                colored: opt(false),
+                icon: opt(icon(icons.nix.nix, icons.ui.search)),
             },
             label: {
                 colored: opt(false),
@@ -108,8 +87,8 @@ const options = mkOptions(OPTIONS, {
             action: opt(() => App.toggleWindow("launcher")),
         },
         date: {
-            format: opt("  %a, %d %b, %R"),
-            action: opt(() => App.toggleWindow("calendarsettings")),
+            format: opt("%R, %a, %d %b"),
+            action: opt(() => App.toggleWindow("datemenu")),
         },
         battery: {
             bar: opt<"hidden" | "regular" | "whole">("hidden"),
@@ -120,16 +99,12 @@ const options = mkOptions(OPTIONS, {
             low: opt(30),
         },
         workspaces: {
-            workspaces: opt(20),
-            isJapanese: opt(true),
+            workspaces: opt(7),
         },
         taskbar: {
             iconSize: opt(0),
             monochrome: opt(true),
             exclusive: opt(false),
-        },
-        messages: {
-            action: opt(() => App.toggleWindow("quicksettings")),
         },
         systray: {
             ignore: opt([
@@ -166,8 +141,10 @@ const options = mkOptions(OPTIONS, {
             favorites: opt([
                 [
                     "firefox",
-                    "lutris",
-                    "vesktop",
+                    "wezterm",
+                    "org.gnome.Nautilus",
+                    "org.gnome.Calendar",
+                    "spotify",
                 ],
             ]),
         },
@@ -175,7 +152,7 @@ const options = mkOptions(OPTIONS, {
 
     overview: {
         scale: opt(9),
-        workspaces: opt(0),
+        workspaces: opt(7),
         monochromeIcon: opt(true),
     },
 
@@ -190,27 +167,30 @@ const options = mkOptions(OPTIONS, {
 
     quicksettings: {
         avatar: {
-            image: opt(`/home/${USER}/.dotfiles/non-nix/wallpapers/avatar.png`),
+            image: opt(`/var/lib/AccountsService/icons/${Utils.USER}`),
             size: opt(70),
-            username: "Serpentian",
         },
         width: opt(380),
         position: opt<"left" | "center" | "right">("right"),
-        networkSettings: opt("nmtui"),
+        networkSettings: opt("gtk-launch gnome-control-center"),
         media: {
             monochromeIcon: opt(true),
             coverSize: opt(100),
-            blacklist: opt(["kdeconnect"]),
         },
-    },
-
-    calendarsettings: {
-        position: opt<"left" | "center" | "right">("right"),
-        width: opt(380),
     },
 
     datemenu: {
         position: opt<"left" | "center" | "right">("center"),
+        weather: {
+            interval: opt(60_000),
+            unit: opt<"metric" | "imperial" | "standard">("metric"),
+            key: opt<string>(
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key || "",
+            ),
+            cities: opt<Array<number>>(
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.cities || [],
+            ),
+        },
     },
 
     osd: {

@@ -2,6 +2,8 @@ export const substitutes = {
     "transmission-gtk": "transmission",
     "blueberry.py": "blueberry",
     "Caprine": "facebook-messenger",
+    "com.raggesilver.BlackBox-symbolic": "terminal-symbolic",
+    "org.wezfurlong.wezterm-symbolic": "terminal-symbolic",
     "audio-headset-bluetooth": "audio-headphones-symbolic",
     "audio-card-analog-usb": "audio-speakers-symbolic",
     "audio-card-analog-pci": "audio-card-symbolic",
@@ -13,13 +15,13 @@ export const substitutes = {
 export default {
     missing: "image-missing-symbolic",
     nix: {
-        nix: "nixos-symbolic",
+        nix: "nix-snowflake-symbolic",
     },
     app: {
         terminal: "terminal-symbolic",
     },
     fallback: {
-        executable: "application-x-executable-symbolic",
+        executable: "application-x-executable",
         notification: "dialog-information-symbolic",
         video: "video-x-generic-symbolic",
         audio: "audio-x-generic-symbolic",
@@ -40,7 +42,6 @@ export default {
         toolbars: "toolbars-symbolic",
         warning: "dialog-warning-symbolic",
         avatar: "avatar-default-symbolic",
-        wallpaper: "wallpaper-symbolic",
         arrow: {
             right: "pan-end-symbolic",
             left: "pan-start-symbolic",
@@ -126,17 +127,11 @@ export default {
             track: "media-playlist-repeat-song-symbolic",
             playlist: "media-playlist-repeat-symbolic",
         },
-        // Use Widget.Label for these ones.
-        // playing: "media-playback-pause-symbolic",
-        playing: "󰏥",
-        // paused: "media-playback-start-symbolic",
-        paused: "",
-        // stopped: "media-playback-start-symbolic",
-        stopped: "",
-        // prev: "media-skip-backward-symbolic",
-        prev: "󰙣",
-        // next: "media-skip-forward-symbolic",
-        next: "󰙡",
+        playing: "media-playback-pause-symbolic",
+        paused: "media-playback-start-symbolic",
+        stopped: "media-playback-start-symbolic",
+        prev: "media-skip-backward-symbolic",
+        next: "media-skip-forward-symbolic",
     },
     system: {
         cpu: "org.gnome.SystemMonitor-symbolic",

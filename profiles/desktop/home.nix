@@ -1,9 +1,5 @@
 { config, pkgs, settings, ...}:
-let
-    custom = import (./. + "../../../themes/" + ("/" + settings.theme) + ".nix") {inherit pkgs;};
-in
 {
-    _module.args = { inherit custom; };
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
         # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
@@ -22,7 +18,6 @@ in
         ../../user/apps/nvim.nix
         ../../user/shell/zsh.nix
         ../../user/apps/mangohud.nix
-        ../../themes/catppuccin.nix
     ];
 
     home = {
@@ -82,9 +77,13 @@ in
         BROWSER = settings.browser;
     };
 
+    services.kdeconnect.enable = true;
+    programs.home-manager.enable = true;
+
+    colorScheme = inputs.nix-colors.colorSchemes.${settings.theme};
+
     gtk = {
         enable = true;
-        theme = custom.gtkTheme;
         iconTheme = {
             name = settings.icons;
             package = settings.iconsPkg;
@@ -95,7 +94,5 @@ in
         };
     };
 
-    services.kdeconnect.enable = true;
-    programs.home-manager.enable = true;
     home.stateVersion = "23.05";
 }

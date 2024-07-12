@@ -1,12 +1,12 @@
 import GLib from "gi://GLib"
 
-const main = "/tmp/ags/main.js"
+const main = "/tmp/asztal/main.js"
 const entry = `${App.configDir}/main.ts`
 const bundler = GLib.getenv("AGS_BUNDLER") || "bun"
 
 const v = {
     ags: pkg.version?.split(".").map(Number) || [],
-    expect: [1, 8, 0],
+    expect: [1, 8, 1],
 }
 
 try {

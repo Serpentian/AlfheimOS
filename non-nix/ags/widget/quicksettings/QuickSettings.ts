@@ -1,14 +1,14 @@
 import type Gtk from "gi://Gtk?version=3.0"
+import { ProfileSelector, ProfileToggle } from "./widgets/PowerProfile"
 import { Header } from "./widgets/Header"
-import { Volume, Microhone, SinkSelector, AppMixer } from "./widgets/Volume"
+import { Volume, Microphone, SinkSelector, AppMixer } from "./widgets/Volume"
+import { Brightness } from "./widgets/Brightness"
 import { NetworkToggle, WifiSelection } from "./widgets/Network"
 import { BluetoothToggle, BluetoothDevices } from "./widgets/Bluetooth"
 import { DND } from "./widgets/DND"
-import { CycleWallpaper } from "./widgets/Wallpaper"
-import { DarkModeToggle } from "./widgets/DarkMode"
+import { MicMute } from "./widgets/MicMute"
 import { Media } from "./widgets/Media"
 import PopupWindow from "widget/PopupWindow"
-import Notification from "./widgets/Notification"
 import options from "options"
 
 const { bar, quicksettings } = options
@@ -46,29 +46,22 @@ const Settings = () => Widget.Box({
                     [Volume],
                     [SinkSelector, AppMixer],
                 ),
-                Microhone(),
+                Microphone(),
+                Brightness(),
             ],
         }),
         Row(
             [NetworkToggle, BluetoothToggle],
             [WifiSelection, BluetoothDevices],
         ),
-        // Row([DarkModeToggle, CycleWallpaper]),
-        Row([DND]),
-//        Widget.Box({
-//            class_name: "calendar",
-//            children: [
-//                Widget.Calendar({
-//                    hexpand: true,
-//                    hpack: "center",
-//                }),
-//            ],
-//        }),
+        Row(
+            [ProfileToggle, DND],
+            [ProfileSelector],
+        ),
         Widget.Box({
             visible: media.as(l => l.length > 0),
             child: Media(),
         }),
-        Notification(),
     ],
 })
 

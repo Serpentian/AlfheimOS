@@ -1,4 +1,4 @@
-{ custom, settings, config, pkgs, ... }:
+{settings, config, pkgs, ... }:
 
 {
     programs.hyprlock.enable = true;
@@ -23,7 +23,7 @@
             size = "250, 50";
             outline_thickness = 0;
             dots_size = 0.26;
-            inner_color = "${custom.palette.foreground_rgb}";
+            inner_color = "#${config.lib.stylix.colors.base05}";
             dots_spacing = 0.64;
             dots_center = true;
             fade_on_empty = true;
@@ -39,7 +39,7 @@
 label {
     monitor =
     text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") </big></b>"
-    color = ${custom.palette.foreground_rgb}
+    color = "#${config.lib.stylix.colors.base05}";
 
     font_size = 64
     font_family = JetBrains Mono Nerd Font 10
@@ -52,7 +52,7 @@ label {
 label {
     monitor =
     text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
-    color = ${custom.palette.foreground_rgb}
+    color = "#${config.lib.stylix.colors.base05}";
 
     font_size = 24
     font_family = JetBrains Mono Nerd Font 10

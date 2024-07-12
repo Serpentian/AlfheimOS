@@ -1,15 +1,20 @@
 import { type Stream } from "types/service/audio"
 import { Arrow, Menu } from "../ToggleButton"
-import { dependencies, icon, sh, run_sh } from "lib/utils"
+import { dependencies, icon, sh } from "lib/utils"
 import icons from "lib/icons.js"
 const audio = await Service.import("audio")
 
 type Type = "microphone" | "speaker"
 
-const VolumeIndicator = (type: Type = "speaker", icon) => Widget.Button({
+const VolumeIndicator = (type: Type = "speaker") => Widget.Button({
     vpack: "center",
     on_clicked: () => audio[type].is_muted = !audio[type].is_muted,
-    child: icon,
+    child: Widget.Icon({
+        icon: audio[type].bind("icon_name")
+            .as(i => icon(i || "", icons.audio.mic.high)),
+        tooltipText: audio[type].bind("volume")
+            .as(vol => `Volume: ${Math.floor(vol * 100)}%`),
+    }),
 })
 
 const VolumeSlider = (type: Type = "speaker") => Widget.Slider({
@@ -28,14 +33,7 @@ const VolumeSlider = (type: Type = "speaker") => Widget.Slider({
 export const Volume = () => Widget.Box({
     class_name: "volume",
     children: [
-        VolumeIndicator("speaker", Widget.Icon({
-            icon: audio.speaker.bind("volume").as(vol => {
-                const { muted, low, medium, high, overamplified } = icons.audio.volume
-                const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]] as const
-                const icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
-                return audio.speaker.is_muted ? muted : icon
-            })
-        })),
+        VolumeIndicator("speaker"),
         VolumeSlider("speaker"),
         Widget.Box({
             vpack: "center",
@@ -49,21 +47,11 @@ export const Volume = () => Widget.Box({
     ],
 })
 
-export const Microhone = () => Widget.Box({
+export const Microphone = () => Widget.Box({
     class_name: "slider horizontal",
     visible: audio.bind("recorders").as(a => a.length > 0),
     children: [
-        VolumeIndicator("microphone", Widget.Icon()
-            .hook(audio, self => self.visible =
-                audio.recorders.length > 0
-                || audio.microphone.stream?.is_muted
-                || audio.microphone.is_muted)
-            .hook(audio.microphone, self => {
-                const vol = audio.microphone.stream!.is_muted ? 0 : audio.microphone.volume
-                const { muted, low, medium, high } = icons.audio.mic
-                const cons = [[67, high], [34, medium], [1, low], [0, muted]] as const
-                self.icon = cons.find(([n]) => n <= vol * 100)?.[1] || ""
-            })),
+        VolumeIndicator("microphone"),
         VolumeSlider("microphone"),
     ],
 })
@@ -120,8 +108,8 @@ const SinkItem = (stream: Stream) => Widget.Button({
 
 const SettingsButton = () => Widget.Button({
     on_clicked: () => {
-        if (dependencies("pulsemixer"))
-            run_sh("pulsemixer")
+        if (dependencies("pavucontrol"))
+            sh("pavucontrol")
     },
     hexpand: true,
     child: Widget.Box({

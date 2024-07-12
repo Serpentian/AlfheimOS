@@ -20,11 +20,11 @@
         };
 
         "org/gnome/shell/extensions/user-theme" = {
-            name = "Catppuccin-Mocha-Standard-Lavender-Dark";
+            # name = "Catppuccin-Mocha-Standard-Lavender-Dark";
         };
         "/org/gnome/shell/extensions/flypie" = {
-            font = "JetBrains Mono 12";
-            label-font = "JetBrains Mono 10";
+            # font = "JetBrains Mono 12";
+            # label-font = "JetBrains Mono 10";
         };
         "/org/gnome/shell/extensions/blur-my-shell/overview" = {
             style-components = 3;

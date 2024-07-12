@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type Application } from "types/service/applications"
 import icons, { substitutes } from "./icons"
-import options from "options"
 import Gtk from "gi://Gtk?version=3.0"
 import Gdk from "gi://Gdk"
 import GLib from "gi://GLib?version=2.0"
@@ -22,7 +21,7 @@ export function icon(name: string | null, fallback = icons.missing) {
     if (Utils.lookUpIcon(icon))
         return icon
 
-    // print(`no icon substitute "${icon}" for "${name}", fallback: "${fallback}"`)
+    print(`no icon substitute "${icon}" for "${name}", fallback: "${fallback}"`)
     return fallback
 }
 
@@ -50,16 +49,9 @@ export async function sh(cmd: string | string[]) {
     })
 }
 
-export async function run_sh(cmd: string | string[]) {
-    return Utils.execAsync([options.default_terminal.value, cmd]).catch(err => {
-        console.error(typeof cmd === "string" ? cmd : cmd.join(" "), err)
-        return ""
-    })
-}
-
 export function forMonitors(widget: (monitor: number) => Gtk.Window) {
     const n = Gdk.Display.get_default()?.get_n_monitors() || 1
-    return range(n, 0).map(widget).flat(1)
+    return range(n, 0).flatMap(widget)
 }
 
 /**
@@ -73,12 +65,14 @@ export function range(length: number, start = 1) {
  * @returns true if all of the `bins` are found
  */
 export function dependencies(...bins: string[]) {
-    const missing = bins.filter(bin => {
-        return !Utils.exec(`which ${bin}`)
-    })
+    const missing = bins.filter(bin => Utils.exec({
+        cmd: `which ${bin}`,
+        out: () => false,
+        err: () => true,
+    }))
 
     if (missing.length > 0) {
-        console.warn("missing dependencies:", missing.join(", "))
+        console.warn(Error(`missing dependencies: ${missing.join(", ")}`))
         Utils.notify(`missing dependencies: ${missing.join(", ")}`)
     }
 
@@ -116,18 +110,4 @@ export function createSurfaceFromWidget(widget: Gtk.Widget) {
     cr.fill()
     widget.draw(cr)
     return surface
-}
-
-export function barAssignPosition(self: Gtk.Widget, pos: string) {
-    if (pos == "start") {
-        self.toggleClassName("start")
-    } else if (pos == "center") {
-        self.toggleClassName("center")
-    } else if (pos == "end") {
-        self.toggleClassName("end")
-    } else if (pos == "first") {
-        self.toggleClassName("first")
-    } else if (pos == "last") {
-        self.toggleClassName("last")
-    }
 }
