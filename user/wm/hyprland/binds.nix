@@ -31,6 +31,9 @@
       "$mod, O, togglesplit,"
       "$mod, P, pseudo,"
 
+      # Lock screen
+      "$mod, Esc, exec, hyprlock"
+
       # Application shortcuts.
       "$mod, Return, exec, kitty"
       "$mod SHIFT, Return, exec, kitty --class floating"
