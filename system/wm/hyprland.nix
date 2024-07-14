@@ -15,18 +15,19 @@
         hyprland = {
             enable = true;
             xwayland.enable = true;
+            package = inputs.hyprland.packages.${pkgs.system}.default;
         };
     };
 
-    programs.hyprland.package = let
-      patch = ./displaylink-custom.patch;
-    in
-    inputs.hyprland.packages.${pkgs.system}.default.overrideAttrs (self: super: {
-      postUnpack = ''
-        rm $sourceRoot/subprojects/wlroots-hyprland/patches/nvidia-hardware-cursors.patch
-        cp ${patch} $sourceRoot/subprojects/wlroots-hyprland/patches
-      '';
-    });
+#    programs.hyprland.package = let
+#      patch = ./displaylink-custom.patch;
+#    in
+#    inputs.hyprland.packages.${pkgs.system}.default.overrideAttrs (self: super: {
+#      postUnpack = ''
+#        rm $sourceRoot/subprojects/wlroots-hyprland/patches/nvidia-hardware-cursors.patch
+#        cp ${patch} $sourceRoot/subprojects/wlroots-hyprland/patches
+#      '';
+#    });
 
     nix.settings = {
         substituters = ["https://hyprland.cachix.org"];

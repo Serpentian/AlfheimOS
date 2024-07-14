@@ -2,7 +2,7 @@
 {
     programs.nixvim.plugins.treesitter = {
         enable = true;
-        folding = true;
+        folding = false;
         nixvimInjections = true;
         settings = {
             indent.enable = true;
