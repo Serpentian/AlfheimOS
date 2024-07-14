@@ -31,6 +31,8 @@ in {
       gaps_out = 16;
       border_size = 2;
       allow_tearing = true;
+      "col.active_border" = "rgba(${config.lib.stylix.colors.base0D}ff)";
+      "col.inactive_border" = "rgba(${config.lib.stylix.colors.base00}ff)";
     };
 
     decoration = {

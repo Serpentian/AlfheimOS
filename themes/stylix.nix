@@ -15,6 +15,7 @@ in {
             popups = details.opacity;
         };
 
+        targets.hyprland.enable = false;
         targets.nixvim.enable =
             lib.mkIf (settings.themeDetails.themeName != null) false;
     };
