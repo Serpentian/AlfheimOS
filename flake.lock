@@ -786,6 +786,29 @@
         "type": "github"
       }
     },
+    "plasma-manager": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1720976495,
+        "narHash": "sha256-zZACdHekPPsC8jvhZw+bYyPOH4PY+GI0SNAVVMjrBa4=",
+        "owner": "nix-community",
+        "repo": "plasma-manager",
+        "rev": "1525b8ab676556edcb38f426d9f471c78b7058bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "plasma-manager",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "aagl": "aagl",
@@ -795,6 +818,7 @@
         "hyprland-plugins": "hyprland-plugins",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
+        "plasma-manager": "plasma-manager",
         "stylix": "stylix",
         "superfile": "superfile"
       }

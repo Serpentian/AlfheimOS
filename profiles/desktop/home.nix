@@ -2,7 +2,7 @@
 {
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
         ../../themes/stylix.nix
         ../../user/apps/w3m.nix
         ../../user/apps/spotify.nix
@@ -20,6 +20,8 @@
         ../../user/apps/mangohud.nix
         ../../user/apps/neovim
     ];
+
+    stylix.targets.hyprland.enable = false;
 
     home = {
         username = settings.username;

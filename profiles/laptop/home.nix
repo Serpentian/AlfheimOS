@@ -19,6 +19,8 @@
         ../../user/shell/zsh.nix
     ];
 
+    stylix.targets.hyprland.enable = false;
+
     home = {
         username = settings.username;
         homeDirectory = "/home/${settings.username}";
