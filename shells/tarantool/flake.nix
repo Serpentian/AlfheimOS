@@ -16,6 +16,10 @@
           luajitPackages.luacheck
           gdb
 
+          # tt
+          lua
+          unzip
+
           # Tarantool dependencies
           git
           gcc
@@ -44,7 +48,8 @@
         ];
         shellHook = ''
             export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib
-            export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local
+            export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local/
+            export TARANTOOL_INCDIR=$TARANTOOL_DIR/include
             export PATH=$TARANTOOL_DIR/bin:$PATH
             # Cluster management
             export PATH=$HOME/Programming/tnt/tarantool/test-run:$PATH

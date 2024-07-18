@@ -12,7 +12,7 @@
         ../../system/apps/cron.nix
         # ../../system/apps/tlp.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -69,6 +69,7 @@
     services.upower.enable = true;
 
     services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+    services.printing.enable = true;
 
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
