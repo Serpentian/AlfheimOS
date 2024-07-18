@@ -13,7 +13,7 @@
     {
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
-          luajitPackages.luacheck
+          semgrep
           gdb
 
           # tt
@@ -37,9 +37,7 @@
           icu
           zlib
           python310
-          python310Packages.pyyaml
-          python310Packages.gevent
-          python310Packages.six
+          python310Packages.pip #pyyaml, gevent, six
           lz4
 
           # TT building
@@ -51,6 +49,7 @@
             export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local/
             export TARANTOOL_INCDIR=$TARANTOOL_DIR/include
             export PATH=$TARANTOOL_DIR/bin:$PATH
+            export PATH=$HOME/.rocks/bin:$PATH
             # Cluster management
             export PATH=$HOME/Programming/tnt/tarantool/test-run:$PATH
             export PATH=$HOME/Programming/tnt/tt:$PATH
@@ -61,6 +60,7 @@
             # export CXX=${pkgs.gcc}/bin/c++
             export CC=${pkgs.clang}/bin/clang
             export CXX=${pkgs.clang}/bin/clang++
+            source $HOME/Programming/tnt/.venv/bin/activate
         '';
 
         # See https://github.com/NixOS/nixpkgs/issues/18995
