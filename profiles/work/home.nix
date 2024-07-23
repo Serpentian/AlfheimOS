@@ -2,7 +2,7 @@
 {
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
         # ../../user/apps/w3m.nix
         ../../themes/stylix.nix
         ../../user/apps/spotify.nix
