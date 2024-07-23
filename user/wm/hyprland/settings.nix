@@ -22,7 +22,7 @@ in {
     exec-once = [
       "swww-daemon &"
       "ags &"
-      "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
+      # "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
       "[workspace 1 silent] firefox"
       "[workspace 2 silent] kitty btop"
       "[workspace 2 silent] kitty spotify_player"
