@@ -18,6 +18,7 @@
         ../../user/apps/neofetch
         ../../user/shell/zsh.nix
         ../../user/apps/mangohud.nix
+        ../../user/gaming/nethack.nix
         ../../user/apps/neovim
     ];
 
