@@ -10,6 +10,7 @@
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
+        ../../system/gaming/nethack.nix
         # ../../system/apps/tlp.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")

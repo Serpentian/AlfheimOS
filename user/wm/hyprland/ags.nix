@@ -45,6 +45,7 @@ in {
         gtk3
         pulsemixer
         networkmanager
+        pavucontrol
     ];
 
     programs.ags = {

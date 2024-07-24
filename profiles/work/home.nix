@@ -20,6 +20,7 @@
         ../../user/apps/neofetch
         ../../user/apps/neovim
         ../../user/shell/zsh.nix
+        ../../user/gaming/nethack.nix
     ];
 
     stylix.targets.hyprland.enable = false;
