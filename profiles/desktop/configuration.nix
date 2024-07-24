@@ -14,6 +14,7 @@
         ../../system/apps/cron.nix
         ../../system/gaming/steam.nix
         ../../system/gaming/lutris.nix
+        ../../system/gaming/retroarch.nix
         ../../system/gaming/aagl.nix
         ../../system/security/vpn.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
