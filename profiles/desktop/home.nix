@@ -46,6 +46,8 @@
         gimp
         mpv
 
+        # Testing
+        floorp
         # These packages are compulsury.
         # settings.editorPkg
         settings.browserPkg
