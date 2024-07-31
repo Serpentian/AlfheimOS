@@ -35,12 +35,12 @@
         options = [ "defaults" "users" "exec"];
     };
 
-#  fileSystems."/home/serpentian/Drives/hdd" =
-#    {
-#        device = "/dev/disk/by-uuid/c597db7a-c96b-48cc-b449-af327c3ab0cf";
-#        fsType = "ext4";
-#        options = [ "defaults" "users" "exec"];
-#    };
+  fileSystems."/home/serpentian/Drives/hdd" =
+    {
+        device = "/dev/disk/by-uuid/a5d270f4-5153-4b2a-9931-bd8b3335c906";
+        fsType = "ext4";
+        options = [ "defaults" "users" "exec"];
+    };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/3143b8ce-adf7-43d7-aaa3-011d5ad8021a"; }
