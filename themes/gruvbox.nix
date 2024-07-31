@@ -4,6 +4,9 @@
     wallpaper = ../non-nix/wallpapers/dopesmoker_gruvbox.png;
     override = null;
 
+    # Override stylix theme of btop.
+    overrideBtop = false;
+
     # Hyprland and ags;
     opacity = 1.0;
     rounding = 0;

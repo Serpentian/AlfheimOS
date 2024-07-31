@@ -7,6 +7,9 @@
         base00 = "11111b";
     };
 
+    # Override stylix theme of btop.
+    overrideBtop = true;
+
     # Hyprland and ags.
     opacity = 0.8; # affects theme.blur in ags.
     rounding = 25; # affects theme.rounding in ags.

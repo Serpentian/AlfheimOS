@@ -8,7 +8,6 @@
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
-        ../../user/apps/btop.nix
         ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
@@ -20,6 +19,7 @@
         ../../user/apps/mangohud.nix
         ../../user/gaming/nethack.nix
         ../../user/apps/neovim
+        ../../user/apps/btop
     ];
 
     stylix.targets.hyprland.enable = false;

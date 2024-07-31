@@ -4,6 +4,9 @@
     wallpaper = ../non-nix/wallpapers/frieren-everforest.jpg;
     override = null;
 
+    # Override stylix theme of btop.
+    overrideBtop = false;
+
     # Hyprland and ags;
     opacity = 1.0;
     rounding = 0;
