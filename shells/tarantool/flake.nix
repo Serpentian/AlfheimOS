@@ -17,7 +17,7 @@
           gdb
 
           # tt
-          lua
+          lua51Packages.lua
           unzip
 
           # Tarantool dependencies
