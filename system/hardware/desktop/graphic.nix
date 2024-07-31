@@ -5,11 +5,16 @@
         AMD_VULKAN_ICD = "RADV";
     };
 
+    environment.systemPackages = with pkgs; [
+        rocmPackages.rocm-smi
+    ];
+
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
         extraPackages = with pkgs; [
             rocmPackages.clr
+            rocmPackages.clr.icd
             rocmPackages.rocminfo
             rocmPackages.rocm-runtime
         ];
