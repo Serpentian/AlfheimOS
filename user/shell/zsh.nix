@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ settings, config, pkgs, ... }:
 
 {
   imports = [
@@ -27,10 +27,10 @@
       cp = "cp -vr";
       rm = "rm -rv";
       w3md = "w3m https://lite.duckduckgo.com/lite/";
-      nix-tarantool = "nix develop ~/.dotfiles/shells/tarantool -c zsh";
-      nix-python = "nix develop ~/.dotfiles/shells/python -c zsh";
-      nix-lampray = "nix develop ~/.dotfiles/shells/lampray -c zsh";
-      neofetch = "neofetch --source ~/.dotfiles/user/apps/neofetch/snufkin.txt";
+      nix-tarantool = "nix develop ${settings.dotfilesDir}/shells/tarantool -c zsh";
+      nix-python = "nix develop ${settings.dotfilesDir}/shells/python -c zsh";
+      nix-lampray = "nix develop ${settings.dotfilesDir}/shells/lampray -c zsh";
+      neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
     };
     initExtra = ''
       set -o emacs

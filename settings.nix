@@ -8,7 +8,7 @@ rec {
     locale = "en_US.UTF-8"; # Select locale
     name = "Nikita Zheleztsov"; # Name (git config)
     email = "n.zheleztsov@proton.me"; # Email (git config)
-    dotfilesDir = "/home/serpentian/.dotfiles"; # Absolute path of the local repo
+    dotfilesDir = "/home/${username}/.dotfiles"; # Absolute path of the local repo
     theme = "catppuccin"; # Selected theme from themes directory (./themes/)
     themeDetails = import (./. + "/themes/${theme}.nix") {dir = dotfilesDir;};
     wm = ["hyprland" "kde"]; # Selected window manager or desktop environment;
