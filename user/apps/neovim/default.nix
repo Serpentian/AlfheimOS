@@ -1,5 +1,9 @@
-{ settings, lib, ... }:
+{ settings, lib, pkgs, ... }:
 {
+    home.packages = with pkgs; [
+        ripgrep
+    ];
+
     imports = [
         ./autocmds.nix
         ./keymaps.nix
