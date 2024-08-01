@@ -30,6 +30,7 @@
       nix-tarantool = "nix develop ${settings.dotfilesDir}/shells/tarantool -c zsh";
       nix-python = "nix develop ${settings.dotfilesDir}/shells/python -c zsh";
       nix-lampray = "nix develop ${settings.dotfilesDir}/shells/lampray -c zsh";
+      nix-invoke = "nix develop ${settings.dotfilesDir}/shells/invoke -c zsh";
       neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
     };
     initExtra = ''

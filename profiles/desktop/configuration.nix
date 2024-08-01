@@ -63,6 +63,7 @@
     # List of globally installed packages.
     environment.systemPackages = with pkgs; [
         home-manager
+        nix-index
         pciutils
         go-mtpfs
         lsof
