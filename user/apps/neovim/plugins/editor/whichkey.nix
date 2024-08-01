@@ -18,6 +18,7 @@
             "<leader>gh" = "+hunk";
             "<leader>w" = "+window";
             "<leader>s" = "+search";
+            "<leader>t" = "+terminal";
         };
         window = {
             border = "single";

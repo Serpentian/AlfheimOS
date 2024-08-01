@@ -15,6 +15,7 @@
         ./plugins/editor/gitsigns.nix
         ./plugins/editor/whichkey.nix
         ./plugins/editor/telescope.nix
+        ./plugins/editor/toggleterm.nix
         ./plugins/editor/mini.nix
 
         # UI plugins
