@@ -27,15 +27,6 @@
             "float,class:^(firefox)$,title:^(Firefox)$"
             "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
 
-            "keepaspectratio,class:^(floorp)$,title:^(Picture-in-Picture)$"
-            "noborder,class:^(floorp)$,title:^(Picture-in-Picture)$"
-            "fakefullscreen,class:^(floorp)$,title:^(Firefox)$"
-            "fakefullscreen,class:^(floorp)$,title:^(Picture-in-Picture)$"
-            "pin,class:^(floorp)$,title:^(Firefox)$"
-            "pin,class:^(floorp)$,title:^(Picture-in-Picture)$"
-            "float,class:^(floorp)$,title:^(Firefox)$"
-            "float,class:^(floorp)$,title:^(Picture-in-Picture)$"
-
             "float,class:^(floating)$,title:^(kitty)$"
             "size 50% 50%,class:^(floating)$,title:^(kitty)$"
             "center,class:^(floating)$,title:^(kitty)$"
