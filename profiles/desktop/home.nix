@@ -46,6 +46,9 @@
         gimp
         mpv
 
+        # Sometimes needed for work.
+        chromium
+
         # These packages are compulsury.
         # settings.editorPkg
         settings.browserPkg
