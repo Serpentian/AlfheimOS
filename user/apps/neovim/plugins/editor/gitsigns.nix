@@ -29,15 +29,15 @@
     programs.nixvim.keymaps = [
     {
         mode = ["n"];
-        key = "<leader>ghl";
+        key = "<leader>ghj";
         options = {desc = "Next hunk";};
-        action = ":Gitsigns next_hunk<cr>";
+        action = ":silent Gitsigns next_hunk<cr>";
     }
     {
         mode = ["n"];
-        key = "<leader>ghh";
+        key = "<leader>ghk";
         options = {desc = "Previous hunk";};
-        action = ":Gitsigns prev_hunk<cr>";
+        action = ":silent Gitsigns prev_hunk<cr>";
     }
     {
         mode = ["n" "v"];
