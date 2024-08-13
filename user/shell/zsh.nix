@@ -32,6 +32,7 @@
       nix-lampray = "nix develop ${settings.dotfilesDir}/shells/lampray -c zsh";
       nix-invoke = "nix develop ${settings.dotfilesDir}/shells/invoke -c zsh";
       neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
+      ytfzf = "ytfzf -T chafa";
     };
     initExtra = ''
       set -o emacs
