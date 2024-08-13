@@ -39,8 +39,7 @@ class CavaService extends Service {
         }
 
         this.#output = output
-        this.emit('changed');
-        this.notify('output');
+        this.changed('output');
         this.emit('output-changed', this.#output);
     }
 

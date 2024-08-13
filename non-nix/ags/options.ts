@@ -69,6 +69,7 @@ const options = mkOptions(OPTIONS, {
             end: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "cava",
                 "expander",
+                "submap",
                 "battery",
                 "systray",
                 "system",

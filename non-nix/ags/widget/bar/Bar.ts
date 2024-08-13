@@ -7,6 +7,7 @@ import SysTray from "./buttons/SysTray"
 import SystemIndicators from "./buttons/SystemIndicators"
 import Taskbar from "./buttons/Taskbar"
 import Cava from "./buttons/Cava"
+import Submap from "./buttons/Submap"
 import Workspaces from "./buttons/Workspaces"
 import options from "options"
 
@@ -26,6 +27,7 @@ const widget = {
     taskbar: Taskbar,
     workspaces: Workspaces,
     cava: Cava,
+    submap: Submap,
     expander: () => Widget.Box({ expand: true }),
 }
 

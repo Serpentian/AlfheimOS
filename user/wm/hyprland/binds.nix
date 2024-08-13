@@ -110,6 +110,7 @@
   };
   wayland.windowManager.hyprland.extraConfig = ''
     # will switch to a submap called resize
+    bind=$mod,R,exec,echo -n "Resize" > /tmp/hypr_submap
     bind=$mod,R,submap,resize
 
     # will start a submap called "resize"
@@ -122,6 +123,7 @@
     binde=,j,resizeactive,0 30
 
     # use reset to go back to the global submap
+    bind=,escape,exec,truncate -s 0 /tmp/hypr_submap
     bind=,escape,submap,reset
 
     # will reset the submap, meaning end the current one and return to the global one
