@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
 {
-    environment.variables = {
-        AMD_VULKAN_ICD = "RADV";
-    };
-
-    environment.systemPackages = with pkgs; [
-        rocmPackages.rocm-smi
-    ];
+    services.xserver.enable = true;
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    services.xserver.videoDrivers = [ "amdgpu" ];
 
     hardware.graphics = {
         enable = true;
@@ -19,6 +15,11 @@
             rocmPackages.rocm-runtime
         ];
     };
+
+    environment.systemPackages = with pkgs; [
+        rocmPackages.rocm-smi
+    ];
+
     # This is necesery because many programs hard-code the path to hip
     systemd.tmpfiles.rules = [
         "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
