@@ -2,7 +2,7 @@
     programs.nixvim.plugins.bufferline = {
         enable = true;
         # separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
-        offsets = [
+        settings.options.offsets = [
             {
                 filetype = "NvimTree";
                 text = "NvimTree";

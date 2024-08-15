@@ -20,8 +20,6 @@
         windowrulev2 = [
             "keepaspectratio,class:^(firefox)$,title:^(Picture-in-Picture)$"
             "noborder,class:^(firefox)$,title:^(Picture-in-Picture)$"
-            "fakefullscreen,class:^(firefox)$,title:^(Firefox)$"
-            "fakefullscreen,class:^(firefox)$,title:^(Picture-in-Picture)$"
             "pin,class:^(firefox)$,title:^(Firefox)$"
             "pin,class:^(firefox)$,title:^(Picture-in-Picture)$"
             "float,class:^(firefox)$,title:^(Firefox)$"
