@@ -168,7 +168,8 @@ const options = mkOptions(OPTIONS, {
 
     quicksettings: {
         avatar: {
-            image: opt(`/var/lib/AccountsService/icons/${Utils.USER}`),
+            image: opt(`${Utils.HOME}/.dotfiles/non-nix/avatars/makise.png`),
+            message: opt('See you,\nspace cowboy...'),
             size: opt(70),
         },
         width: opt(380),

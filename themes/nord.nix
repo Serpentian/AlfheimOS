@@ -14,6 +14,9 @@
     bordersPlusPlus = false;
     ags = {
         theme = {
+            palette = {
+                widget = "#434c5e";
+            };
             border = {
                 width = 1;
                 opacity = 96;
@@ -21,6 +24,9 @@
         };
         bar = {
             curved = true;
+        };
+        widget = {
+            opacity = 0;
         };
     };
 }

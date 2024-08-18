@@ -5,6 +5,7 @@ import powermenu, { Action } from "service/powermenu"
 
 const battery = await Service.import("battery")
 const { image, size } = options.quicksettings.avatar
+const message = options.quicksettings.avatar.message
 
 function up(up: number) {
     const h = Math.floor(up / 60)
@@ -35,29 +36,13 @@ export const Header = () => Widget.Box(
         vertical: true,
         vpack: "center",
         children: [
-            Widget.Box({
-                visible: battery.bind("available"),
-                children: [
-                    Widget.Icon({ icon: battery.bind("icon_name") }),
-                    Widget.Label({ label: battery.bind("percent").as(p => `${p}%`) }),
-                ],
+            Widget.Label({
+                label: message.value,
             }),
-            Widget.Box([
-                Widget.Icon({ icon: icons.ui.time }),
-                Widget.Label({ label: uptime.bind().as(up) }),
-            ]),
         ],
     }),
     Widget.Box({ hexpand: true }),
-    Widget.Button({
-        vpack: "center",
-        child: Widget.Icon(icons.ui.settings),
-        on_clicked: () => {
-            App.closeWindow("quicksettings")
-            App.closeWindow("settings-dialog")
-            App.openWindow("settings-dialog")
-        },
-    }),
+    SysButton("reboot"),
     SysButton("logout"),
     SysButton("shutdown"),
 )
