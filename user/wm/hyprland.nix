@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, lib, settings, pkgs, ... }:
 
 {
     imports = [
@@ -18,7 +18,7 @@
         systemd.enable = true;
         plugins = [
             pkgs.hyprlandPlugins.hyprexpo
-            pkgs.hyprlandPlugins.borders-plus-plus
-        ];
+        ] ++ lib.optional (settings.themeDetails.bordersPlusPlus)
+            pkgs.hyprlandPlugins.borders-plus-plus;
     };
 }

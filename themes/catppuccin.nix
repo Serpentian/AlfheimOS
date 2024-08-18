@@ -30,8 +30,5 @@
         bar = {
             curved = true;
         };
-        widget = {
-            opacity = 0;
-        };
     };
 }

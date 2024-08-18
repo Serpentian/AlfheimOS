@@ -52,10 +52,10 @@ in {
       };
 
       drop_shadow = details.shadow;
-      shadow_ignore_window = true;
+      shadow_ignore_window = false;
       shadow_offset = "2 2";
       shadow_range = 20;
-      shadow_render_power = 3;
+      "col.shadow" = "rgba(${config.lib.stylix.colors.base00}ff)";
     };
 
     animations = {

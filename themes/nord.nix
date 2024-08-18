@@ -8,19 +8,19 @@
     overrideBtop = false;
 
     # Hyprland and ags;
-    opacity = 1.0;
-    rounding = 0;
+    opacity = 0.9;
+    rounding = 25;
     shadow = true;
-    bordersPlusPlus = true;
+    bordersPlusPlus = false;
     ags = {
         theme = {
             border = {
                 width = 1;
-                opacity = 70;
+                opacity = 96;
             };
         };
         bar = {
-            flatButtons = true;
+            curved = true;
         };
     };
 }
