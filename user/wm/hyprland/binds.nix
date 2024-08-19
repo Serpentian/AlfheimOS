@@ -32,7 +32,7 @@
       "$mod, P, pseudo,"
 
       # Lock screen
-      "$mod, Esc, exec, hyprlock"
+      "$mod, Escape, exec, hyprlock"
 
       # Application shortcuts.
       "$mod, Return, exec, kitty"
