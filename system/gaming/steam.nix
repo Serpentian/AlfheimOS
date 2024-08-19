@@ -24,9 +24,19 @@
         ];
     };
 
+    programs.gamemode = {
+        enable = true;
+        enableRenice = true;
+        settings = {
+            general = {
+                renice = -19;
+            };
+        };
+    };
+
     environment.systemPackages = with pkgs; [
         (mangohud.override { lowerBitnessSupport = true; })
         gamescope
-        gamemode
+        # gamemode
     ];
 }
