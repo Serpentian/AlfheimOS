@@ -18,7 +18,7 @@
         ../../system/gaming/retroarch.nix
         ../../system/gaming/aagl.nix
         ../../system/gaming/nethack.nix
-        ../../system/security/vpn.nix
+        ../../system/security/vpn/xray.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
         # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
@@ -32,6 +32,7 @@
     # Netorking
     networking.hostName = settings.hostname;
     networking.networkmanager.enable = true;
+    networking.networkmanager.dns = "dnsmasq";
 
     # Timezone
     time.timeZone = settings.timezone;

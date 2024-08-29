@@ -33,6 +33,7 @@
       nix-invoke = "nix develop ${settings.dotfilesDir}/shells/invoke -c zsh";
       neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
       ytfzf = "ytfzf -T chafa";
+      nekoray = "xhost + local:; sudo nekoray";
     };
     initExtra = ''
       set -o emacs

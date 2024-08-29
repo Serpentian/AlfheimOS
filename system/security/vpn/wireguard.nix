@@ -11,7 +11,7 @@
                 publicKey = "0catAJY1uisr7cL8qu9t3Nwo6nlf6Go7rByyi0iWCC0=";
                 presharedKeyFile = "/etc/wireguard/preshared.key";
                 allowedIPs = [ "0.0.0.0/0" ];
-                endpoint = "46.28.234.6:51820";
+                endpoint = "46.28.234.6:563";
                 persistentKeepalive = 15;
             }];
         };
