@@ -23,9 +23,6 @@
 
         LD_LIBRARY_PATH =
                 "${pkgs.stdenv.cc.cc.lib}/lib/:${pkgs.libGL}/lib/:${pkgs.glib.out}/lib/:$LD_LIBRARY_PATH";
-
-        # See https://github.com/NixOS/nixpkgs/issues/18995
-        hardeningDisable = [ "fortify" ];
       };
     });
 }

@@ -21,6 +21,7 @@
         ../../user/gaming/nethack.nix
         ../../user/apps/neovim
         ../../user/apps/btop
+        ../../user/apps/mpd
     ];
 
     stylix.targets.hyprland.enable = false;
@@ -38,6 +39,7 @@
         libreoffice-fresh
         obs-studio
         tty-clock
+        qbittorrent
         rtorrent
         cpulimit
         swayimg
