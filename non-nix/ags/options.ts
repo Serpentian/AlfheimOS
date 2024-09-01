@@ -142,10 +142,7 @@ const options = mkOptions(OPTIONS, {
             favorites: opt([
                 [
                     "firefox",
-                    "wezterm",
-                    "org.gnome.Nautilus",
-                    "org.gnome.Calendar",
-                    "spotify",
+                    "Browse the filesystem", // Thunar
                 ],
             ]),
         },
