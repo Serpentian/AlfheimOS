@@ -11,6 +11,7 @@
 
         # Editor plugins
         ./plugins/editor/nvimtree.nix
+        ./plugins/editor/vimtex.nix
         ./plugins/editor/treesitter.nix
         ./plugins/editor/gitsigns.nix
         ./plugins/editor/whichkey.nix
