@@ -4,7 +4,8 @@
     programs.zathura = {
         enable = true;
         options = {
-             font = "${settings.font} 12";
+            font = "${settings.font} 12";
+            selection-clipboard = "clipboard";
 #             default-fg = "#CDD6F4";
 #             default-bg = "#1E1E2E";
 #
