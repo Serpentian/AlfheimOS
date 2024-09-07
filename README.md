@@ -95,9 +95,11 @@ home-manager switch --flake .
 
 ## Themes
 
-In the future several themes will be introduced, but now only one is supported:
-
 ![Screen](./assets/catppuccin/overview.png)
+
+![Screen2](./assets/gruvbox/overview.png)
+
+![Screen3](./assets/everforest/overview.png)
 
 ## Credits
 * [librephoenix/nixos-config](https://github.com/librephoenix/nixos-config?tab=readme-ov-file) - The repo structure is heavily inspired by this repo.
