@@ -5,22 +5,29 @@
     override = null;
 
     # Override stylix theme of btop.
-    overrideBtop = false;
+    overrideBtop = true;
+    btopTheme = "gruvbox_dark_v2";
 
     # Hyprland and ags;
     opacity = 1.0;
-    rounding = 0;
+    rounding = 25;
     shadow = true;
     bordersPlusPlus = true;
     ags = {
         theme = {
+            palette = {
+                widget = "#45403d";
+            };
             border = {
                 width = 1;
-                opacity = 70;
+                opacity = 96;
             };
         };
         bar = {
-            flatButtons = true;
+            curved = true;
+        };
+        widget = {
+            opacity = 0;
         };
     };
 }
