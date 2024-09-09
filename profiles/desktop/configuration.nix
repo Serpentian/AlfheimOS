@@ -71,6 +71,7 @@
         nix-index
         pciutils
         go-mtpfs
+        ntfs3g
         lsof
         wget
         git
