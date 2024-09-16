@@ -9,6 +9,7 @@
 
     # Override stylix theme of btop.
     overrideBtop = true;
+    btopTheme = "catppuccin";
 
     # Hyprland and ags.
     opacity = 0.8; # affects theme.blur in ags.

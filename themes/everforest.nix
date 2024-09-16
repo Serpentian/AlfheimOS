@@ -5,7 +5,7 @@
     override = null;
 
     # Override stylix theme of btop.
-    overrideBtop = false;
+    btopTheme = null;
 
     # Hyprland and ags;
     opacity = 1.0;

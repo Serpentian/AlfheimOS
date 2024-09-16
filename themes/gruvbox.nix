@@ -5,7 +5,6 @@
     override = null;
 
     # Override stylix theme of btop.
-    overrideBtop = true;
     btopTheme = "gruvbox_dark_v2";
 
     # Hyprland and ags;

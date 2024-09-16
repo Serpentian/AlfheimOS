@@ -1,7 +1,7 @@
 { config, settings, pkgs, lib, ... }: let
     details = settings.themeDetails;
 in {
-    imports = lib.optionals (details.overrideBtop != false) [
+    imports = lib.optionals (details.btopTheme != null) [
         (./. + "/${settings.theme}.nix")
     ];
 
