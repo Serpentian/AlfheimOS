@@ -35,6 +35,7 @@
       neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
       ytfzf = "ytfzf -T chafa";
       nekoray = "xhost + local:; sudo nekoray";
+      mp = "ncmpcpp";
     };
     initExtra = ''
       set -o emacs
