@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    playerctl
     (pkgs.writeScriptBin "hyprworkspace" ''
       #!/bin/sh
       # from https://github.com/taylor85345/hyprland-dotfiles/blob/master/hypr/scripts/workspace

@@ -8,6 +8,11 @@
         mpc-cli
     ];
 
+    services.mpd-mpris = {
+        enable = true;
+        mpd.useLocal = true;
+    };
+
     services.mpd = {
         enable = true;
         musicDirectory = "${config.home.homeDirectory}/Drives/hdd/Music";
