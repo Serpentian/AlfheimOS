@@ -21,6 +21,9 @@
           unzip
 
           # Tarantool dependencies
+          curl
+          libyaml
+
           git
           gcc
           clang
