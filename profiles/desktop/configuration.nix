@@ -12,6 +12,7 @@
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/cron.nix
+        ../../system/apps/thunar.nix
         # ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
         ../../system/gaming/lutris.nix
@@ -72,6 +73,7 @@
         pciutils
         go-mtpfs
         ntfs3g
+        inetutils
         lsof
         wget
         git
@@ -80,8 +82,6 @@
 
     # A lot of mpris packages require it.
     services.gvfs.enable = true;
-
-    programs.thunar.enable = true;
 
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
