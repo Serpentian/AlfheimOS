@@ -51,6 +51,7 @@
 
         # Sometimes needed for work.
         chromium
+        translate-shell
 
         # These packages are compulsury.
         # settings.editorPkg
