@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    hardware.xpadneo.enable = true;
+    # hardware.xpadneo.enable = true;
     programs.steam = {
         enable = true;
         remotePlay.openFirewall = true; # Steam Remote Play.
