@@ -36,10 +36,15 @@
             "float,class:^(lutris)$"
             "size 1880 990,class:^(lutris)$"
             "center,class:^(lutris)$"
+
+            "fullscreen,class:^steam_app\d+$"
+            "monitor 0,class:^steam_app_\d+$"
+            "workspace 10,class:^steam_app_\d+$"
         ];
 
         workspace = [
             "special,gapsin:24,gapsout:64"
+            "10,border:false,rounding:false"
         ];
     };
 }

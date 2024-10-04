@@ -84,6 +84,7 @@
       "$mod, 7,exec,hyprworkspace 7"
       "$mod, 8,exec,hyprworkspace 8"
       "$mod, 9,exec,hyprworkspace 9"
+      "$mod, 0,exec,hyprworkspace 10"
 
       "$mod CTRL, h, workspace, r-1"
       "$mod CTRL, l, workspace, r+1"
