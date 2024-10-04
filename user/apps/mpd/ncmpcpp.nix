@@ -83,5 +83,16 @@
             # startup_slave_screen = "visualizer";
             # startup_slave_screen_focus = "no";
         };
+        bindings = [
+            {key = "j"; command = "scroll_down"; }
+            {key = "k"; command = "scroll_up"; }
+            {key = "h"; command = "previous_column"; }
+            {key = "l"; command = "next_column"; }
+            {key = "G"; command = "move_end"; }
+            {key = "n"; command = "next_found_item"; }
+            {key = "N"; command = "previous_found_item"; }
+            {key = "ctrl-b"; command = "page_up"; }
+            {key = "ctrl-f"; command = "page_down"; }
+        ];
     };
 }
