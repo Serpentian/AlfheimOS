@@ -8,25 +8,24 @@
         mpc-cli
     ];
 
-    services.mpd-mpris = {
+    services.mopidy = {
         enable = true;
-        mpd.useLocal = true;
-    };
-
-    services.mpd = {
-        enable = true;
-        musicDirectory = "${config.home.homeDirectory}/Drives/hdd/Music";
-        extraConfig = ''
-audio_output {
-        type            "pipewire"
-        name            "PipeWire Sound Server"
-}
- audio_output {
-    type                    "fifo"
-    name                    "my_fifo"
-    path                    "/tmp/mpd.fifo"
-    format                  "44100:16:2"
- }
-        '';
+        extensionPackages = with pkgs; [
+            mopidy-mpd
+            mopidy-mpris
+            mopidy-subidy
+            mopidy-scrobbler
+        ];
+        settings = {
+            subidy = {
+                url = (builtins.readFile "/run/secrets/subsonic/uri");
+                username = "serpentian";
+                password = (builtins.readFile "/run/secrets/subsonic/password");
+            };
+            scrobbler = {
+                username = "serpentian";
+                password = (builtins.readFile "/run/secrets/lastFm");
+            };
+        };
     };
 }

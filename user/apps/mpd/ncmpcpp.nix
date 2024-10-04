@@ -40,8 +40,6 @@
             user_interface = "alternative";
             default_place_to_search_in = "database"; # ?
 
-            visualizer_data_source = "/tmp/mpd.fifo";
-            visualizer_output_name = "my_fifo";
             visualizer_type = "ellipse";
             visualizer_in_stereo = "yes";
             visualizer_look = "●●";
