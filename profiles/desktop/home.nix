@@ -44,6 +44,7 @@
         cpulimit
         swayimg
         vesktop
+        revolt-desktop
         wayvnc
         drawio
         gimp
