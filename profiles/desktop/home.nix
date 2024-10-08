@@ -21,7 +21,6 @@
         ../../user/gaming/nethack.nix
         ../../user/apps/neovim
         ../../user/apps/btop
-        # Breaks purity! Since mopidy doesn't support reading passwords from files.
         ../../user/apps/mpd
     ];
 
