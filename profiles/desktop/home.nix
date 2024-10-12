@@ -89,7 +89,7 @@
         BROWSER = settings.browser;
     };
 
-    programs.sagemath.enable = true;
+    # programs.sagemath.enable = true;
     services.kdeconnect.enable = true;
     programs.home-manager.enable = true;
 
