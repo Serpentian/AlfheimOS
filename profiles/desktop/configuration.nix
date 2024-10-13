@@ -24,7 +24,7 @@
         # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     nixpkgs.overlays = import ../../lib/overlays.nix; # Add packages from the pkgs dir
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
