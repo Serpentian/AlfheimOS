@@ -50,6 +50,10 @@
         gimp
         mpv
 
+        # Overclock
+        dmidecode
+        sysbench
+
         # Sometimes needed for work.
         chromium
         translate-shell
