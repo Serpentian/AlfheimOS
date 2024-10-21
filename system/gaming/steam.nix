@@ -29,7 +29,7 @@
         enableRenice = true;
         settings = {
             general = {
-                renice = -19;
+                renice = 20;
             };
         };
     };

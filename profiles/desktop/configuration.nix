@@ -52,7 +52,7 @@
     users.users.${settings.username} = {
         isNormalUser = true;
         description = settings.username;
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "gamemode" ];
     };
 
     # Use zsh. TODO: option to flake.nix, several shells.
