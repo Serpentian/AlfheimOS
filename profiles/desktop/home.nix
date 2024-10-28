@@ -45,6 +45,7 @@
         swayimg
         vesktop
         revolt-desktop
+        telegram-desktop
         wayvnc
         drawio
         gimp
