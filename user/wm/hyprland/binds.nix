@@ -71,6 +71,8 @@
       "$mod SHIFT, k, swapwindow, u"
       "$mod SHIFT, j, swapwindow, d"
 
+      "$mod SHIFT, c, centerwindow, 1"
+
       # Move monitor focus.
       "$mod, TAB, focusmonitor, +1"
 

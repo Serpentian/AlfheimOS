@@ -24,10 +24,10 @@ in {
       "swww-daemon &"
       "ags &"
       # "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
-      "[workspace 1 silent] firefox"
-      "[workspace 2 silent] kitty btop"
-      "[workspace 2 silent] kitty ncmpcpp"
-      "[workspace 2 silent] kitty cava"
+      "[workspace 2 silent] firefox"
+      "[workspace 3 silent] kitty btop"
+      "[workspace 3 silent] kitty ncmpcpp"
+      "[workspace 3 silent] kitty cava"
     ];
 
     general = {
