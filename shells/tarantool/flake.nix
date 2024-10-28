@@ -18,6 +18,7 @@
 
           # tt
           lua51Packages.lua
+          lua51Packages.luacov
           unzip
 
           # Tarantool dependencies
