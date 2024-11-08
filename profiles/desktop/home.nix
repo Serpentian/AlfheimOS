@@ -56,6 +56,7 @@
         sysbench
 
         # Sometimes needed for work.
+        zoom-us
         chromium
         translate-shell
 
