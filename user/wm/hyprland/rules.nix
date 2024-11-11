@@ -29,9 +29,6 @@
             "size 50% 50%,class:^(floating)$,title:^(kitty)$"
             "center,class:^(floating)$,title:^(kitty)$"
 
-            "stayfocused, title:^()$,class:^(steam)$"
-            "minsize 1 1, title:^()$,class:^(steam)$"
-
             "float,class:^(moe.launcher.the-honkers-railway-launcher)$"
             "float,class:^(lutris)$"
             "size 1664 1005,class:^(lutris)$"
