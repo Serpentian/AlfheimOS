@@ -2,7 +2,7 @@
 rec {
     system = "x86_64-linux";
     hostname = "alfheim"; # Hostname
-    username = "serpentian"; # Ssername
+    username = "serpentian"; # Username
     profile = "desktop"; # Select from profiles directory
     timezone = "Europe/Moscow"; # Select timezone
     locale = "en_US.UTF-8"; # Select locale
@@ -13,7 +13,7 @@ rec {
     themeDetails = import (./. + "/themes/${theme}.nix") {dir = dotfilesDir;};
     wm = ["hyprland"]; # Selected window manager or desktop environment;
                        # must select one in both ./user/wm/ and ./system/wm/
-                       # Note, that first WM is incldued included into work profile
+                       # Note, that first WM is included into work profile
                        # second one includes both.
 
     font = "JetBrains Mono"; # Selected font
