@@ -15,6 +15,12 @@ in {
             popups = details.opacity;
         };
 
+        cursor = {
+            size = 32;
+            name = "phinger-cursors-light";
+            package = pkgs.phinger-cursors;
+        };
+
         targets.nixvim.enable =
             lib.mkIf (settings.themeDetails.themeName != null) false;
 

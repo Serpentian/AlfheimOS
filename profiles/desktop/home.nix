@@ -84,11 +84,6 @@
         };
     };
 
-    xdg.dataFile.icons = {
-        source = ../../non-nix/icons;
-        recursive = true;
-    };
-
     home.sessionVariables = {
         EDITOR = settings.editor;
         TERM = settings.term;
