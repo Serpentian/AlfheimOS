@@ -18,6 +18,7 @@
         systemd.enable = true;
         plugins = [
             pkgs.hyprlandPlugins.hyprexpo
+            pkgs.hyprlandPlugins.hypr-dynamic-cursors
         ] ++ lib.optional (settings.themeDetails.bordersPlusPlus)
             pkgs.hyprlandPlugins.borders-plus-plus;
     };
