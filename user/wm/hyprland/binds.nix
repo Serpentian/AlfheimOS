@@ -37,8 +37,6 @@
       # Application shortcuts.
       "$mod, Return, exec, kitty"
       "$mod SHIFT, Return, exec, kitty --class floating"
-      "$mod, D, exec, neovide --no-vsync"
-      "$mod, F, exec, firefox"
 
       # Special workspace
       "$mod, S, togglespecialworkspace"
@@ -128,6 +126,25 @@
     # use reset to go back to the global submap
     bind=,escape,exec,truncate -s 0 /tmp/hypr_submap
     bind=,escape,submap,reset
+
+    # will reset the submap, meaning end the current one and return to the global one
+    submap=reset
+
+    bind=$mod,A,exec,echo -n "Launch" > /tmp/hypr_submap
+    bind=$mod,A,submap,launch
+
+    submap=launch
+    bind=,F,exec,firefox
+    bind=,D,exec,neovide --no-vsync
+
+    bind=,escape,exec,truncate -s 0 /tmp/hypr_submap
+    bind=,escape,submap,reset
+
+    # Note, that after launching app submap immediately exits.
+    bind=,F,exec,truncate -s 0 /tmp/hypr_submap
+    bind=,F,submap,reset
+    bind=,D,exec,truncate -s 0 /tmp/hypr_submap
+    bind=,D,submap,reset
 
     # will reset the submap, meaning end the current one and return to the global one
     submap=reset
