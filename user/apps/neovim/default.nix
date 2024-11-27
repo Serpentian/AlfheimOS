@@ -2,12 +2,14 @@
 {
     home.packages = with pkgs; [
         ripgrep
+        neovide
     ];
 
     imports = [
         ./autocmds.nix
         ./keymaps.nix
         ./options.nix
+        ./neovide.nix
 
         # Editor plugins
         ./plugins/editor/nvimtree.nix
