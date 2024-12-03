@@ -20,6 +20,7 @@
         ./plugins/editor/telescope.nix
         ./plugins/editor/toggleterm.nix
         ./plugins/editor/mini.nix
+        ./plugins/editor/markdown.nix
 
         # UI plugins
         ./plugins/ui/bufferline.nix
