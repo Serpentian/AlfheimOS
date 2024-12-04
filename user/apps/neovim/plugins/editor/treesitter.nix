@@ -8,6 +8,10 @@
             indent.enable = true;
             highlight.enable = true;
             playground.enable = true;
+            auto_install = true;
+            ensure_installed = [
+                "tlaplus"
+            ];
         };
     };
 }

@@ -59,6 +59,7 @@
         zoom-us
         chromium
         translate-shell
+        tlaplus18
 
         # These packages are compulsury.
         # settings.editorPkg
