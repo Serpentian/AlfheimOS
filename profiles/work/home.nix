@@ -14,7 +14,6 @@
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
-        ../../user/apps/vdirsyncer.nix
         # ../../user/apps/qutebrowser.nix
         ../../user/apps/ssh.nix
         ../../user/apps/neofetch

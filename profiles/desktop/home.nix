@@ -13,7 +13,6 @@
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
-        ../../user/apps/vdirsyncer.nix
         # ../../user/apps/ytfzf.nix
         ../../user/apps/neofetch
         ../../user/shell/zsh.nix
