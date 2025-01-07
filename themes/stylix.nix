@@ -26,5 +26,6 @@ in {
 
         targets.btop.enable =
             lib.mkIf (settings.themeDetails.btopTheme != null) false;
+        targets.hyprlock.enable = false;
     };
 }

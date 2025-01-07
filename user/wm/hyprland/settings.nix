@@ -53,11 +53,13 @@ in {
         size = 10;
       };
 
-      drop_shadow = details.shadow;
-      shadow_ignore_window = false;
-      shadow_offset = "2 2";
-      shadow_range = 20;
-      "col.shadow" = "rgba(${config.lib.stylix.colors.base00}ff)";
+      shadow = {
+        enabled = details.shadow;
+        ignore_window = false;
+        offset = "2 2";
+        range = 20;
+        color = "rgba(${config.lib.stylix.colors.base00}ff)";
+      };
     };
 
     animations = {

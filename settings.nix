@@ -17,7 +17,7 @@ rec {
                        # second one includes both.
 
     font = "JetBrains Mono"; # Selected font
-    fontPkg = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono"]; });
+    fontPkg = (pkgs.nerd-fonts.jetbrains-mono);
     fontSize = 12; # Font size
 
     icons = "Papirus";
