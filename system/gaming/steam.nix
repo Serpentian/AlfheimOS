@@ -6,6 +6,9 @@
         enable = true;
         remotePlay.openFirewall = true; # Steam Remote Play.
         dedicatedServer.openFirewall = true; # Source Dedicated Server.
+        extraCompatPackages = with pkgs; [
+            proton-ge-bin
+        ];
     };
 
     programs.steam.package = pkgs.steam.override {
