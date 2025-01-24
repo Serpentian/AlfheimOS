@@ -22,8 +22,8 @@
                 };
                 bg = "#${config.lib.stylix.colors.base00}";
                 fg = "#${config.lib.stylix.colors.base05}";
-                widget = "#${config.lib.stylix.colors.base05}";
-                border = "#${config.lib.stylix.colors.base05}";
+                widget = "#${config.lib.stylix.colors.base02}";
+                border = "#${config.lib.stylix.colors.base02}";
             };
         };
         font = {

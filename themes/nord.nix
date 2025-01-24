@@ -2,7 +2,10 @@
 {
     themeName = "nord";
     wallpaper = ../non-nix/wallpapers/violet-nord.png;
-    override = null;
+    override = {
+        base02 = "#445060";
+        base05 = "#fffcf0";
+    };
 
     # Override stylix theme of btop.
     btopTheme = "nord";
@@ -14,9 +17,7 @@
     bordersPlusPlus = false;
     ags = {
         theme = {
-            palette = {
-                widget = "#434c5e";
-            };
+            palette = {};
             border = {
                 width = 1;
                 opacity = 96;
