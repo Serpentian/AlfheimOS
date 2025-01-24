@@ -97,7 +97,7 @@ home-manager switch --flake .
 
 ![Screen](./assets/catppuccin/overview.png)
 
-![Screen2](./assets/gruvbox/overview.png)
+![Screen2](./assets/nord/overview.png)
 
 ![Screen3](./assets/everforest/overview.png)
 
