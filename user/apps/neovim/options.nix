@@ -12,5 +12,6 @@
         smartindent = true; # Insert indents automatically
         undofile = true;
         undolevels = 10000;
+        scrolloff = 10;
     };
 }
