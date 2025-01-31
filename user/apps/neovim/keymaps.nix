@@ -84,5 +84,11 @@
         action = "<cmd>qa<cr>";
         options = {desc = "Quit all";};
     }
+    {
+        mode = "n";
+        key = "<Esc>";
+        action = "<cmd>noh<cr>";
+        options = {desc = "Quit all";};
+    }
     ];
 }
