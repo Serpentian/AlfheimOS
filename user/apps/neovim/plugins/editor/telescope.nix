@@ -45,6 +45,10 @@
                 action = "live_grep";
                 options.desc = "Live grep";
             };
+            "<leader>fs" = {
+                action = "session-lens";
+                options.desc = "Find sessions";
+            };
             "<leader>gf" = {
                 action = "git_files";
                 options.desc = "Search git files";

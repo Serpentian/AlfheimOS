@@ -21,6 +21,7 @@
         ./plugins/editor/toggleterm.nix
         ./plugins/editor/mini.nix
         ./plugins/editor/markdown.nix
+        ./plugins/editor/session.nix
 
         # UI plugins
         ./plugins/ui/bufferline.nix

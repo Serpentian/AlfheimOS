@@ -54,7 +54,7 @@
                 group = "+terminal";
             }
             ];
-            window = {
+            win = {
                 border = "single";
             };
         };

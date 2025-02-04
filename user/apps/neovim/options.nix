@@ -13,5 +13,6 @@
         undofile = true;
         undolevels = 10000;
         scrolloff = 10;
+        sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
     };
 }
