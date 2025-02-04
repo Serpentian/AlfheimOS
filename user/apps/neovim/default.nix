@@ -26,6 +26,7 @@
         # UI plugins
         ./plugins/ui/bufferline.nix
         ./plugins/ui/lualine.nix
+        ./plugins/ui/dashboard.nix
     ] ++ lib.optional (settings.themeDetails.themeName != null)
         ./colorscheme/${settings.theme}.nix;
 
