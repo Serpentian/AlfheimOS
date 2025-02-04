@@ -40,6 +40,10 @@ in {
       "col.inactive_border" = "rgba(${config.lib.stylix.colors.base02}ff)";
     };
 
+    cursor = {
+      inactive_timeout = 5;
+    };
+
     decoration = {
       dim_special = 0.5;
       rounding = details.rounding;
