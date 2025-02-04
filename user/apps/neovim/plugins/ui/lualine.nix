@@ -3,9 +3,8 @@
         enable = true;
         settings = {
             theme = "auto";
-            extensions = ["fzf"];
+            extensions = ["fzf" "nvim-tree" "toggleterm" ];
             always_divide_middle = true;
-            ignore_focus = ["neo-tree"];
             globalstatus = true;
             component_separators = {
                 left = "|";
