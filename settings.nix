@@ -16,9 +16,9 @@ rec {
                        # Note, that first WM is included into work profile
                        # second one includes both.
 
-    font = "JetBrains Mono"; # Selected font
-    fontPkg = (pkgs.nerd-fonts.jetbrains-mono);
-    fontSize = 12; # Font size
+    font = "FiraCode Nerd Font"; # Selected font
+    fontPkg = (pkgs.nerd-fonts.fira-code);
+    fontSize = 13; # Font size
 
     icons = "Papirus";
     iconsPkg = pkgs.papirus-icon-theme;

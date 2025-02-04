@@ -2,6 +2,7 @@
     programs.nixvim.colorschemes.nord = {
         enable = true;
         settings = {
+            italic = false;
             disable_background = true;
             borders = false;
         };
