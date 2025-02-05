@@ -18,11 +18,10 @@
 
     wayland.windowManager.hyprland = {
         enable = true;
-        package = pkgs.hyprland;
+        package = inputs.hyprland.packages.${pkgs.system}.hyprland;
         systemd.enable = true;
         plugins = [
-            pkgs.hyprlandPlugins.hyprexpo
-            pkgs.hyprlandPlugins.hypr-dynamic-cursors
+            inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
         ] ++ lib.optional (settings.themeDetails.bordersPlusPlus)
             pkgs.hyprlandPlugins.borders-plus-plus;
     };

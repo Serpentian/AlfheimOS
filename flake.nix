@@ -40,7 +40,9 @@
     };
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        # Until nix-darwin/#1317 is fixed.
+        nixpkgs.url = "github:NixOS/nixpkgs?rev=d2faa1bbca1b1e4962ce7373c5b0879e5b12cef2";
+        # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         ags.url = "git+https://github.com/Aylur/ags?rev=60180a184cfb32b61a1d871c058b31a3b9b0743d";
@@ -60,6 +62,10 @@
         };
         hyprland-plugins = {
             url = "github:hyprwm/hyprland-plugins";
+            inputs.hyprland.follows = "hyprland";
+        };
+        hypr-dynamic-cursors = {
+            url = "github:VirtCode/hypr-dynamic-cursors";
             inputs.hyprland.follows = "hyprland";
         };
         plasma-manager = {

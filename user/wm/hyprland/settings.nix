@@ -42,7 +42,6 @@ in {
 
     cursor = {
       inactive_timeout = 5;
-      no_warps = true;
     };
 
     decoration = {
