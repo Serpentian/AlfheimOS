@@ -13,6 +13,7 @@
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
+        ../../user/apps/qutebrowser.nix
         # ../../user/apps/ytfzf.nix
         ../../user/apps/neofetch
         ../../user/shell/zsh.nix
