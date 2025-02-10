@@ -2,7 +2,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ../../themes/stylix.nix
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/desktop/boot.nix
@@ -12,7 +11,7 @@
         ../../system/gaming/nethack.nix
         # ../../system/apps/tlp.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;

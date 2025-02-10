@@ -8,7 +8,6 @@
     };
 
     # Override stylix theme of btop.
-    overrideBtop = true;
     btopTheme = "catppuccin";
 
     # Hyprland and ags.

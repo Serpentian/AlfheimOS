@@ -2,13 +2,13 @@
 {
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
         # ../../user/apps/w3m.nix
         ../../themes/stylix.nix
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
-        ../../user/apps/btop.nix
+        ../../user/apps/btop
         ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
@@ -42,6 +42,7 @@
         rtorrent
         swayimg
         openvpn
+        update-resolv-conf
         drawio
         gimp
         mpv

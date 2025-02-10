@@ -2,7 +2,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ../../themes/stylix.nix
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/laptop/boot.nix
