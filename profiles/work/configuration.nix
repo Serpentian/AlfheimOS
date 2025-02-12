@@ -5,11 +5,11 @@
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/desktop/boot.nix
+        ../../system/hardware/laptop/battery.nix
         ../../system/security/laptop/firewall.nix
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/gaming/nethack.nix
-        # ../../system/apps/tlp.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
         # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
