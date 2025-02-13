@@ -23,7 +23,9 @@
       "......" = "cd ../../../../../..";
       cat = "bat";
       gs = "git status";
+      gd = "git diff";
       gl = "git log";
+      ga = "git add";
       gc = "git commit";
       gca = "git commit -a";
       vim = "nvim";
