@@ -48,6 +48,7 @@
         telegram-desktop
         wayvnc
         drawio
+        krita
         gimp
         mpv
 
