@@ -1,4 +1,4 @@
-{ config, pkgs, settings, ...}:
+{ inputs, config, pkgs, settings, ...}:
 {
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
@@ -51,6 +51,9 @@
         krita
         gimp
         mpv
+
+        # Test.
+        inputs.zen-browser.packages."${system}".twilight
 
         # Overclock
         dmidecode
