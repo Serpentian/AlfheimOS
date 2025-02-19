@@ -5,6 +5,7 @@
             scrolling.smooth = true;
             qt.highdpi = true;
             zoom.default = 125;
+            auto_save.session = true;
         };
         searchEngines = {
             g = "https://www.google.com/search?hl=en&amp;q={}";
