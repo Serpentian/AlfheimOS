@@ -31,7 +31,7 @@
       vim = "nvim";
       v = "vim";
       mv = "mv -v";
-      cp = "cp -vr";
+      cp = "rsync -avhW --no-compress --progress";
       rm = "rm -rv";
       w3md = "w3m https://lite.duckduckgo.com/lite/";
       nix-tarantool = "nix develop ${settings.dotfilesDir}/shells/tarantool -c zsh";
