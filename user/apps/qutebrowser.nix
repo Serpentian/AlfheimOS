@@ -6,6 +6,7 @@
             qt.highdpi = true;
             zoom.default = 125;
             auto_save.session = true;
+            colors.webpage.darkmode.enabled = false;
         };
         searchEngines = {
             g = "https://www.google.com/search?hl=en&amp;q={}";
@@ -40,6 +41,7 @@
             # Local
             nd = "http://192.168.1.218:4533";
             qb = "http://192.168.1.218:8080";
+            sl = "http://192.168.1.218:5030";
         };
     };
 }
