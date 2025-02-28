@@ -2,7 +2,7 @@
 
 {
     home.packages = with pkgs; [
-        gnome.gnome-tweaks
+        gnome-tweaks
         gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
     ];
