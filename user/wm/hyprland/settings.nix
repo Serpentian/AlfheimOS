@@ -121,7 +121,7 @@ in {
 
     misc = {
       force_default_wallpaper = -1;
-      vrr = 2;
+      # vrr = 2;
     };
   };
 }

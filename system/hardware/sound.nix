@@ -9,7 +9,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  hardware.pulseaudio.enable = false;
   services.pipewire.extraConfig.pipewire = {
       "10-clock-rate" = {
           "context.properties" = {
