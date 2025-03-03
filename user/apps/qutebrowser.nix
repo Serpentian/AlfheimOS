@@ -1,6 +1,7 @@
 {
     programs.qutebrowser = {
         enable = true;
+        loadAutoconfig = true;
         settings = {
             scrolling.smooth = true;
             qt.highdpi = true;
