@@ -4,5 +4,6 @@
  */
 final: prev: {
     _nemu = final.callPackage ../pkgs/nemu.nix {};
+    _hydra = final.callPackage ../pkgs/hydra.nix {};
     _stmp = final.callPackage ../pkgs/stmp.nix {};
 }

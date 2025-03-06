@@ -20,6 +20,7 @@
     wine64
     wine
     gamescope
+    _hydra
   ];
 
   networking.hosts = {
