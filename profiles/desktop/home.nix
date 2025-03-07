@@ -20,6 +20,7 @@
         ../../user/apps/mangohud.nix
         ../../user/gaming/nethack.nix
         ../../user/apps/neovim
+        ../../user/apps/vscode.nix
         ../../user/apps/btop
         ../../user/apps/mpd
     ];
