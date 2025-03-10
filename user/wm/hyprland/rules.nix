@@ -41,7 +41,6 @@
 
         workspace = [
             "special,gapsin:24,gapsout:64"
-            "10,border:false,rounding:false"
         ];
     };
 }
