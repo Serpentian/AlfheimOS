@@ -53,8 +53,7 @@
         aagl.url = "github:ezKEa/aagl-gtk-on-nix";
         aagl.inputs.nixpkgs.follows = "nixpkgs";
         superfile.url = "github:yorukot/superfile";
-        # Waiting for https://github.com/danth/stylix/issues/911 fix.
-        stylix.url = "git+https://github.com/danth/stylix?rev=eb7b19c26030c534664c840405c995a493a98013";
+        stylix.url = "github:danth/stylix";
         swww.url = "github:LGFae/swww";
         nixvim = {
             url = "github:nix-community/nixvim";
