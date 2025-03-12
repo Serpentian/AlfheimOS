@@ -21,6 +21,8 @@
           lua51Packages.luacov
           unzip
 
+          cpulimit
+
           # Tarantool dependencies
           curl
           libyaml
