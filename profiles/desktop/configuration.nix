@@ -21,7 +21,7 @@
         ../../system/gaming/minecraft.nix
         ../../system/security/vpn/xray.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
