@@ -19,6 +19,7 @@
         ../../user/shell/zsh.nix
         ../../user/apps/mangohud.nix
         ../../user/gaming/nethack.nix
+        ../../user/gaming/steam.nix
         ../../user/apps/neovim
         ../../user/apps/vscode.nix
         ../../user/apps/btop

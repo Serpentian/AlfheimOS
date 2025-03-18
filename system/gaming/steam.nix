@@ -1,30 +1,17 @@
 { config, pkgs, ... }:
 
 {
-    hardware.xpadneo.enable = true;
+
+    hardware.xpadneo.enable = true; # Xbox controller.
+
     programs.steam = {
         enable = true;
-        remotePlay.openFirewall = true; # Steam Remote Play.
-        dedicatedServer.openFirewall = true; # Source Dedicated Server.
-        extraCompatPackages = with pkgs; [
-            proton-ge-bin
-        ];
-    };
-
-    programs.steam.package = pkgs.steam.override {
-        extraPkgs = pkgs: with pkgs; [
-            libgdiplus
-            keyutils
-            libkrb5
-            libpng
-            libpulseaudio
-            libvorbis
-            stdenv.cc.cc.lib
-            xorg.libXcursor
-            xorg.libXi
-            xorg.libXinerama
-            xorg.libXScrnSaver
-        ];
+        # remotePlay.openFirewall = true; # Steam Remote Play.
+        # dedicatedServer.openFirewall = true; # Source Dedicated Server.
+        extraCompatPackages = with pkgs; [ proton-ge-bin ];
+        gamescopeSession = {
+            enable = true;
+        };
     };
 
     programs.gamemode = {
@@ -40,6 +27,5 @@
     environment.systemPackages = with pkgs; [
         (mangohud.override { lowerBitnessSupport = true; })
         gamescope
-        # gamemode
     ];
 }
