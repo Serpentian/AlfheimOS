@@ -40,7 +40,6 @@
     };
 
     inputs = {
-        # Until nix-darwin/#1317 is fixed.
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -52,7 +51,9 @@
         };
         aagl.url = "github:ezKEa/aagl-gtk-on-nix";
         aagl.inputs.nixpkgs.follows = "nixpkgs";
-        superfile.url = "github:yorukot/superfile";
+        # Waiting for #724 to be fixed
+        # superfile.url = "github:yorukot/superfile";
+        superfile.url = "git+https://github.com/yorukot/superfile?rev=e394a26549305e33129d0b54f3b0973231dbaf2a";
         stylix.url = "github:danth/stylix";
         swww.url = "github:LGFae/swww";
         nixvim = {
@@ -64,7 +65,9 @@
             inputs.hyprland.follows = "hyprland";
         };
         hypr-dynamic-cursors = {
-            url = "github:VirtCode/hypr-dynamic-cursors";
+            # Waiting for #66 to be fixed.
+            # url = "github:VirtCode/hypr-dynamic-cursors";
+            url = "github:myamusashi/hypr-dynamic-cursors";
             inputs.hyprland.follows = "hyprland";
         };
         plasma-manager = {
