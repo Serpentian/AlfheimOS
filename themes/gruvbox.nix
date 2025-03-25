@@ -1,7 +1,7 @@
 { dir }:
 {
     themeName = "gruvbox-material-dark-medium";
-    wallpaper = ../non-nix/wallpapers/dopesmoker_gruvbox.png;
+    wallpaper = ../non-nix/wallpapers/nature-gruvbox.jpg;
     override = null;
 
     # Override stylix theme of btop.
@@ -11,7 +11,7 @@
     opacity = 1.0;
     rounding = 25;
     shadow = true;
-    bordersPlusPlus = true;
+    bordersPlusPlus = false;
     ags = {
         theme = {
             palette = {

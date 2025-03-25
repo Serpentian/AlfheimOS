@@ -2,7 +2,7 @@
 {
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
         ../../themes/stylix.nix
         ../../user/apps/w3m.nix
         ../../user/apps/spotify.nix
@@ -45,6 +45,7 @@
         rtorrent
         cpulimit
         swayimg
+        kdePackages.gwenview
         vesktop
         revolt-desktop
         telegram-desktop
@@ -67,6 +68,7 @@
         chromium
         translate-shell
         tlaplus18
+        tlaplusToolbox
 
         # These packages are compulsury.
         # settings.editorPkg

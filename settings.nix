@@ -9,9 +9,9 @@ rec {
     name = "Nikita Zheleztsov"; # Name (git config)
     email = "n.zheleztsov@proton.me"; # Email (git config)
     dotfilesDir = "/home/${username}/.dotfiles"; # Absolute path of the local repo
-    theme = "nord"; # Selected theme from themes directory (./themes/)
+    theme = "gruvbox"; # Selected theme from themes directory (./themes/)
     themeDetails = import (./. + "/themes/${theme}.nix") {dir = dotfilesDir;};
-    wm = ["hyprland"]; # Selected window manager or desktop environment;
+    wm = ["hyprland" "gnome"]; # Selected window manager or desktop environment;
                        # must select one in both ./user/wm/ and ./system/wm/
                        # Note, that first WM is included into work profile
                        # second one includes both.
