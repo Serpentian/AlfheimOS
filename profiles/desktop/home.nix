@@ -20,6 +20,7 @@
         ../../user/apps/mangohud.nix
         ../../user/gaming/nethack.nix
         ../../user/gaming/steam.nix
+        ../../user/apps/sweethome.nix
         ../../user/apps/neovim
         ../../user/apps/vscode.nix
         ../../user/apps/btop

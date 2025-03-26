@@ -5,6 +5,7 @@
         gnome-tweaks
         gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
+        gnomeExtensions.useless-gaps
     ];
 
     dconf.settings = {
