@@ -21,6 +21,7 @@
         ../../user/gaming/nethack.nix
         ../../user/gaming/steam.nix
         ../../user/apps/sweethome.nix
+        ../../user/apps/tlaplus.nix
         ../../user/apps/neovim
         ../../user/apps/vscode.nix
         ../../user/apps/btop
@@ -68,8 +69,6 @@
         zoom-us
         chromium
         translate-shell
-        tlaplus18
-        tlaplusToolbox
 
         # These packages are compulsury.
         # settings.editorPkg
