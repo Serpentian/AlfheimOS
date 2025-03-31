@@ -2,17 +2,17 @@
 {
     imports = [
         (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
         ../../themes/stylix.nix
-        ../../user/apps/w3m.nix
-        ../../user/apps/spotify.nix
+        # ../../user/apps/w3m.nix
+        # ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
         ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
-        ../../user/apps/khal.nix
+        # ../../user/apps/khal.nix
         ../../user/apps/qutebrowser.nix
         # ../../user/apps/ytfzf.nix
         ../../user/apps/neofetch
@@ -20,12 +20,12 @@
         ../../user/apps/mangohud.nix
         ../../user/gaming/nethack.nix
         ../../user/gaming/steam.nix
-        ../../user/apps/sweethome.nix
+        # ../../user/apps/sweethome.nix
         ../../user/apps/tlaplus.nix
         ../../user/apps/neovim
-        ../../user/apps/vscode.nix
+        # ../../user/apps/vscode.nix
         ../../user/apps/btop
-        ../../user/apps/mpd
+        # ../../user/apps/mpd
     ];
 
     stylix.targets.hyprland.enable = false;
@@ -41,19 +41,18 @@
     home.packages = with pkgs; [
         sway-contrib.grimshot
         libreoffice-fresh
-        obs-studio
-        tty-clock
+        # obs-studio
+        # tty-clock
         qbittorrent
-        rtorrent
+        # rtorrent
         cpulimit
         swayimg
-        kdePackages.gwenview
         vesktop
-        revolt-desktop
+        # revolt-desktop
         telegram-desktop
-        wayvnc
+        # wayvnc
         drawio
-        flacon
+        # flacon
         krita
         gimp
         mpv
@@ -66,9 +65,9 @@
         sysbench
 
         # Sometimes needed for work.
-        zoom-us
+        # zoom-us
         chromium
-        translate-shell
+        # translate-shell
 
         # These packages are compulsury.
         # settings.editorPkg
@@ -112,5 +111,5 @@
         };
     };
 
-    home.stateVersion = "23.05";
+    home.stateVersion = "24.11";
 }

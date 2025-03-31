@@ -6,22 +6,22 @@
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/desktop/graphic.nix
         ../../system/hardware/desktop/mouse.nix
-        ../../system/hardware/desktop/printing.nix
+        # ../../system/hardware/desktop/printing.nix
         ../../system/hardware/desktop/boot.nix
         ../../system/security/desktop/firewall.nix
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/apps/thunar.nix
-        ../../system/apps/ollama.nix
+        # ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
-        ../../system/gaming/lutris.nix
-        ../../system/gaming/retroarch.nix
-        ../../system/gaming/aagl.nix
+        # ../../system/gaming/lutris.nix
+        # ../../system/gaming/retroarch.nix
+        # ../../system/gaming/aagl.nix
         ../../system/gaming/nethack.nix
-        ../../system/gaming/minecraft.nix
+        # ../../system/gaming/minecraft.nix
         ../../system/security/vpn/xray.nix
         (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
+        # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -85,6 +85,6 @@
 
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "23.11"; # Did you read the comment?
+    system.stateVersion = "24.11"; # Did you read the comment?
 }
 
