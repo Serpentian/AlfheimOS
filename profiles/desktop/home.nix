@@ -12,6 +12,7 @@
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
+        ../../user/apps/github.nix
         # ../../user/apps/khal.nix
         ../../user/apps/qutebrowser.nix
         # ../../user/apps/ytfzf.nix
