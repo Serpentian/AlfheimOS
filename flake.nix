@@ -65,9 +65,7 @@
             inputs.hyprland.follows = "hyprland";
         };
         hypr-dynamic-cursors = {
-            # Waiting for #66 to be fixed.
-            # url = "github:VirtCode/hypr-dynamic-cursors";
-            url = "github:myamusashi/hypr-dynamic-cursors";
+            url = "github:VirtCode/hypr-dynamic-cursors";
             inputs.hyprland.follows = "hyprland";
         };
         plasma-manager = {

@@ -5,12 +5,6 @@
         ./starship.nix
     ];
 
-    programs.fzf.enable = true;
-    programs.mcfly  = {
-        enable = true;
-        fzf.enable = true;
-    };
-
     programs.zsh = {
         enable = true;
         autosuggestion.enable = true;
