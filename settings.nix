@@ -26,8 +26,8 @@ rec {
     # Session variables.
     editor = "nvim"; # Default editor
     editorPkg = pkgs.neovim;
-    browser = "firefox"; # Default browser; must select one from ./user/app/browser/
-    browserPkg = pkgs.firefox;
+    browser = "qutebrowser"; # Default browser; must select one from ./user/app/browser/
+    browserPkg = pkgs.qutebrowser;
     term = "kitty"; # Default terminal command
     termPkg = pkgs.kitty;
 }
