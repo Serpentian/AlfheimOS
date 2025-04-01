@@ -51,9 +51,6 @@
         };
         aagl.url = "github:ezKEa/aagl-gtk-on-nix";
         aagl.inputs.nixpkgs.follows = "nixpkgs";
-        # Waiting for #724 to be fixed
-        # superfile.url = "github:yorukot/superfile";
-        superfile.url = "git+https://github.com/yorukot/superfile?rev=e394a26549305e33129d0b54f3b0973231dbaf2a";
         stylix.url = "github:danth/stylix";
         swww.url = "github:LGFae/swww";
         nixvim = {

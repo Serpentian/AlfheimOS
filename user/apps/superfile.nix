@@ -2,7 +2,7 @@
 
 {
     home.packages = with pkgs; [
-        inputs.superfile.packages.${pkgs.system}.default
+        superfile
     ];
 
     home.file.".config/superfile/config.toml".text = ''
