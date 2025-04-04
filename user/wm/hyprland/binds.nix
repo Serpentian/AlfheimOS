@@ -60,8 +60,11 @@
       ", XF86AudioMicMute, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
       ",XF86AudioMute, exec, pulsemixer --id $(pulsemixer --list-sinks | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
       "$mod ALT, l, exec, hyprmusic next"
+      ",XF86AudioNext, exec, hyprmusic next"
       "$mod ALT, h, exec, hyprmusic previous"
+      ", XF86AudioPrev, exec, hyprmusic previous"
       "$mod ALT, p, exec, hyprmusic play-pause"
+      ", XF86AudioPlay, exec, hyprmusic play-pause"
 
       # Swap windows with vim keys
       "$mod SHIFT, h, swapwindow, l"

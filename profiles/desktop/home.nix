@@ -61,6 +61,7 @@
         # Test.
         inputs.zen-browser.packages."${system}".twilight
         _subsonic-tui
+        typioca
 
         # Overclock
         dmidecode

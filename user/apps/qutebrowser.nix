@@ -44,5 +44,8 @@
             qb = "http://192.168.1.218:8080";
             sl = "http://192.168.1.218:5030";
         };
+        extraConfig = ''
+            c.tabs.padding = { "bottom": 8, "left": 5, "right": 5, "top": 8 }
+        '';
     };
 }
