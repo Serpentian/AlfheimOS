@@ -16,7 +16,7 @@
         ../../system/gaming/steam.nix
         # ../../system/gaming/lutris.nix
         # ../../system/gaming/retroarch.nix
-        # ../../system/gaming/aagl.nix
+        ../../system/gaming/aagl.nix
         ../../system/gaming/nethack.nix
         # ../../system/gaming/minecraft.nix
         ../../system/security/vpn/xray.nix
