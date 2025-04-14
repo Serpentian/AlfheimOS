@@ -11,8 +11,8 @@
     ];
 
     binde = [
-        ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
-        ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
+        ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +2"
+        ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -2"
         ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
         "$mod ALT, k, exec, pulsemixer --change-volume +5"
