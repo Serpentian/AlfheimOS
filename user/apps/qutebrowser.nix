@@ -18,6 +18,7 @@
         quickmarks = {
             # Work
             gh = "https://github.com";
+            ghr = "https://github.com/Serpentian?tab=repositories";
             ghi = "https://github.com/issues";
             ghp = "https://github.com/pulls";
             ghn = "https://github.com/notifications";
