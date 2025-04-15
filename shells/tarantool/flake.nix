@@ -21,6 +21,7 @@
           lua51Packages.luacov
           lua51Packages.luacheck
           unzip
+          pkg-config
 
           cpulimit
 
