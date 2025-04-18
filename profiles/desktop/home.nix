@@ -61,7 +61,6 @@
         # Test.
         inputs.zen-browser.packages."${system}".twilight
         _subsonic-tui
-        airshipper
         typioca
 
         # Overclock
