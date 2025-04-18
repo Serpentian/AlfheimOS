@@ -14,7 +14,7 @@
         ../../system/apps/thunar.nix
         # ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
-        ../../system/gaming/lutris.nix
+        # ../../system/gaming/lutris.nix
         # ../../system/gaming/retroarch.nix
         ../../system/gaming/aagl.nix
         ../../system/gaming/nethack.nix
