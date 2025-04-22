@@ -44,6 +44,7 @@ api.nvim_win_set_cursor(0, {api.nvim_buf_line_count(0), 0})
       window_margin_width = 0;
       window_padding_width = 15;
       enable_audio_bell = "no";
+      cursor_trail = 4;
       scrollback_pager = ''
          nvim +"source /home/serpentian/.config/kitty/vim-mode.lua"
       '';
