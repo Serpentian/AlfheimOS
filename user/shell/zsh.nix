@@ -44,7 +44,7 @@
             nekoray = "xhost + local:; sudo nekoray";
             mp = "ncmpcpp";
         };
-        initExtra = ''
+        initContent = ''
             set -o emacs
         '';
     };
