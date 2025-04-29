@@ -2,6 +2,8 @@
 
 {
     imports = [
+        ./bat.nix
+        ./television
         ./starship.nix
     ];
 
@@ -46,11 +48,10 @@
         };
         initContent = ''
             set -o emacs
-        '';
+        '' + (builtins.readFile ./television/zshrc);
     };
 
     home.packages = with pkgs; [
         eza
-        bat
     ];
 }
