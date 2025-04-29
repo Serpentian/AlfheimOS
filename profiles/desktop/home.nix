@@ -71,6 +71,7 @@
         # Sometimes needed for work.
         # zoom-us
         chromium
+        unzip
         # translate-shell
 
         # These packages are compulsury.
