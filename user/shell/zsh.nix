@@ -5,6 +5,7 @@
         ./bat.nix
         ./television
         ./starship.nix
+        ./tmux
     ];
 
     programs.zsh = {
@@ -25,8 +26,8 @@
             "......" = "cd ../../../../../..";
             cat = "bat";
             gs = "git status";
-            gd = "git diff";
-            gl = "git log";
+            gd = "tv git-diff";
+            gl = "tv git-log";
             ga = "git add";
             gc = "git commit";
             gca = "git commit -a";
@@ -53,5 +54,6 @@
 
     home.packages = with pkgs; [
         eza
+        tldr
     ];
 }

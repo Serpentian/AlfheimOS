@@ -42,7 +42,7 @@ api.nvim_win_set_cursor(0, {api.nvim_buf_line_count(0), 0})
       touch_scroll_multiplier = "1.0";
       wheel_scroll_multiplier = "5.0";
       window_margin_width = 0;
-      window_padding_width = 15;
+      window_padding_width = "15 15 0";
       enable_audio_bell = "no";
       cursor_trail = 4;
       scrollback_pager = ''

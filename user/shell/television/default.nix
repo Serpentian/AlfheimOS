@@ -2,6 +2,7 @@
 {
     home.packages = with pkgs; [
         television
+        nix-search-tv
     ];
 
     home.file.".config/television/themes/stylix.toml".text = ''

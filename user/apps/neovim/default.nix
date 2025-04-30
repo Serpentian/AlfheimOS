@@ -22,6 +22,7 @@
         ./plugins/editor/mini.nix
         ./plugins/editor/markdown.nix
         ./plugins/editor/session.nix
+        ./plugins/editor/tmux-navigator.nix
 
         # UI plugins
         ./plugins/ui/bufferline.nix

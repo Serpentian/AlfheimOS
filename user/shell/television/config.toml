@@ -149,7 +149,7 @@ fallback_channel = "files"
 ]
 "docker-images" = ["docker run"]
 "git-repos" = ["nvim", "code", "hx", "git clone"]
-
+"nix" = ["nix", "nix search"]
 
 [shell_integration.keybindings]
 # controls which key binding should trigger tv
