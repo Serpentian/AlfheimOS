@@ -90,7 +90,9 @@
       "$mod, 0,exec,hyprworkspace 10"
 
       "$mod CTRL, h, workspace, r-1"
+      "$mod, Left, workspace, r-1"
       "$mod CTRL, l, workspace, r+1"
+      "$mod, Right, workspace, r+1"
 
       # Scroll through monitor workspaces with mod + scroll
       "$mod, mouse_down, workspace, r-1"
