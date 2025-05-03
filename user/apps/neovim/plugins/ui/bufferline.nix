@@ -33,7 +33,7 @@
 
     {
       mode = "n";
-      key = "<leader>bd";
+      key = "<leader>bx";
       action.__raw = ''
                 function()
                     local bd = require("mini.bufremove").delete
@@ -56,7 +56,7 @@
     }
     {
       mode = "n";
-      key = "<leader>bD";
+      key = "<leader>bX";
       action.__raw = ''
         function() require("mini.bufremove").delete(0, true) end
       '';

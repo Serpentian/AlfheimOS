@@ -9,8 +9,4 @@
             ps.context-cyrillicnumbers
         ]))
     ];
-
-    programs.nixvim.plugins.vimtex = {
-        enable = true;
-    };
 }
