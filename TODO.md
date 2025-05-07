@@ -1,8 +1,8 @@
 ### Todo
 
 - [ ] tcpdump with tarantool patch, should be placed in shell.
-- [ ] mpd with patched subidy
 - [ ] LSP with AI in neovim
+- [ ] Replace tree in neovim, need ability to search for files, or auto expand trees.
 
 ### In Progress
 

@@ -7,6 +7,7 @@ in {
         prefix = "C-s";
         terminal = "tmux-256color";
         escapeTime = 0;
+        mouse = true;
         historyLimit = 10000;
         disableConfirmationPrompt = true;
         plugins = with pkgs.tmuxPlugins; [
