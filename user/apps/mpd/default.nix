@@ -2,6 +2,7 @@
 {
     imports = [
         ./ncmpcpp.nix
+        ./mpdscribble.nix
     ];
 
     home.packages = with pkgs; [
