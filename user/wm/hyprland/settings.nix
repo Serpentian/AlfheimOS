@@ -29,7 +29,7 @@ in {
       # "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
       "[workspace 2 silent] firefox"
       "[workspace 3 silent] kitty btop"
-      "[workspace 3 silent] kitty subsonic-tui"
+      "[workspace 3 silent] kitty ncmpcpp"
       "[workspace 3 silent] kitty cava"
       "steam -nochatui -nofriendsui -silent -vgui"
     ];

@@ -27,7 +27,7 @@
         ../../user/apps/neovim
         # ../../user/apps/vscode.nix
         ../../user/apps/btop
-        # ../../user/apps/mpd
+        ../../user/apps/mpd
     ];
 
     stylix.targets.hyprland.enable = false;

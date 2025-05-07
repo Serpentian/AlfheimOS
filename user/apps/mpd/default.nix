@@ -15,7 +15,7 @@
 
     services.mpd = {
         enable = true;
-        musicDirectory = "${config.home.homeDirectory}/Drives/hdd/Music";
+        musicDirectory = "${config.home.homeDirectory}/Drives/network/music";
         extraConfig = ''
 audio_output {
         type            "pipewire"

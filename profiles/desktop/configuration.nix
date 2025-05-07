@@ -8,6 +8,7 @@
         ../../system/hardware/desktop/mouse.nix
         # ../../system/hardware/desktop/printing.nix
         ../../system/hardware/desktop/boot.nix
+        ../../system/hardware/desktop/nfs.nix
         ../../system/security/desktop/firewall.nix
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
