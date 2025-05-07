@@ -4,7 +4,7 @@
         # Any C compiler is required for proper work of the treesitter.
         gcc
         tree-sitter
-        nodejs_23
+        nodejs
     ];
 
     programs.nixvim.plugins.treesitter = {
