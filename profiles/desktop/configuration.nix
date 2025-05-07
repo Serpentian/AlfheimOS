@@ -12,6 +12,7 @@
         ../../system/security/desktop/firewall.nix
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
+        ../../system/security/sops.nix
         ../../system/apps/thunar.nix
         # ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix

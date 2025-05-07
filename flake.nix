@@ -11,6 +11,7 @@
             ${settings.hostname} = nixpkgs.lib.nixosSystem {
                 modules = [
                     inputs.stylix.nixosModules.stylix
+                    inputs.sops-nix.nixosModules.sops
                     (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix")
                 ];
                 specialArgs = {
@@ -30,6 +31,7 @@
                     inputs.plasma-manager.homeManagerModules.plasma-manager
                     inputs.stylix.homeManagerModules.stylix
                     inputs.nixvim.homeManagerModules.nixvim
+                    inputs.sops-nix.homeManagerModules.sops
                 ];
                 extraSpecialArgs = {
                     inherit inputs;
@@ -71,5 +73,6 @@
             inputs.home-manager.follows = "home-manager";
         };
         zen-browser.url = "github:0xc000022070/zen-browser-flake";
+        sops-nix.url = "github:Mic92/sops-nix";
     };
 }

@@ -41,6 +41,7 @@
     nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     home.packages = with pkgs; [
+        gnupg
         sway-contrib.grimshot
         libreoffice-fresh
         # obs-studio
