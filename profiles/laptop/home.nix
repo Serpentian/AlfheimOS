@@ -7,15 +7,17 @@
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
-        ../../user/apps/btop.nix
-        ../../user/apps/ranger.nix
+        ../../user/apps/btop
+        ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
         ../../user/apps/neofetch
-        ../../user/apps/nvim.nix
+        ../../user/apps/neovim
         ../../user/shell/zsh.nix
+        ../../user/gaming/nethack.nix
+        ../../user/apps/tlaplus.nix
     ];
 
     stylix.targets.hyprland.enable = false;
@@ -31,17 +33,24 @@
     home.packages = with pkgs; [
         sway-contrib.grimshot
         libreoffice-fresh
+        yubikey-manager
         obs-studio
         tty-clock
+        teleport
         rtorrent
+        tigervnc
         swayimg
-        vesktop
+        openvpn
+        update-resolv-conf
         drawio
         gimp
         mpv
 
+        # Sometimes needed for work.
+        chromium
+
         # These packages are compulsury.
-        settings.editorPkg
+        # settings.editorPkg
         settings.browserPkg
         settings.termPkg
     ];
@@ -73,17 +82,11 @@
     services.kdeconnect.enable = true;
     programs.home-manager.enable = true;
 
-    colorScheme = inputs.nix-colors.colorSchemes.${settings.theme};
-
     gtk = {
         enable = true;
         iconTheme = {
             name = settings.icons;
             package = settings.iconsPkg;
-        };
-        font = {
-            name = settings.font;
-            size = settings.fontSize;
         };
     };
 

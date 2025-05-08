@@ -16,8 +16,11 @@
           semgrep
           gdb
 
+          cpulimit
+
           # tt
           lua51Packages.lua
+          lua51Packages.luacheck
           lua51Packages.luacov
           lua51Packages.luacheck
           unzip
