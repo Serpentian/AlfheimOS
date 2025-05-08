@@ -3,7 +3,6 @@
 in {
     programs.tmux = {
         enable = true;
-        shell = "${pkgs.zsh}/bin/zsh";
         prefix = "C-s";
         terminal = "tmux-256color";
         escapeTime = 0;

@@ -3,6 +3,7 @@
         spaces = {};
         tabs = {};
         removeTrailingSpace = {};
+        panes = {};
     };
 
     programs.nixvim.autoCmd = [
@@ -47,6 +48,18 @@
                 save_cursor = vim.fn.getpos(".")
                 vim.cmd([[%s/\s\+$//e]])
                 vim.fn.setpos(".", save_cursor)
+            end
+            '';
+        };
+    }
+    {
+        group = "panes";
+        event = ["VimResized"];
+        pattern = "*";
+        callback = {
+            __raw = ''
+            function()
+                vim.api.nvim_command("wincmd =")
             end
             '';
         };
