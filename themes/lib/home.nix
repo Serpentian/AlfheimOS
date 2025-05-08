@@ -9,6 +9,10 @@ in {
         };
     };
 
+    home.packages = with pkgs; [
+        details.fontPkg
+    ];
+
     stylix = {
         targets.nixvim.enable =
             lib.mkIf (settings.themeDetails.themeName != null) false;

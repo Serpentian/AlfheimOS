@@ -10,10 +10,10 @@
 
       add_newline = true;
       character = {
-        error_symbol = "[](bold red)";
-        success_symbol = "[](bold blue)";
-        vicmd_symbol = "[](bold yellow)";
-        format = "$symbol [|](bold bright-black) ";
+        error_symbol = "[ ](bold red)";
+        success_symbol = "[ ](bold blue)";
+        vicmd_symbol = "[ ](bold yellow)";
+        format = "[󰮯 ](bold blue)[|](bold bright-black) ";
       };
 
       hostname = {
@@ -32,7 +32,7 @@
       };
 
       lua = {
-        symbol = "[](blue) ";
+        symbol = "[ ](blue) ";
       };
 
       c = {
@@ -40,7 +40,7 @@
       };
 
       directory = {
-        read_only = " ";
+        read_only = " ";
       };
 
       git_branch = {
