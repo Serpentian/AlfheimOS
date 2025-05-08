@@ -7,4 +7,5 @@ final: prev: {
     _hydra = final.callPackage ../pkgs/hydra.nix {};
     _stmp = final.callPackage ../pkgs/stmp.nix {};
     _subsonic-tui = final.callPackage ../pkgs/subsonic-tui.nix {};
+    _neonmodem = final.callPackage ../pkgs/neonmodem.nix {};
 }
