@@ -67,10 +67,10 @@
       ", XF86AudioPlay, exec, hyprmusic play-pause"
 
       # Swap windows with vim keys
-      "$mod SHIFT, h, swapwindow, l"
-      "$mod SHIFT, l, swapwindow, r"
-      "$mod SHIFT, k, swapwindow, u"
-      "$mod SHIFT, j, swapwindow, d"
+      "$mod SHIFT, h, movewindow, l"
+      "$mod SHIFT, l, movewindow, r"
+      "$mod SHIFT, k, movewindow, u"
+      "$mod SHIFT, j, movewindow, d"
 
       "$mod SHIFT, c, centerwindow, 1"
 
