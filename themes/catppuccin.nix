@@ -1,4 +1,4 @@
-{ dir, ...}:
+{ pkgs, ...}:
 {
     themeName = "catppuccin-mocha";
     wallpaper = ../non-nix/wallpapers/evening-sky.png;
@@ -34,4 +34,11 @@
             opacity = 0;
         };
     };
+
+    font = "FiraCode Nerd Font"; # Selected font
+    fontPkg = (pkgs.nerd-fonts.fira-code);
+    fontSize = 13; # Font size
+
+    icons = "Papirus";
+    iconsPkg = pkgs.papirus-icon-theme;
 }

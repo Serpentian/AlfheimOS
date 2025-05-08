@@ -1,10 +1,8 @@
 { config, pkgs, settings, inputs, ...}:
 {
     imports = [
-        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
-        # ../../user/apps/w3m.nix
-        ../../themes/stylix.nix
+        ../../themes/lib/common.nix
+        ../../themes/lib/home.nix
         ../../user/apps/spotify.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
@@ -14,15 +12,13 @@
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
-        # ../../user/apps/qutebrowser.nix
         ../../user/apps/ssh.nix
         ../../user/apps/neofetch
-        ../../user/apps/neovim
-        ../../user/shell/zsh.nix
         ../../user/gaming/nethack.nix
-    ];
-
-    stylix.targets.hyprland.enable = false;
+        ../../user/shells/${settings.shell}.nix
+    ] ++ (map (wm: ../../user/wm/${wm}.nix) settings.wms)
+      ++ (map (editor: ../../user/editors/${editor}) settings.editors)
+      ++ (map (browser: ../../user/browsers/${browser}.nix) settings.browsers);
 
     home = {
         username = settings.username;
@@ -32,6 +28,7 @@
     # Add packages from the pkgs dir
     nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
+
     home.packages = with pkgs; [
         sway-contrib.grimshot
         libreoffice-fresh
@@ -75,21 +72,10 @@
     };
 
     home.sessionVariables = {
-        EDITOR = settings.editor;
-        TERM = settings.term;
-        BROWSER = settings.browser;
+        EDITOR = settings.preferredEditor;
+        BROWSER = settings.preferredBrowser;
     };
 
-    services.kdeconnect.enable = true;
     programs.home-manager.enable = true;
-
-    gtk = {
-        enable = true;
-        iconTheme = {
-            name = settings.icons;
-            package = settings.iconsPkg;
-        };
-    };
-
     home.stateVersion = "23.05";
 }

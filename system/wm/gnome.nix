@@ -3,7 +3,6 @@
 {
     imports = [
         ./common/wayland.nix
-        ./common/fonts.nix
     ];
 
     services.udev.packages = with pkgs; [ gnome-settings-daemon ];

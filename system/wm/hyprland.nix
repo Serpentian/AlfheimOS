@@ -3,7 +3,6 @@
 {
     imports = [
         ./common/wayland.nix
-        ./common/fonts.nix
     ];
 
     environment.systemPackages = with pkgs; [

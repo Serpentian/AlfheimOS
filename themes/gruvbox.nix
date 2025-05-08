@@ -1,4 +1,4 @@
-{ dir }:
+{pkgs, ...}:
 {
     themeName = "gruvbox-material-dark-medium";
     wallpaper = ../non-nix/wallpapers/nature-gruvbox.jpg;
@@ -29,4 +29,11 @@
             opacity = 0;
         };
     };
+
+    font = "FiraCode Nerd Font"; # Selected font
+    fontPkg = (pkgs.nerd-fonts.fira-code);
+    fontSize = 13; # Font size
+
+    icons = "Papirus";
+    iconsPkg = pkgs.papirus-icon-theme;
 }

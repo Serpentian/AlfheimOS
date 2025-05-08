@@ -30,8 +30,8 @@ api.nvim_win_set_cursor(0, {api.nvim_buf_line_count(0), 0})
       cursor_underline_thickness = "1.5";
       disable_ligatures = "never";
       editor = "nvim";
-      font_family = settings.font;
-      font_size = settings.fontSize;
+      font_family = settings.themeDetails.font;
+      font_size = settings.themeDetails.fontSize;
       hide_window_decorations = "titlebar-only";
       inactive_tab_font_style = "normal";
       inactive_text_alpha = "1.0";

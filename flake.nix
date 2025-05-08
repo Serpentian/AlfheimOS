@@ -2,7 +2,7 @@
     description = "Alfheim NixOs";
 
     outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
-        settings = import (./. + "/settings.nix") {inherit pkgs;};
+        settings = import (./. + "/settings.nix") {inherit pkgs inputs;};
         pkgs = import nixpkgs {system = settings.system;};
     in {
         # NixOS configuration entrypoint.

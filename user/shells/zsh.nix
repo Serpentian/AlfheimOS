@@ -2,11 +2,14 @@
 
 {
     imports = [
-        ./bat.nix
-        ./television
-        ./starship.nix
-        ./tmux
+        ./lib/bat.nix
+        ./lib/starship.nix
+        ./lib/television
+        ./lib/tmux
     ];
+
+    programs.tmux.shell = "${pkgs.zsh}/bin/zsh";
+    programs.starship.enableZshIntegration = true;
 
     programs.zsh = {
         enable = true;
@@ -49,7 +52,7 @@
         };
         initContent = ''
             set -o emacs
-        '' + (builtins.readFile ./television/zshrc);
+        '' + (builtins.readFile ./lib/television/zshrc);
     };
 
     home.packages = with pkgs; [

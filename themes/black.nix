@@ -1,4 +1,4 @@
-{ dir }:
+{pkgs, ...}:
 {
     themeName = "black-metal-immortal";
     wallpaper = ../non-nix/wallpapers/black.png;
@@ -27,4 +27,11 @@
             opacity = 0;
         };
     };
+
+    font = "FiraCode Nerd Font"; # Selected font
+    fontPkg = (pkgs.nerd-fonts.fira-code);
+    fontSize = 13; # Font size
+
+    icons = "Papirus";
+    iconsPkg = pkgs.papirus-icon-theme;
 }

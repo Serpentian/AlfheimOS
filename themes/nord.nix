@@ -1,4 +1,4 @@
-{ dir }:
+{pkgs, ...}:
 {
     themeName = "nord";
     wallpaper = ../non-nix/wallpapers/violet-nord.png;
@@ -30,4 +30,11 @@
             opacity = 0;
         };
     };
+
+    font = "FiraCode Nerd Font"; # Selected font
+    fontPkg = (pkgs.nerd-fonts.fira-code);
+    fontSize = 13; # Font size
+
+    icons = "Papirus";
+    iconsPkg = pkgs.papirus-icon-theme;
 }

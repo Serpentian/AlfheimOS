@@ -1,4 +1,4 @@
-{ dir }:
+{pkgs, ...}:
 {
     themeName = "everforest-dark-hard";
     wallpaper = ../non-nix/wallpapers/frieren-everforest.jpg;
@@ -23,4 +23,11 @@
             flatButtons = true;
         };
     };
+
+    font = "FiraCode Nerd Font"; # Selected font
+    fontPkg = (pkgs.nerd-fonts.fira-code);
+    fontSize = 13; # Font size
+
+    icons = "Papirus";
+    iconsPkg = pkgs.papirus-icon-theme;
 }

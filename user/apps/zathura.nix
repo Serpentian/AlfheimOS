@@ -1,10 +1,10 @@
-{ pkgs, lib, settings, config, ... }:
-
-{
+{ pkgs, lib, settings, config, ... }: let
+    fontSize = builtins.toString settings.themeDetails.fontSize;
+in {
     programs.zathura = {
         enable = true;
         options = {
-            font = "${settings.font} 12";
+            font = "${settings.themeDetails.font} ${fontSize}";
             selection-clipboard = "clipboard";
             recolor = true;
             # Enable transparency.

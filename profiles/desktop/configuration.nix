@@ -22,13 +22,12 @@
         ../../system/gaming/nethack.nix
         # ../../system/gaming/minecraft.nix
         ../../system/security/vpn/xray.nix
-        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
-    ];
+        ../../themes/lib/common.nix
+    ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    nixpkgs.overlays = import ../../lib/overlays.nix; # Add packages from the pkgs dir
+    nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -50,17 +49,15 @@
         LC_ALL = settings.locale;
     };
 
+    programs.${settings.shell}.enable = true;
+
     # Users.
     users.users.${settings.username} = {
         isNormalUser = true;
+        shell = settings.shellPkg;
         description = settings.username;
         extraGroups = [ "wheel" "gamemode" ];
     };
-
-    # Use zsh. TODO: option to flake.nix, several shells.
-    environment.shells = with pkgs; [ zsh ];
-    users.defaultUserShell = pkgs.zsh;
-    programs.zsh.enable = true;
 
     # See https://nix.dev/permalink/stub-ld.
     programs.nix-ld.enable = true;

@@ -10,9 +10,7 @@
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
         ../../system/gaming/nethack.nix
-        (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../system/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
-    ];
+    ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -34,17 +32,15 @@
         LC_ALL = settings.locale;
     };
 
+    programs.${settings.shell}.enable = true;
+
     # Users.
     users.users.${settings.username} = {
+        shell = settings.shellPkg;
         isNormalUser = true;
         description = settings.username;
         extraGroups = [ "wheel" ];
     };
-
-    # Use zsh. TODO: option to flake.nix, several shells.
-    environment.shells = with pkgs; [ zsh ];
-    users.defaultUserShell = pkgs.zsh;
-    programs.zsh.enable = true;
 
     # See https://nix.dev/permalink/stub-ld.
     programs.nix-ld.enable = true;

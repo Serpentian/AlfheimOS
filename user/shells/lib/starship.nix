@@ -3,7 +3,6 @@
 {
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
     settings = {
       format = ''
 [┌─>](bold blue) $all[└─>](bold blue) $character

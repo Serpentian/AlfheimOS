@@ -27,8 +27,8 @@
             };
         };
         font = {
-            size = settings.fontSize;
-            name = "${settings.font}";
+            size = settings.themeDetails.fontSize;
+            name = settings.themeDetails.font;
         };
         widget = {
             opacity = details.opacity * 100;

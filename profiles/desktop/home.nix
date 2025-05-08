@@ -1,11 +1,8 @@
 { inputs, config, pkgs, settings, ...}:
 {
     imports = [
-        (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 0)+".nix")
-        # (./. + "../../../user/wm"+("/" + builtins.elemAt settings.wm 1)+".nix")
-        ../../themes/stylix.nix
-        # ../../user/apps/w3m.nix
-        # ../../user/apps/spotify.nix
+        ../../themes/lib/common.nix
+        ../../themes/lib/home.nix
         ../../user/apps/kitty.nix
         ../../user/apps/git.nix
         ../../user/apps/superfile.nix
@@ -13,24 +10,18 @@
         ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/github.nix
-        # ../../user/apps/khal.nix
-        ../../user/apps/qutebrowser.nix
-        # ../../user/apps/ytfzf.nix
         ../../user/apps/neofetch
-        ../../user/shell/zsh.nix
         ../../user/apps/mangohud.nix
         ../../user/gaming/nethack.nix
         ../../user/gaming/steam.nix
-        # ../../user/apps/sweethome.nix
         ../../user/apps/tlaplus.nix
         ../../user/apps/latex.nix
-        ../../user/apps/neovim
-        # ../../user/apps/vscode.nix
         ../../user/apps/btop
         ../../user/apps/mpd
-    ];
-
-    stylix.targets.hyprland.enable = false;
+        ../../user/shells/${settings.shell}.nix
+    ] ++ (map (wm: ../../user/wm/${wm}.nix) settings.wms)
+      ++ (map (editor: ../../user/editors/${editor}) settings.editors)
+      ++ (map (browser: ../../user/browsers/${browser}.nix) settings.browsers);
 
     home = {
         username = settings.username;
@@ -40,6 +31,7 @@
     # Add packages from the pkgs dir
     nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
+
     home.packages = with pkgs; [
         gnupg
         sway-contrib.grimshot
@@ -61,10 +53,7 @@
         mpv
 
         # Test.
-        inputs.zen-browser.packages."${system}".twilight
-        _subsonic-tui
-        airshipper
-        typioca
+        weechat
 
         # Overclock
         dmidecode
@@ -75,11 +64,6 @@
         chromium
         unzip
         # translate-shell
-
-        # These packages are compulsury.
-        # settings.editorPkg
-        settings.browserPkg
-        settings.termPkg
     ];
 
     xdg.enable = true;
@@ -101,22 +85,10 @@
     };
 
     home.sessionVariables = {
-        EDITOR = settings.editor;
-        TERM = settings.term;
-        BROWSER = settings.browser;
+        EDITOR = settings.preferredEditor;
+        BROWSER = settings.preferredBrowser;
     };
 
-    # programs.sagemath.enable = true;
-    services.kdeconnect.enable = true;
     programs.home-manager.enable = true;
-
-    gtk = {
-        enable = true;
-        iconTheme = {
-            name = settings.icons;
-            package = settings.iconsPkg;
-        };
-    };
-
     home.stateVersion = "24.11";
 }
