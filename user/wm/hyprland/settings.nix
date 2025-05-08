@@ -31,7 +31,7 @@ in {
       "[workspace 3 silent] kitty btop"
       "[workspace 3 silent] kitty ncmpcpp"
       "[workspace 3 silent] kitty cava"
-      "steam -nochatui -nofriendsui -silent -vgui"
+       # "steam -nochatui -nofriendsui -silent -vgui"
     ];
 
     general = {
