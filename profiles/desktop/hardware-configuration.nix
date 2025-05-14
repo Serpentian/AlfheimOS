@@ -27,6 +27,7 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/48903577-a70e-40f1-82bd-1be25407c20b";
       fsType = "ext4";
+      neededForBoot = true;
     };
 
   fileSystems."/home/serpentian/Drives/ssd" =
