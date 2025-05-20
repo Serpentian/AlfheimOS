@@ -33,6 +33,7 @@
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
 
     home.packages = with pkgs; [
+        sysstat
         gnupg
         sway-contrib.grimshot
         libreoffice-fresh
