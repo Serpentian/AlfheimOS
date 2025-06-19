@@ -29,7 +29,7 @@
                 modules = [
                     (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")
                     inputs.plasma-manager.homeManagerModules.plasma-manager
-                    inputs.stylix.homeManagerModules.stylix
+                    inputs.stylix.homeModules.stylix
                     inputs.nixvim.homeManagerModules.nixvim
                     inputs.sops-nix.homeManagerModules.sops
                 ];
