@@ -80,6 +80,8 @@
         vim
     ];
 
+    fonts.packages = [ settings.themeDetails.fontPkg ];
+
     # A lot of mpris packages require it.
     services.gvfs.enable = true;
 

@@ -20,5 +20,15 @@ in {
             name = "phinger-cursors-light";
             package = pkgs.phinger-cursors;
         };
+
+        fonts = {
+            sansSerif = {
+                package = details.fontPkg;
+                name = details.font;
+            };
+            serif = config.stylix.fonts.sansSerif;
+            monospace = config.stylix.fonts.sansSerif;
+            emoji = config.stylix.fonts.sansSerif;
+        };
     };
 }
