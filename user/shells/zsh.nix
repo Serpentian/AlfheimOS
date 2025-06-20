@@ -52,6 +52,8 @@
         };
         initContent = ''
             set -o emacs
+            GUIX_PROFILE="/home/serpentian/.config/guix/current"
+            . "$GUIX_PROFILE/etc/profile"
         '' + (builtins.readFile ./lib/television/zshrc);
     };
 
