@@ -16,7 +16,7 @@ rec {
     shell = "zsh"; # See user/shells directory.
     shellPkg = pkgs.zsh;
 
-    wms = ["hyprland"]; # See user/wm/ and system/wm directories.
+    wms = ["hyprland" "kde"]; # See user/wm/ and system/wm directories.
     editors = ["neovim"]; # See user/editors directory.
     browsers = ["zen-browser"]; # See user/browsers directory.
     preferredEditor = "nvim"; # Session variable $TERM.
