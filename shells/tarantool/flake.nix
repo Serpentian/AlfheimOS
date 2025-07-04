@@ -13,9 +13,7 @@
     {
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
-          semgrep
           gdb
-
           cpulimit
 
           # tt
@@ -34,7 +32,7 @@
 
           git
           gcc
-          clang
+          # clang
           c-ares
           gnumake
           cmake
@@ -61,18 +59,20 @@
             export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local/
             export TARANTOOL_INCDIR=$TARANTOOL_DIR/include
             export PATH=$TARANTOOL_DIR/bin:$PATH
-            export PATH=$HOME/.rocks/bin:$PATH
             # Cluster management
             export PATH=$HOME/Programming/tnt/tarantool/test-run:$PATH
             export PATH=$HOME/Programming/tnt/tt:$PATH
             # Lint check
             export PATH=$HOME/Programming/tnt/checkpatch:$PATH
             # Use gcc for compilation
-            # export CC=${pkgs.gcc}/bin/gcc
-            # export CXX=${pkgs.gcc}/bin/c++
-            export CC=${pkgs.clang}/bin/clang
-            export CXX=${pkgs.clang}/bin/clang++
+            export CC=${pkgs.gcc}/bin/gcc
+            export CXX=${pkgs.gcc}/bin/c++
+            # export CC=${pkgs.clang}/bin/clang
+            # export CXX=${pkgs.clang}/bin/clang++
             source $HOME/Programming/tnt/.venv/bin/activate
+            # Activate ssh.
+            eval `ssh-agent -s`
+            ssh-add ~/.ssh/work
         '';
 
         # See https://github.com/NixOS/nixpkgs/issues/18995
