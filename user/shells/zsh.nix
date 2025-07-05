@@ -45,6 +45,8 @@
             nix-lampray = "nix develop ${settings.dotfilesDir}/shells/lampray -c zsh";
             nix-invoke = "nix develop ${settings.dotfilesDir}/shells/invoke -c zsh";
             nix-comfy = "nix develop ${settings.dotfilesDir}/shells/comfy -c zsh";
+            nix-pkg-build = "nix build -f default.nix --arg pkgs 'import <nixpkgs> {}'";
+            nix-pkg-shell = "nix shell -f default.nix --arg pkgs 'import <nixpkgs> {}'";
             neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
             ytfzf = "ytfzf -T chafa";
             nekoray = "xhost + local:; sudo nekoray";
