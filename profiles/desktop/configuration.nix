@@ -15,7 +15,7 @@
         ../../system/security/sops.nix
         ../../system/apps/thunar.nix
         ../../system/apps/guix.nix
-        # ../../system/apps/ollama.nix
+        ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
         ../../system/gaming/lutris.nix
         # ../../system/gaming/retroarch.nix

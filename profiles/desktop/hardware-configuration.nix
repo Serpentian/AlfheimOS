@@ -35,7 +35,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/serpentian/Drives/hdd" =
+  fileSystems."/mnt/hdd" =
     { device = "/dev/disk/by-uuid/a5d270f4-5153-4b2a-9931-bd8b3335c906";
       fsType = "ext4";
     };
