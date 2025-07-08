@@ -48,6 +48,7 @@
             nix-pkg-build = "nix build -f default.nix --arg pkgs 'import <nixpkgs> {}'";
             nix-pkg-shell = "nix shell -f default.nix --arg pkgs 'import <nixpkgs> {}'";
             neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
+            git-clean = "git clean -xfd; git submodule foreach git clean -xfd";
             ytfzf = "ytfzf -T chafa";
             nekoray = "xhost + local:; sudo nekoray";
             mp = "ncmpcpp";
