@@ -1,6 +1,10 @@
 { settings, pkgs, ... }:
 
 {
+    environment.systemPackages = with pkgs; [
+        python313Packages.huggingface-hub
+    ];
+
     services.ollama = rec {
         enable = true;
 
