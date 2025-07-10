@@ -55,7 +55,7 @@
 
         # Test.
         weechat
-        _nyarch-assistant
+        # _nyarch-assistant
 
         # Overclock
         dmidecode
