@@ -1,4 +1,4 @@
-{ settings, config, pkgs, ... }:
+{ settings, config, pkgs, lib, ... }:
 
 {
     imports = [
@@ -49,14 +49,13 @@
             nix-pkg-shell = "nix shell -f default.nix --arg pkgs 'import <nixpkgs> {}'";
             neofetch = "neofetch --source ${settings.dotfilesDir}/user/apps/neofetch/snufkin.txt";
             git-clean = "git clean -xfd; git submodule foreach git clean -xfd";
+            guix-activate = ". '$/home/${settings.username}/.config/guix/current/etc/profile'";
             ytfzf = "ytfzf -T chafa";
             nekoray = "xhost + local:; sudo nekoray";
             mp = "ncmpcpp";
         };
         initContent = ''
             set -o emacs
-            GUIX_PROFILE="/home/serpentian/.config/guix/current"
-            . "$GUIX_PROFILE/etc/profile"
         '' + (builtins.readFile ./lib/television/zshrc);
     };
 
