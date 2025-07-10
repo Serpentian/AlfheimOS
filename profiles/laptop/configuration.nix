@@ -5,6 +5,7 @@
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/laptop/boot.nix
+        ../../system/hardware/desktop/mouse.nix
         ../../system/security/laptop/firewall.nix
         ../../system/security/virtualization/general.nix
         ../../system/security/virtualization/nemu
