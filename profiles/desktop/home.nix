@@ -34,6 +34,7 @@
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
 
     home.packages = with pkgs; [
+        calc
         sysstat
         gnupg
         sway-contrib.grimshot
