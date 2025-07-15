@@ -75,6 +75,48 @@
         options = {desc = "Previous tab";};
     }
 
+    ###################
+    # Computations    #
+    ###################
+    {
+        mode = "n";
+        key = "<leader>cm";
+        action.__raw = ''
+        function()
+            local data = vim.fn.getreg('"')  -- get unnamed register
+            if not data or data == "" then
+                vim.notify("Register is empty", vim.log.levels.WARN)
+                return
+            end
+
+            local lines = vim.split(data, "\n", { trimempty = true })
+            local sum, count = 0, 0
+            for _, line in ipairs(lines) do
+                local num = tonumber(line)
+                if num then
+                    sum = sum + num
+                    count = count + 1
+                end
+            end
+
+            if count == 0 then
+                vim.notify("No valid numbers found in register", vim.log.levels.ERROR)
+                return
+            end
+
+            local mean = sum / count
+            vim.notify(string.format("Mean = %.2f", mean), vim.log.levels.INFO)
+        end
+        '';
+        options = {desc = "Compute mean from unnamed register";};
+    }
+    {
+        mode = "v";
+        key = "<leader>cc";
+        action = "<cmd>'<,'>s/\\v(.+)/\\=submatch(1) . ' = ' . eval(submatch(1))<cr>";
+        options = {desc = "Eval selected lines";};
+    }
+
     ########
     # Misc #
     ########
