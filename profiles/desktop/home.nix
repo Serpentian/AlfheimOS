@@ -15,6 +15,7 @@
         ../../user/apps/ssh.nix
         ../../user/gaming/nethack.nix
         ../../user/gaming/steam.nix
+        ../../user/gaming/lutris.nix
         ../../user/apps/tlaplus.nix
         ../../user/apps/latex.nix
         ../../user/apps/btop
