@@ -18,7 +18,7 @@ rec {
 
     wms = ["hyprland" "kde"]; # See user/wm/ and system/wm directories.
     editors = ["neovim"]; # See user/editors directory.
-    browsers = ["zen-browser"]; # See user/browsers directory.
+    browsers = ["zen-browser" "qutebrowser" ]; # See user/browsers directory.
     preferredEditor = "nvim"; # Session variable $TERM.
     preferredBrowser = "zen"; # Session variable $BROWSER.
 }
