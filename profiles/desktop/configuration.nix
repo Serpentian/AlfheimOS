@@ -67,6 +67,7 @@
 
     # List of globally installed packages.
     environment.systemPackages = with pkgs; [
+        usbutils
         home-manager
         nix-index
         pciutils

@@ -4,7 +4,7 @@
   home.file.".config/nemu/nemu.cfg".text = ''
 [main]
 # virtual machine dir.
-vmdir = /home/serpentian/Drives/hdd/nemu
+vmdir = /mnt/hdd/nemu
 
 # path to database file.
 db = /home/serpentian/.local/share/nemu/nemu.db
