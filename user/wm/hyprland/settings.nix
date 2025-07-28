@@ -123,6 +123,7 @@ in {
 
         misc = {
             force_default_wallpaper = -1;
+            exit_window_retains_fullscreen = true;
         };
     };
 }
