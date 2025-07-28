@@ -35,6 +35,8 @@
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
 
     home.packages = with pkgs; [
+        obs-studio
+        lshw
         calc
         sysstat
         gnupg
