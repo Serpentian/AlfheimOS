@@ -1,6 +1,6 @@
 { inputs, pkgs, settings, lib, config, ... }: let
     details = settings.themeDetails;
-    asztal = pkgs.callPackage ../../../non-nix/ags/default.nix {inherit inputs;};
+    asztal = pkgs.callPackage ../../../../non-nix/ags/default.nix {inherit inputs;};
     agsColors = {
         wallpaper = details.wallpaper;
         theme = {
@@ -50,7 +50,7 @@ in {
 
     programs.ags = {
         enable = true;
-        configDir = ../../../non-nix/ags;
+        configDir = ../../../../non-nix/ags;
     };
 
     home.file.".cache/ags/options-nix.json".text = (builtins.toJSON agsOptions);

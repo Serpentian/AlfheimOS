@@ -11,12 +11,13 @@
     btopTheme = "catppuccin";
 
     # Hyprland and ags.
-    opacity = 0.8; # affects theme.blur in ags.
-    rounding = 25; # affects theme.rounding in ags.
-    shadow = false; # affects theme.shadows in ags.
+    opacity = 0.8;
+    rounding = 25;
+    shadow = false;
     bordersPlusPlus = false;
 
     # Override default settings in ags.
+    shell = "ags";
     ags = {
         theme = {
             palette = {
