@@ -15,13 +15,13 @@
         ../../system/security/sops.nix
         ../../system/apps/thunar.nix
         ../../system/apps/guix.nix
-        ../../system/apps/ollama.nix
+        # ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
         # ../../system/gaming/retroarch.nix
-        ../../system/gaming/aagl.nix
+        # ../../system/gaming/aagl.nix
         ../../system/gaming/nethack.nix
         # ../../system/gaming/minecraft.nix
-        ../../system/security/vpn/xray.nix
+        # ../../system/security/vpn/xray.nix
         ../../themes/lib/common.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 

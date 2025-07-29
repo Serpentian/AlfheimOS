@@ -4,7 +4,7 @@
         ./hardware-configuration.nix
         ../../system/hardware/sound.nix
         ../../system/hardware/bluetooth.nix
-        ../../system/hardware/desktop/boot.nix
+        ../../system/hardware/work/boot.nix
         ../../system/hardware/laptop/battery.nix
         ../../system/security/laptop/firewall.nix
         ../../system/security/virtualization/general.nix

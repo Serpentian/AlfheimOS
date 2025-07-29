@@ -8,35 +8,39 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3b51d682-c6db-46e2-a7e4-0ce41d7bb2e4";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/e1912d73-18fc-46cf-932d-6eddf22af460";
+      fsType = "xfs";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3A41-ECBF";
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/381D-6E77";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home" =
+  fileSystems."/home/serpentian/Drives/ssd1" =
     { device = "/dev/disk/by-uuid/48903577-a70e-40f1-82bd-1be25407c20b";
       fsType = "ext4";
-      neededForBoot = true;
     };
 
-  fileSystems."/home/serpentian/Drives/ssd" =
+  fileSystems."/home/serpentian/Drives/ssd2" =
     { device = "/dev/disk/by-uuid/a0cede19-b4ed-4362-a5ef-17a5c6b3ada3";
       fsType = "ext4";
     };
 
+  fileSystems."/home/serpentian/Drives/nvme" =
+    { device = "/dev/disk/by-uuid/3b51d682-c6db-46e2-a7e4-0ce41d7bb2e4";
+      fsType = "ext4";
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0ec06a80-6637-4a4f-8c94-c5d83d8a7d65"; }
+    [ { device = "/dev/disk/by-uuid/f049a537-4af0-4b28-9d68-b01d662b2a78"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -45,7 +49,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp5s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
