@@ -49,6 +49,7 @@ in {
         "zen.view.grey-out-inactive-windows" = false;
         "zen.tabs.vertical.right-side" = true;
         "zen.urlbar.replace-newtab" = false;
+        "media.hardwaremediakeys.enabled" = false;
         # Enable userChrome.css
         "devtools.debugger.remote-enabled" = true;
         "devtools.chrome.enable" = true;
