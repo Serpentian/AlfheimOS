@@ -69,6 +69,8 @@
 
         # Sometimes needed for work.
         # zoom-us
+        openvpn
+        update-resolv-conf
         chromium
         unzip
         # translate-shell
