@@ -25,6 +25,7 @@
       ++ (map (editor: ../../user/editors/${editor}) settings.editors)
       ++ (map (browser: ../../user/browsers/${browser}.nix) settings.browsers);
 
+    nix.package = pkgs.nix;
     home = {
         username = settings.username;
         homeDirectory = "/home/${settings.username}";
