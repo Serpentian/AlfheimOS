@@ -14,6 +14,7 @@
         ../../user/apps/mangohud.nix
         ../../user/apps/ssh.nix
         ../../user/gaming/nethack.nix
+        ../../user/gaming/oss-games.nix
         ../../user/gaming/steam.nix
         ../../user/gaming/lutris.nix
         ../../user/apps/tlaplus.nix
