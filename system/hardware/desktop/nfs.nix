@@ -4,7 +4,7 @@
     boot.supportedFilesystems = [ "nfs" ];
     services.nfs = {};
     fileSystems."/home/serpentian/Drives/network" = {
-        device = "192.168.1.218:/home/serpentian/media";
+        device = "192.168.1.219:/home/serpentian/media";
         fsType = "nfs";
     };
 }
