@@ -1,0 +1,9 @@
+[metadata]
+name = "nix"
+description = "A channel to find packages and options of NixOS"
+
+[source]
+command = "nix-search-tv print"
+
+[preview]
+command = "nix-search-tv preview {}"

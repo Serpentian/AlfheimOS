@@ -8,6 +8,7 @@
     home.file.".config/television/themes/stylix.toml".text = ''
 # general
 # background = nil, transparent
+remote_control_mode_bg = '#00000000'
 border_fg = '#${config.lib.stylix.colors.base04}'
 text_fg = '#${config.lib.stylix.colors.base05}'
 dimmed_text_fg = '#${config.lib.stylix.colors.base0D}'
@@ -30,5 +31,5 @@ send_to_channel_mode_fg = '#${config.lib.stylix.colors.base0D}'
         '';
 
     home.file.".config/television/config.toml".source = ./config.toml;
-    home.file.".config/television/default_channels.toml".source = ./default_channels.toml;
+    home.file.".config/television/cable/nix.toml".source = ./nix.toml;
 }
