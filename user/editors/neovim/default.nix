@@ -21,6 +21,7 @@
         ./plugins/editor/markdown.nix
         ./plugins/editor/session.nix
         ./plugins/editor/tmux-navigator.nix
+        ./plugins/editor/gitlinker.nix
 
         # UI plugins
         ./plugins/ui/bufferline.nix
