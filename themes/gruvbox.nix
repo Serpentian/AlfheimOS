@@ -6,6 +6,7 @@
 
     # Override stylix theme of btop.
     btopTheme = "gruvbox_dark_v2";
+    shell = "ags";
 
     # Hyprland and ags;
     opacity = 1.0;
