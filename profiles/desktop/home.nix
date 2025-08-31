@@ -12,6 +12,7 @@
         ../../user/apps/github.nix
         ../../user/apps/neofetch
         ../../user/apps/mangohud.nix
+        ../../user/apps/kdeconnect.nix
         ../../user/apps/ssh.nix
         ../../user/gaming/nethack.nix
         ../../user/gaming/oss-games.nix
