@@ -69,12 +69,12 @@
         sysbench
 
         # Sometimes needed for work.
-        # zoom-us
+        zoom-us
         openvpn
         update-resolv-conf
         chromium
         unzip
-        # translate-shell
+        translate-shell
     ];
 
     xdg.enable = true;
