@@ -59,6 +59,7 @@
         };
         initContent = ''
             set -o emacs
+            export PATH=$PATH:${config.home.homeDirectory}/.local/bin
         '' + (builtins.readFile ./lib/television/zshrc);
     };
 
