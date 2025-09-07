@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  #
   home.file.".config/nemu/nemu.cfg".text = ''
 [main]
 # virtual machine dir.
-vmdir = /home/serpentian/Drives/ssd/nemu
+vmdir = /home/serpentian/Drives/ssd1/nemu
 
 # path to database file.
 db = /home/serpentian/.local/share/nemu/nemu.db
@@ -64,7 +65,7 @@ log_cmd = /tmp/qemu_last_cmd.log
 
 [nemu-monitor]
 # Auto start monitoring daemon
-autostart = 1
+autostart = 0
 
 # Daemon sleep interval (ms) (default: 1000)
 #sleep = 1000

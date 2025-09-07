@@ -25,7 +25,7 @@
     };
 
   fileSystems."/home/serpentian/Drives/ssd1" =
-    { device = "/dev/disk/by-uuid/48903577-a70e-40f1-82bd-1be25407c20b";
+    { device = "/dev/disk/by-uuid/56aa7bd4-26dd-4ff3-9811-cfa1e489af43";
       fsType = "ext4";
     };
 

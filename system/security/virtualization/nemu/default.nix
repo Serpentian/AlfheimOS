@@ -24,7 +24,10 @@ in {
             serpentian = {
                 autoAddVeth = true;
                 autoStartDaemon = true;
+                autoStartVMs = [ "Win11" ];
             };
         };
     };
+
+    services.qemuGuest.enable = true;
 }

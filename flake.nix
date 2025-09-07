@@ -83,5 +83,9 @@
             url = "github:0xc000022070/zen-browser-flake";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        winapps = {
+            url = "github:winapps-org/winapps";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 }

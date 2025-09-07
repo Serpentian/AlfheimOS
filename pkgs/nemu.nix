@@ -39,8 +39,8 @@ stdenv.mkDerivation rec {
     owner = "nemuTUI";
     repo = "nemu";
     # rev = "v${version}";
-    rev = "e2e88fc67d3243855fbe2b189037c107792e84e8";
-    hash = "sha256-uq4fBcrOfsWFAxzFRSxKYzxs3F1kXfnO4r3Y21qu3vs=";
+    rev = "b2723f109603a4ca3ca070637d346697231277fa";
+    hash = "sha256-MppdlzBP9UiF25oxnJ+kHcp/IKqU8e/A6h9VyMHjNG4=";
   };
 
   system.requiredKernelConfig = with config.lib.kernelConfig; [
