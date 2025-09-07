@@ -1,13 +1,15 @@
-{ config, pkgs, ...}:
+{ config, pkgs, settings, ...}:
 
 {
     imports = [
         ./spice.nix
+        # ./nemu
     ];
 
     environment.systemPackages = with pkgs; [
         docker-compose
         distrobox
+        libvirt
         qemu
     ];
 
@@ -17,6 +19,8 @@
     virtualisation.podman.enable = true;
     virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
 
-    services.qemuGuest.enable = true;
+    users.users.${settings.username} = {
+        extraGroups = [ "kvm" ];
+    };
 }
 

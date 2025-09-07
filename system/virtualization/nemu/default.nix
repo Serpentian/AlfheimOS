@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, settings, ... }:
 
 let
   nixpkgs = import <nixpkgs> { config = config.nixpkgs.config; };
@@ -21,7 +21,7 @@ in {
         macvtapGroup = "vhost";
         usbGroup = "usb";
         users = {
-            serpentian = {
+            ${settings.username} = {
                 autoAddVeth = true;
                 autoStartDaemon = true;
                 autoStartVMs = [ "Win11" ];

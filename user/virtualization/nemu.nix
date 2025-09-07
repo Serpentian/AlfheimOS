@@ -5,10 +5,10 @@
   home.file.".config/nemu/nemu.cfg".text = ''
 [main]
 # virtual machine dir.
-vmdir = /home/serpentian/Drives/ssd1/nemu
+vmdir = ${config.home.homeDirectory}/Drives/ssd1/nemu
 
 # path to database file.
-db = /home/serpentian/.local/share/nemu/nemu.db
+db = ${config.home.homeDirectory}/.local/share/nemu/nemu.db
 
 # path to pid file. Example:
 # pid = /tmp/nemu.pid
