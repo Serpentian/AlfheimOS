@@ -29,12 +29,12 @@
                 pkgs = nixpkgs.legacyPackages.${settings.system};
                 modules = [
                     (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")
-                    inputs.plasma-manager.homeManagerModules.plasma-manager
+                    inputs.plasma-manager.homeModules.plasma-manager
                     inputs.stylix.homeModules.stylix
-                    inputs.nixvim.homeManagerModules.nixvim
+                    inputs.nixvim.homeModules.nixvim
                     inputs.sops-nix.homeManagerModules.sops
                     inputs.zen-browser.homeModules.twilight
-                    inputs.chaotic.homeManagerModules.default
+                    inputs.chaotic.homeModules.default
                 ];
                 extraSpecialArgs = {
                     inherit inputs;
