@@ -46,6 +46,7 @@
     programs.${settings.shell}.enable = true;
 
     # Users.
+    nix.settings.trusted-users = [ "root" settings.username ];
     users.users.${settings.username} = {
         isNormalUser = true;
         shell = settings.shellPkg;
