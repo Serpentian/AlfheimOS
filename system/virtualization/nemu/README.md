@@ -36,6 +36,7 @@ qemu command line:
 
 ```
 -drive file=/home/serpentian/Drives/ssd1/nemu/virtio-win-0.1.271.iso,media=cdrom
+
  -chardev socket,path=/tmp/qga.sock,server=on,wait=off,id=qga0 \
  -device virtio-serial \
  -device virtserialport,chardev=qga0,name=org.qemu.guest_agent.0

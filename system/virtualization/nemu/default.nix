@@ -8,6 +8,7 @@ in {
         virt-viewer
         tigervnc
         qemu
+        samba
     ];
 
     imports = [

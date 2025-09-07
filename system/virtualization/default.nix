@@ -3,7 +3,7 @@
 {
     imports = [
         ./spice.nix
-        # ./nemu
+        ./nemu
     ];
 
     environment.systemPackages = with pkgs; [
@@ -11,6 +11,10 @@
         distrobox
         libvirt
         qemu
+
+        wine
+        wine64
+        winetricks
     ];
 
     # Enable docker daemon. Rootless docker doesn't properly work
