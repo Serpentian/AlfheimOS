@@ -9,13 +9,13 @@
         ../../user/apps/btop
         ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
-        ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/khal.nix
         ../../user/apps/neofetch
         ../../user/gaming/nethack.nix
         ../../user/apps/tlaplus.nix
         ../../user/apps/latex.nix
+        ../../user/virtualization
         ../../user/shells/${settings.shell}.nix
     ] ++ (map (wm: ../../user/wm/${wm}.nix) settings.wms)
       ++ (map (editor: ../../user/editors/${editor}) settings.editors)

@@ -7,8 +7,7 @@
         ../../system/hardware/thinkpad/boot.nix
         ../../system/security/laptop/firewall.nix
         ../../system/hardware/laptop/battery.nix
-        ../../system/security/virtualization/general.nix
-        ../../system/security/virtualization/nemu
+        ../../system/virtualization
         ../../system/gaming/nethack.nix
         ../../themes/lib/common.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);

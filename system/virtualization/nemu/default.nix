@@ -28,6 +28,4 @@ in {
             };
         };
     };
-
-    services.qemuGuest.enable = true;
 }

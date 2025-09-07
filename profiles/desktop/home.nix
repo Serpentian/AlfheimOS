@@ -7,7 +7,6 @@
         ../../user/apps/git.nix
         ../../user/apps/superfile.nix
         ../../user/apps/zathura.nix
-        ../../user/apps/nemu.nix
         ../../user/apps/cava.nix
         ../../user/apps/github.nix
         ../../user/apps/neofetch
@@ -22,6 +21,7 @@
         ../../user/apps/latex.nix
         ../../user/apps/btop
         ../../user/apps/mpd
+        ../../user/virtualization
         ../../user/shells/${settings.shell}.nix
     ] ++ (map (wm: ../../user/wm/${wm}.nix) settings.wms)
       ++ (map (editor: ../../user/editors/${editor}) settings.editors)

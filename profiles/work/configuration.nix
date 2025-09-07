@@ -7,8 +7,7 @@
         ../../system/hardware/work/boot.nix
         ../../system/hardware/laptop/battery.nix
         ../../system/security/laptop/firewall.nix
-        ../../system/security/virtualization/general.nix
-        ../../system/security/virtualization/nemu
+        ../../system/virtualization
         ../../system/gaming/nethack.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 

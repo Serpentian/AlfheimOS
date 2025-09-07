@@ -6,23 +6,16 @@
         ../../system/hardware/bluetooth.nix
         ../../system/hardware/desktop/graphic.nix
         ../../system/hardware/desktop/mouse.nix
-        # ../../system/hardware/desktop/printing.nix
         ../../system/hardware/desktop/boot.nix
         ../../system/hardware/desktop/nfs.nix
         ../../system/security/desktop/firewall.nix
-        ../../system/security/virtualization/general.nix
-        ../../system/security/virtualization/nemu
+        ../../system/virtualization
         ../../system/security/vpn/xray.nix
         ../../system/security/sops.nix
         ../../system/apps/thunar.nix
         ../../system/apps/guix.nix
-        # ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
-        # ../../system/gaming/retroarch.nix
-        # ../../system/gaming/aagl.nix
         ../../system/gaming/nethack.nix
-        # ../../system/gaming/minecraft.nix
-        # ../../system/security/vpn/xray.nix
         ../../themes/lib/common.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 

@@ -11,5 +11,7 @@
     virtualisation.docker.enable = true;
     virtualisation.podman.enable = true;
     virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
+
+    services.qemuGuest.enable = true;
 }
 
