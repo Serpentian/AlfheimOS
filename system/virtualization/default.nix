@@ -1,9 +1,14 @@
 { config, pkgs, ...}:
 
 {
+    imports = [
+        ./spice.nix
+    ];
+
     environment.systemPackages = with pkgs; [
         docker-compose
         distrobox
+        qemu
     ];
 
     # Enable docker daemon. Rootless docker doesn't properly work
