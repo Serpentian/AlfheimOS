@@ -9,4 +9,5 @@ final: prev: {
     _subsonic-tui = final.callPackage ../pkgs/subsonic-tui.nix {};
     _neonmodem = final.callPackage ../pkgs/neonmodem.nix {};
     _nyarch-assistant = final.callPackage ../pkgs/nyarch-assistant.nix {};
+    _msgpuck = final.callPackage ../pkgs/msgpuck.nix {};
 }

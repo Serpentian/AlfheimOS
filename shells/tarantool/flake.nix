@@ -8,7 +8,12 @@
 
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          (import ../../overlays/default.nix)
+        ];
+      };
     in
     {
       devShells.default = pkgs.mkShell {
@@ -57,9 +62,16 @@
 
           # Cartridge
           nodejs
+
+          # Tcpdump
+          libnl
+          libpcap
+          _msgpuck
         ];
         shellHook = ''
             export LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib
+            export MSGPUCK_INCLUDE_DIR=${pkgs._msgpuck}/include
+            export MSGPUCK_LIBRARY=${pkgs._msgpuck}/lib/libmsgpuck.a
             export LUA_INCDIR=${pkgs.lua51Packages.lua}/include
             export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local
             export TARANTOOL_INCDIR=$TARANTOOL_DIR/include
