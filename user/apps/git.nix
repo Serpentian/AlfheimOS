@@ -8,8 +8,8 @@
         extraConfig.core.editor = "nvim";
         extraConfig = {
             url = {
-                "git@github.com:" = {
-                    insteadOf = "https://github.com/";
+                "git@github.com:tarantool" = {
+                    insteadOf = "https://github.com/tarantool";
                 };
             };
         };
