@@ -2,7 +2,7 @@
 
 {
     imports = [
-        ./hyprland/shells/${settings.themeDetails.shell}.nix
+        ./hyprland/shells/${settings.themeDetails.shell}
         ./hyprland/env.nix
         ./hyprland/binds.nix
         ./hyprland/scripts.nix
