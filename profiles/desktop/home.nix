@@ -78,6 +78,8 @@
         chromium
         unzip
         translate-shell
+
+        jq
     ];
 
     xdg.enable = true;
