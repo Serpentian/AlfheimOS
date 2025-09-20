@@ -19,7 +19,7 @@
         ../../themes/lib/common.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 
-    boot.kernelPackages = pkgs.linuxPackages_cachyos;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     nixpkgs.overlays = import ../../lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(

@@ -12,7 +12,7 @@
                 modules = [
                     inputs.stylix.nixosModules.stylix
                     inputs.sops-nix.nixosModules.sops
-                    inputs.chaotic.nixosModules.default
+                    # inputs.chaotic.nixosModules.default
                     (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix")
                 ];
                 specialArgs = {
@@ -34,7 +34,7 @@
                     inputs.nixvim.homeModules.nixvim
                     inputs.sops-nix.homeManagerModules.sops
                     inputs.zen-browser.homeModules.twilight
-                    inputs.chaotic.homeModules.default
+                    # inputs.chaotic.homeModules.default
                 ];
                 extraSpecialArgs = {
                     inherit inputs;
@@ -49,7 +49,7 @@
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         sops-nix.url = "github:Mic92/sops-nix";
-        chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+        # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
         stylix.url = "github:danth/stylix";
         ags.url = "git+https://github.com/Aylur/ags?rev=60180a184cfb32b61a1d871c058b31a3b9b0743d";
         caelestia.url = "github:caelestia-dots/shell";
