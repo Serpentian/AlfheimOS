@@ -44,7 +44,6 @@
             rm = "rm -rv";
             w3md = "w3m https://lite.duckduckgo.com/lite/";
             nix-tarantool = "nix develop ${settings.dotfilesDir}/shells/tarantool -c zsh";
-            nix-abeille = "nix develop ${settings.dotfilesDir}/shells/abeille -c zsh";
             nix-python = "nix develop ${settings.dotfilesDir}/shells/python -c zsh";
             nix-lampray = "nix develop ${settings.dotfilesDir}/shells/lampray -c zsh";
             nix-invoke = "nix develop ${settings.dotfilesDir}/shells/invoke -c zsh";
