@@ -15,6 +15,11 @@
         packages = [
             (pkgs.python311.withPackages (python-pkgs: [
                 python-pkgs.pip
+                python-pkgs.numpy
+                python-pkgs.sympy
+                python-pkgs.scipy
+                python-pkgs.pandas
+                python-pkgs.matplotlib
                 python-pkgs.virtualenv
                 python-pkgs.jupyterlab
             ]))
