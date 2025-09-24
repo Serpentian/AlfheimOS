@@ -25,7 +25,7 @@ in {
             ${settings.username} = {
                 autoAddVeth = true;
                 autoStartDaemon = true;
-                autoStartVMs = [ "Win11" ];
+                # autoStartVMs = [ "Win11" ];
             };
         };
     };
