@@ -16,6 +16,7 @@
             (pkgs.python311.withPackages (python-pkgs: [
                 python-pkgs.pip
                 python-pkgs.numpy
+                python-pkgs.graphviz
                 python-pkgs.sympy
                 python-pkgs.scipy
                 python-pkgs.pandas
