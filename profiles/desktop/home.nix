@@ -65,7 +65,7 @@
         # Test.
         weechat
         # _nyarch-assistant
-        _msgpuck
+        # _msgpuck
 
         # Overclock
         dmidecode
