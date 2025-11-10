@@ -17,6 +17,7 @@
         autosuggestion.enable = true;
         enableCompletion = true;
         syntaxHighlighting.enable = true;
+        history.size = 100000;
         shellAliases = {
             ls = "exa --color=auto --icons";
             l = "ls -l";

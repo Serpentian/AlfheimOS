@@ -6,7 +6,7 @@
     ];
 
     home.packages = with pkgs; [
-        mpc-cli
+        mpc
     ];
 
     services.mpd-mpris = {
