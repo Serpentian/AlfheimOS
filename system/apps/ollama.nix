@@ -17,9 +17,5 @@
         environmentVariables = {
             HCC_AMDGPU_TARGET = "gfx1101";
         };
-
-        user = "ollama";
-        home = "/mnt/hdd/ollama";
-        models = "/mnt/hdd/ollama/models";
     };
 }
