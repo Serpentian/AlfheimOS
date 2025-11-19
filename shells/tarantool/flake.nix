@@ -20,6 +20,7 @@
         packages = with pkgs; [
           gdb
           cpulimit
+          netcat-openbsd
 
           # tt
           lua51Packages.lua
@@ -91,7 +92,7 @@
             source $HOME/Programming/tnt/.venv/bin/activate
             # Activate ssh.
             eval `ssh-agent -s`
-            ssh-add ~/.ssh/work
+            # ssh-add ~/.ssh/work
         '';
 
         # See https://github.com/NixOS/nixpkgs/issues/18995
