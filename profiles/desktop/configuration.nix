@@ -13,6 +13,7 @@
         ../../system/security/vpn/xray.nix
         ../../system/security/sops.nix
         ../../system/apps/thunar.nix
+        # ../../system/apps/open-webui.nix
         ../../system/apps/guix.nix
         ../../system/apps/ollama.nix
         ../../system/gaming/steam.nix
