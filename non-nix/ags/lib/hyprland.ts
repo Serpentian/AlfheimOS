@@ -39,13 +39,13 @@ function sendBatch(batch: string[]) {
 }
 
 async function setupHyprland() {
-    await sendBatch(App.windows.map(({ name }) => `layerrule match:namespace ${name}, enable false`))
+    await sendBatch(App.windows.map(({ name }) => `layerrule unset, ${name}`))
 
     if (blur.value > 0) {
         sendBatch(App.windows.flatMap(({ name }) => [
-            `layerrule match:namespace ${name}, enable false`,
-            `layerrule blur true, match:namespace ${name}`,
-            `layerrule match:namespace ${name}, ignore_alpha ${/* based on shadow color */.29}`,
+            `layerrule unset, ${name}`,
+            `layerrule blur, ${name}`,
+            `layerrule ignorealpha ${/* based on shadow color */.29}, ${name}`,
         ]))
     }
 }
