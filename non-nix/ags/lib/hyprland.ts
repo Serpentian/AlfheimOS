@@ -39,27 +39,13 @@ function sendBatch(batch: string[]) {
 }
 
 async function setupHyprland() {
-//    const wm_gaps = Math.floor(hyprland.gaps.value * spacing.value)
-
-//    sendBatch([
-//        `general:border_size ${width}`,
-//        `general:gaps_out ${wm_gaps}`,
-//        `general:gaps_in ${Math.floor(wm_gaps / 2)}`,
-//        `general:col.active_border ${rgba(active.value)}`,
-//        `general:col.inactive_border ${rgba(hyprland.inactiveBorder.value)}`,
-//        `decoration:rounding ${radius}`,
-//        `decoration:drop_shadow ${shadows.value ? "yes" : "no"}`,
-//        `dwindle:no_gaps_when_only ${hyprland.gapsWhenOnly.value ? 0 : 1}`,
-//        `master:no_gaps_when_only ${hyprland.gapsWhenOnly.value ? 0 : 1}`,
-//    ])
-
-    await sendBatch(App.windows.map(({ name }) => `layerrule unset, ${name}`))
+    await sendBatch(App.windows.map(({ name }) => `layerrule match:namespace ${name}, enable false`))
 
     if (blur.value > 0) {
         sendBatch(App.windows.flatMap(({ name }) => [
-            `layerrule unset, ${name}`,
-            `layerrule blur, ${name}`,
-            `layerrule ignorealpha ${/* based on shadow color */.29}, ${name}`,
+            `layerrule match:namespace ${name}, enable false`,
+            `layerrule blur true, match:namespace ${name}`,
+            `layerrule match:namespace ${name}, ignore_alpha ${/* based on shadow color */.29}`,
         ]))
     }
 }
