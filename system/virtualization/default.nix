@@ -3,7 +3,7 @@
 {
     imports = [
         ./spice.nix
-        ./nemu
+        # ./nemu
     ];
 
     environment.systemPackages = with pkgs; [

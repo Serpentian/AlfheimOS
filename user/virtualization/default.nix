@@ -3,6 +3,6 @@
     imports = [
         ./winapps
         ./quickemu.nix
-        ./nemu.nix
+        # ./nemu.nix
     ];
 }
