@@ -14,7 +14,6 @@ rec {
     themeDetails = import (./. + "/themes/${theme}.nix") {inherit pkgs;};
 
     shell = "zsh"; # See user/shells directory.
-    shellPkg = pkgs.zsh;
 
     wms = ["hyprland" ]; # See user/wm/ and system/wm directories.
     editors = ["neovim"]; # See user/editors directory.

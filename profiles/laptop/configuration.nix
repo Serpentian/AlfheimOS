@@ -37,7 +37,7 @@
     # Users.
     users.users.${settings.username} = {
         isNormalUser = true;
-        shell = settings.shellPkg;
+        shell = pkgs.${settings.shell};
         description = settings.username;
         extraGroups = [ "wheel" ];
     };
