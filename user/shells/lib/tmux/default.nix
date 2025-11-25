@@ -1,5 +1,8 @@
 {pkgs, settings, ...}: let
-    theme = import ./themes/${settings.theme}.nix { inherit pkgs; };
+    themePath = ./themes/${settings.theme}.nix;
+    theme = if builtins.pathExists themePath
+            then import themePath {inherit pkgs; }
+            else [];
 in {
     programs.tmux = {
         enable = true;

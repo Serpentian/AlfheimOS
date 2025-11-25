@@ -8,6 +8,7 @@
     btopTheme = null;
 
     # Hyprland and ags;
+    shell = "ags";
     opacity = 1.0;
     rounding = 0;
     shadow = true;
