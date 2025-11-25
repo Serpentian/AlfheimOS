@@ -23,5 +23,6 @@ rec {
     theme = "catppuccin"; # Selected theme from themes directory (./themes/)
 
     # Do not change these!
+    profileDetails = import (./. + "/profiles/${profile}/details.nix") {};
     themeDetails = import (./. + "/themes/${theme}.nix") {inherit pkgs;};
 }

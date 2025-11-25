@@ -1,5 +1,6 @@
-{ config, pkgs, settings, inputs, ... }: let
-    details = settings.themeDetails;
+{ config, pkgs, settings, inputs, lib, ... }: let
+    themeDetails = settings.themeDetails;
+    profileDetails = settings.profileDetails;
 in {
     home.packages = with pkgs; [
         swww
@@ -7,30 +8,17 @@ in {
     ];
 
     wayland.windowManager.hyprland.settings = {
-        monitor = [
-            "DP-1, 3440x1440@144, 0x0, 1"
-            "HDMI-A-1, 2560x1440@144,-2560x0, 1"
-            "HDMI-A-2, 2560x1440@144,3440x0, 1"
-            # "HDMI-A-1, disable" "HDMI-A-1,2560x1440@60,-900x-100, 1.6,transform,3"
-            "eDP-1,1920x1080@60,0x0, 1"
-            # "eDP-1,2560x1600@120,2560x400, 1.6"
-            "DP-3,3840x2160@60,0x0, 1.5"
-            # "HEADLESS,1920x1080@60,1150x1440, 1"
-            "DVI-I-1, 3840x2160@60, 1920x0, 1"
+        monitor = profileDetails.hyprlandMonitors ++ [
             ",preferred,auto,1"
         ];
 
         exec-once = [
             "swww-daemon &"
             "ags &"
-            # "hyprctl output create headless HEADLESS"
-            # "wayvnc -S /tmp/wayvnc -g -o HEADLESS -f 60 -d 0.0.0.0 5900"
-            # "hyprctl setcursor Catppuccin-Mocha-Lavender-Cursors 24"
             "[workspace 2 silent] firefox"
             "[workspace 3 silent] kitty btop"
             "[workspace 3 silent] kitty ncmpcpp"
             "[workspace 3 silent] kitty cava"
-            # "steam -nochatui -nofriendsui -silent -vgui"
         ];
 
         general = {
@@ -48,7 +36,7 @@ in {
 
         decoration = {
             dim_special = 0.5;
-            rounding = details.rounding;
+            rounding = themeDetails.rounding;
             blur = {
                 enabled = true;
                 special = true;
@@ -60,7 +48,7 @@ in {
             };
 
             shadow = {
-                enabled = details.shadow;
+                enabled = themeDetails.shadow;
                 ignore_window = false;
                 offset = "2 2";
                 range = 20;
