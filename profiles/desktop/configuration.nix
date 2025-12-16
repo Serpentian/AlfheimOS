@@ -11,6 +11,7 @@
         ../../system/security/desktop/firewall.nix
         ../../system/virtualization
         ../../system/security/vpn/xray.nix
+        ../../system/security/ssh.nix
         ../../system/security/sops.nix
         ../../system/apps/thunar.nix
         # ../../system/apps/open-webui.nix
