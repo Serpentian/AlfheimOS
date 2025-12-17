@@ -14,7 +14,7 @@
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    nixpkgs.overlays = import ../../lib/overlays.nix; # Add packages from the pkgs dir
+    nixpkgs.overlays = import ../../pkgs/lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
