@@ -78,6 +78,7 @@
         chromium
         unzip
         translate-shell
+        android-tools
 
         jq
     ];

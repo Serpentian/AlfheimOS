@@ -25,13 +25,15 @@
     };
 
   fileSystems."/home/serpentian/Drives/ssd1" =
-    { device = "/dev/disk/by-uuid/56aa7bd4-26dd-4ff3-9811-cfa1e489af43";
-      fsType = "ext4";
-    };
+    { device = "/dev/disk/by-uuid/b2086a4b-fdd6-4ef2-8309-8a3a968cff96";
+      fsType = "xfs";
+      options = ["nofail"];
+  };
 
   fileSystems."/home/serpentian/Drives/ssd2" =
     { device = "/dev/disk/by-uuid/a0cede19-b4ed-4362-a5ef-17a5c6b3ada3";
       fsType = "ext4";
+      options = ["nofail"];
     };
 
   swapDevices =
