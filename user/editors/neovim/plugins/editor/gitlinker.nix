@@ -2,14 +2,16 @@
 {
     programs.nixvim.plugins.gitlinker = {
         enable = true;
-        addCurrentLineOnNormalMode = true;
-        callbacks = {
-            "bitbucket.org" = "get_bitbucket_type_url";
-            "codeberg.org" = "get_gitea_type_url";
-            "git.kernel.org" = "get_cgit_type_url";
-            "git.savannah.gnu.org" = "get_cgit_type_url";
-            "github.com" = "get_github_type_url";
-            "gitlab.com" = "get_gitlab_type_url";
+        settings = {
+            add_current_line_on_normal_mode = true;
+            callbacks = {
+                "bitbucket.org" = "get_bitbucket_type_url";
+                "codeberg.org" = "get_gitea_type_url";
+                "git.kernel.org" = "get_cgit_type_url";
+                "git.savannah.gnu.org" = "get_cgit_type_url";
+                "github.com" = "get_github_type_url";
+                "gitlab.com" = "get_gitlab_type_url";
+            };
         };
     };
 

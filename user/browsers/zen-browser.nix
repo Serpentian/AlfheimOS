@@ -1,4 +1,4 @@
-{settings, config, ...}: let
+{settings, stylix, ...}: let
     locked = value: {
         "Value" = value;
         "Status" = "locked";
@@ -12,6 +12,8 @@ in {
     home.sessionVariables = {
         BROWSER = "zen";
     };
+
+    stylix.targets.zen-browser.profileNames = [ profileName ];
 
     programs.zen-browser.enable = true;
     programs.zen-browser.policies = {

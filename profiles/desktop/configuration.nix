@@ -83,6 +83,12 @@
     # A lot of mpris packages require it.
     services.gvfs.enable = true;
 
+    boot.kernelParams = [
+        "video=DP-1:3440x1440@144"
+        "video=HDMI-A-1:2560x1440@144"
+        "video=HDMI-A-2:2560x1440@144"
+    ];
+
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "24.11"; # Did you read the comment?

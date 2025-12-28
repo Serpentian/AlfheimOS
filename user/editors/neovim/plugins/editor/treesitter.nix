@@ -12,7 +12,15 @@
         folding = false;
         nixvimInjections = true;
         grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+            bash
             json
+            lua
+            make
+            markdown
+            nix
+            regex
+            xml
+            yaml
             tlaplus
             latex
             bibtex
