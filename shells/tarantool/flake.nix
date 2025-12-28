@@ -11,7 +11,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          (import ../../overlays/default.nix)
+          (import ../../pkgs/overlays/default.nix)
         ];
       };
     in
