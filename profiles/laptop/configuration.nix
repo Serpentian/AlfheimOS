@@ -9,6 +9,8 @@
         ../../system/security/laptop/firewall.nix
         ../../system/virtualization
         ../../system/gaming/nethack.nix
+        ../../system/security/ssh.nix
+        ../../system/gaming/steam.nix
         ../../themes/lib/common.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 

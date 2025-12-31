@@ -13,6 +13,8 @@
         ../../user/apps/khal.nix
         ../../user/apps/neofetch
         ../../user/gaming/nethack.nix
+        ../../user/apps/ssh.nix
+        ../../user/gaming/steam.nix
         ../../user/apps/tlaplus.nix
         ../../user/apps/latex.nix
         ../../user/virtualization
@@ -36,7 +38,9 @@
         yubikey-manager
         obs-studio
         tty-clock
-        teleport
+        # _teleport
+        yubico-piv-tool
+        calc
         rtorrent
         tigervnc
         swayimg
