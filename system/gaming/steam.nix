@@ -28,4 +28,11 @@
         (mangohud.override { lowerBitnessSupport = true; })
         gamescope
     ];
+
+    # Disable DS touchpad as mouse;
+    services.udev.extraRules = ''
+ACTION=="add|change" ATTRS{name}=="Sony Interactive Entertainment DualSense Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+# Bluetooth
+ACTION=="add|change" ATTRS{name}=="DualSense Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+    '';
 }
