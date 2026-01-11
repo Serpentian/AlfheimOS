@@ -3,8 +3,8 @@
 {
     wayland.windowManager.hyprland.settings = {
         windowrule = [
-            # "match:title ^(swayimg)(.*)$, float true"
-            "float, title:^(swayimg)(.*)$"
+            "match:title ^(swayimg)(.*)$, float true"
+            # "float, title:^(swayimg)(.*)$"
         ];
 
         workspace = [

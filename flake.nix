@@ -63,7 +63,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         nixvim = {
-            url = "git+https://github.com/nix-community/nixvim?rev=f4b9a7122425c56d65466fcafb99053730b2646a";
+            # url = "git+https://github.com/nix-community/nixvim?rev=f4b9a7122425c56d65466fcafb99053730b2646a";
+            url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         hyprland-plugins = {

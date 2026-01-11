@@ -9,7 +9,7 @@
 
     programs.nixvim.plugins.treesitter = {
         enable = true;
-        folding = false;
+        folding.enable = false;
         nixvimInjections = true;
         grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
             bash
