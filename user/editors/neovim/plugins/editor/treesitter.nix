@@ -11,20 +11,7 @@
         enable = true;
         folding.enable = false;
         nixvimInjections = true;
-        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-            bash
-            json
-            lua
-            make
-            markdown
-            nix
-            regex
-            xml
-            yaml
-            tlaplus
-            latex
-            bibtex
-        ];
+        # All parsers are installed by default.
         settings = {
             indent.enable = true;
             highlight.enable = true;
