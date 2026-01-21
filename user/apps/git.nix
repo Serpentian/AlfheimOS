@@ -14,6 +14,9 @@
                 name = "Nikita Zheleztsov";
                 email = "n.zheleztsov@proton.me";
             };
+            stash = {
+                showPatch = true;
+            };
         };
     };
 
