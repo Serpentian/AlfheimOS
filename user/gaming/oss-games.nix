@@ -6,5 +6,8 @@
         zeroad
         wesnoth
         xonotic
+        luanti
+        airshipper
+        pioneer
     ];
 }
