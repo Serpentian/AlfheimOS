@@ -58,6 +58,7 @@
             ytfzf = "ytfzf -T chafa";
             nekoray = "xhost + local:; sudo nekoray";
             mp = "ncmpcpp";
+            docker-run-ssh-agent = "sudo docker run --mount type=bind,source=$SSH_AUTH_SOCK,target=/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent";
         };
         initContent = ''
             set -o emacs
