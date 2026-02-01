@@ -95,6 +95,7 @@
             {key = "N"; command = "previous_found_item"; }
             {key = "ctrl-b"; command = "page_up"; }
             {key = "ctrl-f"; command = "page_down"; }
+            {key = "ctrl-l"; command = "show_lyrics"; }
         ];
     };
 }
