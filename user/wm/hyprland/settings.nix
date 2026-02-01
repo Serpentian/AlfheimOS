@@ -86,6 +86,7 @@ in {
             kb_layout = "us,ru";
             kb_options = "grp:alt_shift_toggle";
             follow_mouse = true;
+            # sensitivity = -0.5;
             touchpad = {
                 natural_scroll = true;
             };
