@@ -57,7 +57,7 @@
         # wayvnc
         drawio
         # flacon
-        inkscape
+        # inkscape
         krita
         gimp
         mpv
