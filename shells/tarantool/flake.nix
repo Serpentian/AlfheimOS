@@ -76,6 +76,7 @@
             export LUA_INCDIR=${pkgs.lua51Packages.lua}/include
             export TARANTOOL_DIR=$HOME/Programming/tnt/tarantool/install/var/empty/local
             export TARANTOOL_INCDIR=$TARANTOOL_DIR/include
+            export TT_CLI_TARANTOOL_PREFIX=$TARANTOOL_DIR
             export PATH=$TARANTOOL_DIR/bin:$PATH
             # Cluster management
             export PATH=$HOME/Programming/tnt/tarantool/test-run:$PATH
