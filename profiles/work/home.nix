@@ -49,8 +49,8 @@
 
         # These packages are compulsury.
         # settings.editorPkg
-        settings.browserPkg
-        settings.termPkg
+        # settings.browserPkg
+        # settings.termPkg
     ];
 
     xdg.enable = true;

@@ -9,6 +9,7 @@
         ../../system/security/laptop/firewall.nix
         ../../system/virtualization
         ../../system/gaming/nethack.nix
+        ../../themes/lib/common.nix
     ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -62,9 +63,6 @@
     # A lot of mpris packages require it.
     services.gvfs.enable = true;
     services.upower.enable = true;
-
-    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
-    services.printing.enable = true;
 
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
