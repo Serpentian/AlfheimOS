@@ -77,6 +77,7 @@
         update-resolv-conf
         chromium
         unzip
+        p7zip
         translate-shell
         android-tools
 
