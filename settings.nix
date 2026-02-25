@@ -14,9 +14,9 @@ rec {
     # App configurations.
     shell = "zsh"; # See user/shells directory.
     editors = ["neovim"]; # See user/editors directory.
-    browsers = ["zen-browser" "qutebrowser" ]; # See user/browsers directory.
+    browsers = ["librewolf" "qutebrowser" ]; # See user/browsers directory.
     preferredEditor = "nvim"; # Session variable $TERM.
-    preferredBrowser = "zen"; # Session variable $BROWSER.
+    preferredBrowser = "librewolf"; # Session variable $BROWSER.
 
     # WM and theming.
     wms = ["hyprland" ]; # See user/wm/ and system/wm directories.

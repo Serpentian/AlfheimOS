@@ -9,11 +9,8 @@
     };
     profileName = "1uj53epo.Default Profile";
 in {
-    home.sessionVariables = {
-        BROWSER = "zen";
-    };
-
     stylix.targets.zen-browser.profileNames = [ profileName ];
+    stylix.targets.librewolf.colorTheme.enable = true;
 
     programs.zen-browser.enable = true;
     programs.zen-browser.policies = {

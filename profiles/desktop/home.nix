@@ -34,7 +34,9 @@
     };
 
     # Add packages from the pkgs dir
-    nixpkgs.overlays = import ../../pkgs/lib/overlays.nix;
+    nixpkgs.overlays =
+        (import ../../pkgs/lib/overlays.nix )
+        ++ [ inputs.nur.overlays.default ];
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
 
     home.packages = with pkgs; [
@@ -58,7 +60,7 @@
         drawio
         # flacon
         # inkscape
-        krita
+        # krita
         gimp
         mpv
 
