@@ -3,6 +3,7 @@
     programs.ncmpcpp = {
         enable = true;
         package = pkgs.ncmpcpp.override {
+            boost = pkgs.boost187;
             outputsSupport = true;
             visualizerSupport = true;
             clockSupport = true;

@@ -1,9 +1,8 @@
 {pkgs, ...}:
 {
     home.packages = with pkgs; [
-        superTuxKart
-        superTux
-        zeroad
+        supertuxkart
+        # zeroad
         wesnoth
         xonotic
         luanti
