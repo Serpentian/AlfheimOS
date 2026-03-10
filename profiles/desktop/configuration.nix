@@ -54,7 +54,7 @@
         isNormalUser = true;
         shell = pkgs.${settings.shell};
         description = settings.username;
-        extraGroups = [ "wheel" "gamemode" ];
+        extraGroups = [ "wheel" "gamemode" "dialout"];
     };
 
     # See https://nix.dev/permalink/stub-ld.

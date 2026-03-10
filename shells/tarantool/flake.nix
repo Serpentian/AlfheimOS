@@ -55,6 +55,7 @@
           python310
           python310Packages.pip #pyyaml, gevent, six
           lz4
+          etcd
 
           # TT building
           go
@@ -94,6 +95,7 @@
             # Activate ssh.
             eval `ssh-agent -s`
             # ssh-add ~/.ssh/work
+            export ETCD_PATH=${pkgs.etcd}/bin
         '';
 
         # See https://github.com/NixOS/nixpkgs/issues/18995

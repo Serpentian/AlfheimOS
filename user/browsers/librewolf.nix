@@ -10,9 +10,15 @@ in {
             "privacy.clearOnShutdown.sessions" = false;
             "privacy.clearOnShutdown.downloads" = false;
             "privacy.clearOnShutdown.cookies" = false;
+            "privacy.clearOnShutdown.formdata" = false;
+            "privacy.clearOnShutdown.cache" = false;
 
-            "privacy.clearOnShutdown.formdata" = true;
-            "privacy.clearOnShutdown.cache" = true;
+            "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+            "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = false;
+            "privacy.clearOnShutdown_v2.formdata" = false;
+            "privacy.clearOnShutdown_v2.cache" = false;
+            "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = false;
+            "privacy.clearOnShutdown_v2.siteSettings" = false;
         };
     };
 

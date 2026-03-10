@@ -65,7 +65,9 @@
         mpv
 
         # Test.
-        weechat
+        ghostty
+        kicad
+        # weechat
         # _nyarch-assistant
         # _msgpuck
 
