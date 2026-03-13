@@ -2,13 +2,7 @@
 {
     programs.ncmpcpp = {
         enable = true;
-        package = pkgs.ncmpcpp.override {
-            boost = pkgs.boost187;
-            outputsSupport = true;
-            visualizerSupport = true;
-            clockSupport = true;
-            taglibSupport = true;
-        };
+        package = pkgs.ncmpcpp;
         mpdMusicDir = "${config.home.homeDirectory}/Drives/hdd/Music";
         settings = {
             media_library_albums_split_by_date = "yes";

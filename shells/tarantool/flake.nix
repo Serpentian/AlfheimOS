@@ -36,6 +36,7 @@
           curl
           bc
           libyaml
+          awscli
 
           git
           gcc
