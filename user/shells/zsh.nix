@@ -25,6 +25,7 @@
             la = "ls -a";
             lla = "ls -la";
             lt = "ls --tree";
+            llat = "ls -al -s time";
             ".." = "cd ..";
             "..." = "cd ../..";
             "...." = "cd ../../../..";
@@ -59,6 +60,7 @@
             nekoray = "xhost + local:; sudo nekoray";
             mp = "ncmpcpp";
             docker-run-ssh-agent = "sudo docker run --mount type=bind,source=$SSH_AUTH_SOCK,target=/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent";
+            git-rm-deleted-by-us = "git status --short | awk '$1==\"DU\" {print $2}' | xargs git rm";
         };
         initContent = ''
             set -o emacs

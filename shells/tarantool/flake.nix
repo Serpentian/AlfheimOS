@@ -63,6 +63,10 @@
           mage
           unzip
 
+          # AEON
+          protobuf
+          protobufc
+
           # Cartridge
           nodejs
 
@@ -87,6 +91,7 @@
             # Lint check
             export PATH=$HOME/Programming/tnt/checkpatch:$PATH
             export PATH=$HOME/Programming/tnt/cartridge-cli:$PATH
+            export PATH=$HOME/go/bin:$PATH
             # Use gcc for compilation
             export CC=${pkgs.gcc}/bin/gcc
             export CXX=${pkgs.gcc}/bin/c++

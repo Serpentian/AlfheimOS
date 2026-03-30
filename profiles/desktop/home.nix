@@ -71,6 +71,11 @@
         # _nyarch-assistant
         # _msgpuck
 
+
+        element-desktop
+        gnome-keyring
+        seahorse
+
         # Overclock
         dmidecode
         sysbench
