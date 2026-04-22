@@ -27,6 +27,7 @@
           lua51Packages.luacheck
           lua51Packages.luacov
           lua51Packages.luacheck
+          lua51Packages.penlight
           unzip
           pkg-config
 
