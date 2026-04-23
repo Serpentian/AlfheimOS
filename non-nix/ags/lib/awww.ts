@@ -3,7 +3,7 @@ import { dependencies, sh } from "./utils"
 
 export async function setWallpaper(wall: string) {
     await sh([
-        "swww", "img",
+        "awww", "img",
         "--transition-type", "grow",
         "--transition-fps", "120",
         wall,
@@ -11,9 +11,9 @@ export async function setWallpaper(wall: string) {
 }
 
 export default async function init() {
-    if (!dependencies("swww"))
+    if (!dependencies("awww"))
         return
 
-    Utils.execAsync("swww init").catch(() => { })
+    Utils.execAsync("awww init").catch(() => { })
     setWallpaper(options.wallpaper.value)
 }

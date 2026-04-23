@@ -3,7 +3,7 @@
     profileDetails = settings.profileDetails;
 in {
     home.packages = with pkgs; [
-        swww
+        awww
         wayvnc
     ];
 
@@ -13,7 +13,7 @@ in {
         ];
 
         exec-once = [
-            "swww-daemon &"
+            "awww-daemon &"
             "ags &"
             "[workspace 2 silent] firefox"
             "[workspace 3 silent] kitty btop"

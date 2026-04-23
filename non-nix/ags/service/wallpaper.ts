@@ -25,12 +25,12 @@ class Wallpaper extends Service {
     #blockMonitor = false
 
     #wallpaper() {
-        if (!dependencies("swww"))
+        if (!dependencies("awww"))
             return
 
         sh("hyprctl cursorpos").then(pos => {
             sh([
-                "swww", "img",
+                "awww", "img",
                 "--invert-y",
                 "--transition-type", "grow",
                 "--transition-pos", pos.replace(" ", ""),
@@ -81,7 +81,7 @@ class Wallpaper extends Service {
     constructor() {
         super()
 
-        if (!dependencies("swww"))
+        if (!dependencies("awww"))
             return this
 
         // gtk portal
@@ -90,7 +90,7 @@ class Wallpaper extends Service {
                 this.#wallpaper()
         })
 
-        Utils.execAsync("swww-daemon")
+        Utils.execAsync("awww-daemon")
             .then(this.#wallpaper)
             .catch(() => null)
     }
