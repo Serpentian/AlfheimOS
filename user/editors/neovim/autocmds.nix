@@ -3,7 +3,6 @@
         spaces = {};
         tabs = {};
         removeTrailingSpace = {};
-        removeTrailingEnter = {};
         panes = {};
     };
 
@@ -48,20 +47,6 @@
             function(ev)
                 save_cursor = vim.fn.getpos(".")
                 vim.cmd([[%s/\s\+$//e]])
-                vim.fn.setpos(".", save_cursor)
-            end
-            '';
-        };
-    }
-    {
-        group = "removeTrailingEnter";
-        event = ["BufWritePre"];
-        pattern = "*";
-        callback = {
-            __raw = ''
-            function(ev)
-                save_cursor = vim.fn.getpos(".")
-                vim.cmd([[%s/\_s*\%$//e]])
                 vim.fn.setpos(".", save_cursor)
             end
             '';
