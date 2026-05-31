@@ -39,6 +39,8 @@
           libyaml
           awscli
 
+          parallel
+
           git
           gcc
           # clang
