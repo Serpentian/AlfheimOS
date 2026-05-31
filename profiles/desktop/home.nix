@@ -59,7 +59,7 @@
         # wayvnc
         drawio
         # flacon
-        # inkscape
+        inkscape
         # krita
         gimp
         mpv
@@ -71,6 +71,9 @@
         # _nyarch-assistant
         # _msgpuck
 
+        pcsx2
+        dolphin-emu
+        pwgen
 
         element-desktop
         gnome-keyring
