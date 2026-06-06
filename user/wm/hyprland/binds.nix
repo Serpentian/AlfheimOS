@@ -28,7 +28,7 @@
             "$mod, delete, exit,"
 
             # Dwindle
-            "$mod, O, togglesplit,"
+            "$mod, O, layoutmsg, togglesplit,"
             "$mod, P, pseudo,"
 
             # Lock screen

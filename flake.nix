@@ -69,7 +69,7 @@
         nixvim = {
             # url = "git+https://github.com/nix-community/nixvim?rev=f4b9a7122425c56d65466fcafb99053730b2646a";
             url = "github:nix-community/nixvim";
-            inputs.nixpkgs.follows = "nixpkgs";
+            # inputs.nixpkgs.follows = "nixpkgs";
         };
         hyprland-plugins = {
             url = "github:hyprwm/hyprland-plugins";
@@ -90,6 +90,10 @@
         };
         winapps = {
             url = "github:winapps-org/winapps";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        opencode = {
+            url = "github:anomalyco/opencode";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };

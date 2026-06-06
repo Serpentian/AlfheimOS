@@ -49,7 +49,7 @@ in {
 
             shadow = {
                 enabled = themeDetails.shadow;
-                ignore_window = false;
+                # ignore_window = false;
                 offset = "2 2";
                 range = 20;
                 color = "rgba(${config.lib.stylix.colors.base00}ff)";
@@ -104,7 +104,7 @@ in {
 
         dwindle = {
             # keep floating dimentions while tiling
-            pseudotile = true;
+            # pseudotile = true;
             preserve_split = true;
             force_split = 2;
             split_width_multiplier = 1.5;
