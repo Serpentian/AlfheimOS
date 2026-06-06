@@ -13,6 +13,7 @@
         ../../user/apps/mangohud.nix
         ../../user/apps/kdeconnect.nix
         ../../user/apps/ssh.nix
+        ../../user/apps/opencode.nix
         ../../user/gaming/nethack.nix
         ../../user/gaming/oss-games.nix
         ../../user/gaming/steam.nix
@@ -59,7 +60,7 @@
         # wayvnc
         drawio
         # flacon
-        inkscape
+        # inkscape
         # krita
         gimp
         mpv
@@ -84,7 +85,7 @@
         sysbench
 
         # Sometimes needed for work.
-        zoom-us
+        # zoom-us
         openvpn
         update-resolv-conf
         chromium
