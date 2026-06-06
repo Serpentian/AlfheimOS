@@ -32,6 +32,8 @@
           pkg-config
 
           cpulimit
+          yq
+          jq
 
           # Tarantool dependencies
           curl
