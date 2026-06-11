@@ -1,4 +1,4 @@
-{ config, pkgs, settings, inputs, lib, ... }: let
+{ config, pkgs, settings, inputs, lib, shellDetails, ... }: let
     themeDetails = settings.themeDetails;
     profileDetails = settings.profileDetails;
 in {
@@ -12,10 +12,7 @@ in {
             ",preferred,auto,1"
         ];
 
-        exec-once = [
-            "awww-daemon &"
-            "ags &"
-            "[workspace 2 silent] firefox"
+        exec-once = shellDetails.launchCommands ++ [
             "[workspace 3 silent] kitty btop"
             "[workspace 3 silent] kitty ncmpcpp"
             "[workspace 3 silent] kitty cava"

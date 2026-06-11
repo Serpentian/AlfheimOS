@@ -1,15 +1,17 @@
-{ inputs, config, lib, settings, pkgs, ... }:
-
-{
+{ inputs, config, lib, settings, pkgs, ... }: let
+    shell = "ags";
+in {
+    _module.args.shellDetails =
+        import (../. + "/shells/${shell}/details.nix") {};
     imports = [
-        ./shells/${settings.themeDetails.shell}
         ./env.nix
         ./binds.nix
         ./scripts.nix
         ./rules.nix
-        ./settings.nix
         ./plugins.nix
         ./hyprlock.nix
+        ../shells/${shell}
+        ./settings.nix
     ];
 
     home.packages = with pkgs; [
