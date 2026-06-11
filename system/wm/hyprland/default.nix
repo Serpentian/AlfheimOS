@@ -2,7 +2,7 @@
 
 {
     imports = [
-        ./common/wayland.nix
+        ../common/wayland.nix
     ];
 
     environment.systemPackages = with pkgs; [

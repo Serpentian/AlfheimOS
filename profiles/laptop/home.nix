@@ -17,7 +17,7 @@
         ../../user/apps/latex.nix
         ../../user/virtualization
         ../../user/shells/${settings.shell}.nix
-    ] ++ (map (wm: ../../user/wm/${wm}.nix) settings.wms)
+    ] ++ (map (wm: ../../user/wm/${wm}) settings.wms)
       ++ (map (editor: ../../user/editors/${editor}) settings.editors)
       ++ (map (browser: ../../user/browsers/${browser}.nix) settings.browsers);
 

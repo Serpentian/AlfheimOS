@@ -16,7 +16,7 @@
         ../../user/gaming/nethack.nix
         ../../user/shells/${settings.shell}.nix
         ../../user/virtualization
-    ] ++ (map (wm: ../../user/wm/${wm}.nix) settings.wms)
+    ] ++ (map (wm: ../../user/wm/${wm}) settings.wms)
       ++ (map (editor: ../../user/editors/${editor}) settings.editors)
       ++ (map (browser: ../../user/browsers/${browser}.nix) settings.browsers);
 

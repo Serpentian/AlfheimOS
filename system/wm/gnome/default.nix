@@ -2,7 +2,7 @@
 
 {
     imports = [
-        ./common/wayland.nix
+        ../common/wayland.nix
     ];
 
     services.udev.packages = with pkgs; [ gnome-settings-daemon ];

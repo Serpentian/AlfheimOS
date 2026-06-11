@@ -2,14 +2,14 @@
 
 {
     imports = [
-        ./hyprland/shells/${settings.themeDetails.shell}
-        ./hyprland/env.nix
-        ./hyprland/binds.nix
-        ./hyprland/scripts.nix
-        ./hyprland/rules.nix
-        ./hyprland/settings.nix
-        ./hyprland/plugins.nix
-        ./hyprland/hyprlock.nix
+        ./shells/${settings.themeDetails.shell}
+        ./env.nix
+        ./binds.nix
+        ./scripts.nix
+        ./rules.nix
+        ./settings.nix
+        ./plugins.nix
+        ./hyprlock.nix
     ];
 
     home.packages = with pkgs; [

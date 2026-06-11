@@ -10,7 +10,7 @@
         ../../system/virtualization
         ../../system/gaming/nethack.nix
         ../../themes/lib/common.nix
-    ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
+    ] ++ (map (wm: ../../system/wm/${wm}) settings.wms);
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
