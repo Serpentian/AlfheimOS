@@ -980,6 +980,26 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781184658,
+        "narHash": "sha256-xOF++wpfkGCVsOTsPPX44Z9eAg6Ez+DqfwBGRxT6IuM=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "97dd4cd33c2056e3575f0aa6f5e36a22754b8525",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -1124,6 +1144,7 @@
         "hyprland-plugins": "hyprland-plugins",
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
+        "noctalia": "noctalia",
         "nur": "nur",
         "opencode": "opencode",
         "plasma-manager": "plasma-manager",

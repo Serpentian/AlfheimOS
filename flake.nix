@@ -34,6 +34,7 @@
                     inputs.nixvim.homeModules.nixvim
                     inputs.sops-nix.homeManagerModules.sops
                     inputs.zen-browser.homeModules.twilight
+                    inputs.noctalia.homeModules.default
                     # inputs.chaotic.homeModules.default
                 ];
                 extraSpecialArgs = {
@@ -94,6 +95,10 @@
         };
         opencode = {
             url = "github:anomalyco/opencode";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        noctalia = {
+            url = "github:noctalia-dev/noctalia";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
