@@ -5,11 +5,6 @@
         ../common/wayland.nix
     ];
 
-    environment.systemPackages = with pkgs; [
-        brightnessctl
-    ];
-
-
     programs = {
         hyprland = {
             enable = true;
