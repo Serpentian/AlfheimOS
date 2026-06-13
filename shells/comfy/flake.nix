@@ -20,15 +20,26 @@
                     ]))
                 ];
 
-                LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib/:$LD_LIBRARY_PATH";
+                LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath (with pkgs; [
+                    stdenv.cc.cc.lib
+                    zlib
+                    zstd
+                    glib
+                    libGL
+
+                    xorg.libxcb
+                    xorg.libX11
+                    xorg.libXext
+                    xorg.libXrender
+                ]);
 
                 shellHook = ''
-                    cd $HOME/Drives/hdd/ComfyUI
-                    source $HOME/Drives/hdd/ComfyUI/.venv/bin/activate
+                    cd $HOME/Programming/ComfyUI
+                    source $HOME/Programming/ComfyUI/.venv/bin/activate
                 '';
 
                 # LD_LIBRARY_PATH =
-                # "${pkgs.stdenv.cc.cc.lib}/lib/:${pkgs.libGL}/lib/:${pkgs.glib.out}/lib/:$LD_LIBRARY_PATH";
+                #     "${pkgs.stdenv.cc.cc.lib}/lib/:${pkgs.libGL}/lib/:${pkgs.glib.out}/lib/:${pkgs.zlib.out}/lib/:${pkgs.zstd.out}/lib/:$LD_LIBRARY_PATH";
             };
         });
 }
