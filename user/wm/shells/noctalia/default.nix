@@ -106,8 +106,8 @@ in {
                 address = "Moscow, RU";
             };
             osd = {
-                orientation = "vertical";
-                position = "center_right";
+                orientation = "horizontal";
+                position = "bottom_center";
             };
             bar.default = {
                 scale = 1.4;
