@@ -20,7 +20,7 @@ rec {
 
     # WM and theming.
     wms = ["hyprland" ]; # See user/wm/ and system/wm directories.
-    theme = "catppuccin"; # Selected theme from themes directory (./themes/)
+    theme = "morpho"; # Selected theme from themes directory (./themes/)
 
     # Do not change these!
     profileDetails = import (./. + "/profiles/${profile}/details.nix") {};
