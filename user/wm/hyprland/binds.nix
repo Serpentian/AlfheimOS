@@ -11,12 +11,12 @@
         ];
 
         binde = [
-            ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +2"
-            ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -2"
-            ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
-            ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
-            "$mod ALT, k, exec, pulsemixer --change-volume +5"
-            "$mod ALT, j, exec, pulsemixer --change-volume -5"
+            ", XF86AudioRaiseVolume, exec, ${shellDetails.binds.volumeUp}"
+            ", XF86AudioLowerVolume, exec, ${shellDetails.binds.volumeDown}"
+            ", XF86MonBrightnessUp, exec, ${shellDetails.binds.brightnessUp}"
+            ", XF86MonBrightnessDown, exec, ${shellDetails.binds.brightnessDown}"
+            "$mod ALT, k, exec, ${shellDetails.binds.volumeUp}"
+            "$mod ALT, j, exec, ${shellDetails.binds.volumeDown}"
         ];
 
         bind = [
@@ -32,7 +32,7 @@
             "$mod, P, pseudo,"
 
             # Lock screen
-            "$mod, Escape, exec, hyprlock"
+            "$mod, Escape, exec, ${shellDetails.binds.lock}"
 
             # Application shortcuts.
             "$mod, Return, exec, kitty"
@@ -43,11 +43,10 @@
             "$mod SHIFT, S, movetoworkspacesilent, special"
 
             # Launcher
-            # "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
             "$mod SHIFT, A, exec, ${shellDetails.binds.launcher}"
 
             # Screenshot
-            "$mod SHIFT, z, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"
+            "$mod SHIFT, z, exec, ${shellDetails.binds.screenshot}"
 
             # Move window focus with vim keys.
             "$mod, h, movefocus, l"
@@ -56,15 +55,14 @@
             "$mod, j, movefocus, d"
 
             # Music control
-            "$mod ALT, m, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
-            ", XF86AudioMicMute, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
-            ",XF86AudioMute, exec, pulsemixer --id $(pulsemixer --list-sinks | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
-            "$mod ALT, l, exec, hyprmusic next"
-            ",XF86AudioNext, exec, hyprmusic next"
-            "$mod ALT, h, exec, hyprmusic previous"
-            ", XF86AudioPrev, exec, hyprmusic previous"
-            "$mod ALT, p, exec, hyprmusic play-pause"
-            ", XF86AudioPlay, exec, hyprmusic play-pause"
+            "$mod ALT, m, exec, ${shellDetails.binds.micMute}"
+            ", XF86AudioMicMute, exec, ${shellDetails.binds.micMute}"
+            "$mod ALT, l, exec, ${shellDetails.binds.mediaNext}"
+            ",XF86AudioNext, exec, ${shellDetails.binds.mediaNext}"
+            "$mod ALT, h, exec, ${shellDetails.binds.mediaPrev}"
+            ", XF86AudioPrev, exec, ${shellDetails.binds.mediaPrev}"
+            "$mod ALT, p, exec, ${shellDetails.binds.mediaToggle}"
+            ", XF86AudioPlay, exec, ${shellDetails.binds.mediaToggle}"
 
             # Swap windows with vim keys
             "$mod SHIFT, h, movewindow, l"

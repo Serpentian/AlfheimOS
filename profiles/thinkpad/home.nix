@@ -32,7 +32,6 @@
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
 
     home.packages = with pkgs; [
-        sway-contrib.grimshot
         libreoffice-fresh
         yubikey-manager
         obs-studio

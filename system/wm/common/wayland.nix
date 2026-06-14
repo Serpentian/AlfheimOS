@@ -4,7 +4,6 @@
     environment.systemPackages = with pkgs; [
         wayland
         wl-clipboard
-        brightnessctl
     ];
 
     # Configure xwayland

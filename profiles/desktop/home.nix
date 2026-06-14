@@ -46,7 +46,6 @@
         calc
         sysstat
         gnupg
-        sway-contrib.grimshot
         libreoffice-fresh
         # obs-studio
         # tty-clock

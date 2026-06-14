@@ -29,52 +29,5 @@
 
       exit 0
     '')
-    # Spotifyd is slow with playerctl, use dbus insted.
-    (pkgs.writeScriptBin "hyprmusic" ''
-      #!/bin/sh
-      set -euo pipefail
-      case "''${1:-}" in
-        next)
-          MEMBER=Next
-          ;;
-
-        previous)
-          MEMBER=Previous
-          ;;
-
-        play)
-          MEMBER=Play
-          ;;
-
-        pause)
-          MEMBER=Pause
-          ;;
-
-        play-pause)
-          MEMBER=PlayPause
-          ;;
-
-        *)
-          echo "Usage: $0 next|previous|play|pause|play-pause"
-          exit 1
-          ;;
-
-      esac
-
-      exec dbus-send                                                \
-        --print-reply                                               \
-        --dest="org.mpris.MediaPlayer2.''$(playerctl -l | head -n 1)" \
-        /org/mpris/MediaPlayer2                                     \
-        "org.mpris.MediaPlayer2.Player.$MEMBER"
-    '')
-    (pkgs.writeScriptBin "hyprtheme" ''
-      #!/bin/sh
-      home-manager switch --flake .
-      pkill ags
-      ags 1>/dev/null 2>&1 &
-      disown ags
-      hyprctl reload
-      pkill -USR2 cava
-    '')
   ];
 }
