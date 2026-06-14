@@ -3,7 +3,7 @@
     asztal = pkgs.callPackage ../../../../non-nix/ags/default.nix
         {inherit inputs;};
     agsColors = {
-        wallpaper = details.wallpaper;
+        wallpaper = details.wallpaper.center;
         theme = {
             blur = (1 - details.opacity) * 100;
             radius = details.rounding;

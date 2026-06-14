@@ -1,10 +1,13 @@
 {pkgs, ...}:
 {
     themeName = "rose-pine";
-    wallpaper = ../non-nix/wallpapers/butterfly-girl.png;
+    avatar = ../non-nix/avatars/butterfly.png;
+    wallpaper = {
+        left = ../non-nix/wallpapers/butterfly-left.png;
+        center = ../non-nix/wallpapers/butterfly-girl.png;
+        right = ../non-nix/wallpapers/butterfly-right.png;
+    };
     override = {
-        # base00 = "191628";
-        # base00 = "161325";
         base00 = "05000f";
     };
 
@@ -18,9 +21,9 @@
     shadow = true;
     bordersPlusPlus = false;
 
-    font = "Iosevka Nerd Font"; # Selected font
+    font = "IosevkaTerm NF"; # Selected font
     fontPkg = (pkgs.nerd-fonts.iosevka-term);
-    fontSize = 14; # Font size
+    fontSize = 16; # Font size
 
     icons = "Papirus";
     iconsPkg = pkgs.papirus-icon-theme;

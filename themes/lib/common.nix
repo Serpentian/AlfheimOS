@@ -4,7 +4,7 @@ in {
     stylix = {
         enable = true;
         polarity = "dark";
-        image = details.wallpaper;
+        image = details.wallpaper.center;
         base16Scheme = lib.mkIf (details.themeName != null)
             "${pkgs.base16-schemes}/share/themes/${details.themeName}.yaml";
         override = lib.mkIf (details.override != null) details.override;

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, shellDetails, ... }:
 
 {
     wayland.windowManager.hyprland.settings = {
@@ -44,7 +44,7 @@
 
             # Launcher
             # "$mod, A, exec, rofi -show drun -kb-cancel Super_L"
-            "$mod SHIFT, A, exec, ags -t launcher"
+            "$mod SHIFT, A, exec, ${shellDetails.binds.launcher}"
 
             # Screenshot
             "$mod SHIFT, z, exec, wl-copy < $(grimshot --notify save area $XDG_PICTURES_DIR/Screenshots/$(TZ=utc date +'screenshot_%Y-%m-%d-%H%M%S.%3N.png'))"

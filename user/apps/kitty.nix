@@ -49,6 +49,7 @@ api.nvim_win_set_cursor(0, {api.nvim_buf_line_count(0), 0})
          nvim +"source /home/serpentian/.config/kitty/vim-mode.lua"
       '';
       paste_actions = "no-op";
+      allow_remote_control = "yes";
     };
     keybindings = {
       "ctrl+shift+v" = "paste_from_clipboard";

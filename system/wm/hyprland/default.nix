@@ -1,8 +1,9 @@
-{ inputs, config, pkgs, ... }:
-
-{
+{ inputs, config, pkgs, ... }: let
+    shell = "noctalia";
+in {
     imports = [
         ../common/wayland.nix
+        ../shells/${shell}.nix
     ];
 
     programs = {

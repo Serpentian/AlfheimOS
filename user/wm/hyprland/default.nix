@@ -1,5 +1,5 @@
 { inputs, config, lib, settings, pkgs, ... }: let
-    shell = "ags";
+    shell = "noctalia";
 in {
     _module.args.shellDetails =
         import (../. + "/shells/${shell}/details.nix") {};
