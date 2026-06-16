@@ -1,6 +1,7 @@
-{ config, pkgs, settings, inputs, lib, shellDetails, ... }: let
+{ config, pkgs, settings, inputs, lib, hyprlandShellDetails, ... }: let
     themeDetails = settings.themeDetails;
     profileDetails = settings.profileDetails;
+    shellDetails = hyprlandShellDetails;
 in {
     home.packages = with pkgs; [
         awww

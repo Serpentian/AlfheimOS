@@ -1,7 +1,7 @@
 { inputs, config, lib, settings, pkgs, ... }: let
     shell = "noctalia";
 in {
-    _module.args.shellDetails =
+    _module.args.hyprlandShellDetails =
         import (../. + "/shells/${shell}/details.nix") {};
     imports = [
         ./env.nix
@@ -29,5 +29,13 @@ in {
         ] ++ lib.optional (settings.themeDetails.bordersPlusPlus)
             # inputs.hyprland-plugins.packages.${pkgs.system}.borders-plus-plus;
             pkgs.hyprlandPlugins.borders-plus-plus;
+    };
+
+    xdg.portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        config = {
+            hyprland.default = ["hyprland"];
+        };
     };
 }

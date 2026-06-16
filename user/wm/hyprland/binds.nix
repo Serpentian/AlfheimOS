@@ -1,6 +1,6 @@
-{ config, pkgs, shellDetails, ... }:
-
-{
+{ config, pkgs, hyprlandShellDetails, ... }: let
+    shellDetails = hyprlandShellDetails;
+in {
     wayland.windowManager.hyprland.settings = {
         "$mod" = "SUPER";
 

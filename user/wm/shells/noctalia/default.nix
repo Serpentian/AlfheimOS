@@ -100,6 +100,9 @@ in {
                 audio_visualizer = {
                     width = 120;
                 };
+                tray = {
+                    drawer = true;
+                };
             };
             location = {
                 auto_locate = false;
@@ -108,6 +111,9 @@ in {
             osd = {
                 orientation = "horizontal";
                 position = "bottom_center";
+                kinds = {
+                    keyboard_layout = false;
+                };
             };
             bar.default = {
                 scale = 1.4;

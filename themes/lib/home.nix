@@ -17,5 +17,6 @@ in {
         targets.hyprland.enable = false;
         targets.btop.enable =
             lib.mkIf (settings.themeDetails.btopTheme != null) false;
+        targets.sway.useWallpaper = false;
     };
 }
