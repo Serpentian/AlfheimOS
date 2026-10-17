@@ -8,4 +8,9 @@
         fsType = "nfs";
         options = ["nofail"];
     };
+    fileSystems."/home/serpentian/Drives/networkBig" = {
+        device = "192.168.1.219:/home/serpentian/media2";
+        fsType = "nfs";
+        options = ["nofail"];
+    };
 }
