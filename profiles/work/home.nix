@@ -65,8 +65,8 @@
         desktop = null;
         publicShare = null;
         extraConfig = {
-            XDG_DOTFILES_DIR = "${settings.dotfilesDir}";
-            XDG_BOOK_DIR = "${config.home.homeDirectory}/Media/Books";
+            DOTFILES = "${settings.dotfilesDir}";
+            BOOK = "${config.home.homeDirectory}/Media/Books";
         };
     };
 
