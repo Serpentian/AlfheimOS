@@ -8,5 +8,6 @@
         luanti
         airshipper
         pioneer
+        vcmi
     ];
 }
