@@ -8,6 +8,7 @@
             swayShellDetails.launchCommands;
         window.titlebar = false;
         floating.titlebar = true;
+        focus.mouseWarping = "container";
         input = {
             "type:keyboard" = {
                 xkb_layout = "us,ru";
