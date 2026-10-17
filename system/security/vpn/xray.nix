@@ -2,6 +2,10 @@
 {
     environment.systemPackages = with pkgs; [
         xorg.xhost # start with sudo
-        nekoray
     ];
+
+    programs.throne = {
+        enable = true;
+        tunMode.enable = true;
+    };
 }
