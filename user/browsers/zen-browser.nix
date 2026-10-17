@@ -38,9 +38,9 @@ in {
             ];
         };
         search = {
-            force = true;
-            default = "local";
-            privateDefault = "local";
+            # force = true;
+            # default = "DuckDuckGo";
+            # privateDefault = "DuckDuckGo";
             engines = {
                 local = {
                     name = "SearXNG";
