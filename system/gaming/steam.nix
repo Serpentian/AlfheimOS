@@ -6,6 +6,7 @@
 
     programs.steam = {
         enable = true;
+        protontricks.enable = true;
         # remotePlay.openFirewall = true; # Steam Remote Play.
         # dedicatedServer.openFirewall = true; # Source Dedicated Server.
         extraCompatPackages = with pkgs; [ proton-ge-bin ];
@@ -27,7 +28,6 @@
     environment.systemPackages = with pkgs; [
         (mangohud.override { lowerBitnessSupport = true; })
         gamescope
-        protontricks
     ];
 
     # Disable DS touchpad as mouse;
