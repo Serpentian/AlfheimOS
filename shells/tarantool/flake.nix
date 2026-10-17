@@ -3,10 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # Only for `gh`: the main nixpkgs is pinned to an old revision whose gh
+    # (2.40) predates `gh api --slurp`, required by tarantool's
+    # tools/gh-review.py. Kept separate to avoid re-resolving the toolchain.
+    nixpkgs-gh.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, nixpkgs-gh, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
@@ -14,6 +18,7 @@
           (import ../../pkgs/overlays/default.nix)
         ];
       };
+      pkgsGh = import nixpkgs-gh { inherit system; };
     in
     {
       devShells.default = pkgs.mkShell {
@@ -35,6 +40,9 @@
           cpulimit
           yq
           jq
+
+          # GitHub reviews (tools/gh-review.py)
+          pkgsGh.gh
 
           # Tarantool dependencies
           curl
