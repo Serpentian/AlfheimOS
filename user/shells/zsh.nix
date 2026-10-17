@@ -20,7 +20,7 @@
         syntaxHighlighting.enable = true;
         history.size = 100000;
         shellAliases = {
-            ls = "exa --color=auto --icons";
+            ls = "exa --color=auto --icons=auto";
             l = "ls -l";
             la = "ls -a";
             lla = "ls -la";
