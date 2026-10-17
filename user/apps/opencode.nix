@@ -7,6 +7,7 @@
 
     home.packages = with pkgs; [
         claude-code
+        # inputs.codex.packages.${pkgs.system}.default
         codex
     ];
 }
