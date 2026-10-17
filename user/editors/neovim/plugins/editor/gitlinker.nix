@@ -4,14 +4,6 @@
         enable = true;
         settings = {
             add_current_line_on_normal_mode = true;
-            callbacks = {
-                "bitbucket.org" = "get_bitbucket_type_url";
-                "codeberg.org" = "get_gitea_type_url";
-                "git.kernel.org" = "get_cgit_type_url";
-                "git.savannah.gnu.org" = "get_cgit_type_url";
-                "github.com" = "get_github_type_url";
-                "gitlab.com" = "get_gitlab_type_url";
-            };
         };
     };
 
@@ -23,7 +15,7 @@
         action.__raw = ''
             function()
                 require("gitlinker").get_buf_range_url("n", {
-                    action_callback = require("gitlinker.actions").copy_to_cliboard
+                    action_callback = require("gitlinker.actions").copy_to_clipboard
                 })
             end
         '';
@@ -35,7 +27,7 @@
         action.__raw = ''
             function()
                 require("gitlinker").get_buf_range_url("v", {
-                    action_callback = require("gitlinker.actions").copy_to_cliboard
+                    action_callback = require("gitlinker.actions").copy_to_clipboard
                 })
             end
         '';
