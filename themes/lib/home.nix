@@ -13,6 +13,7 @@ in {
         targets.nixvim.enable =
             lib.mkIf (settings.themeDetails.themeName != null) false;
         targets.tmux.enable = false;
+        targets.rofi.enable = false;
         targets.hyprlock.enable = false;
         targets.hyprland.enable = false;
         targets.btop.enable =
