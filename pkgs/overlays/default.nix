@@ -3,6 +3,7 @@
  * other ".nix" files in this directory are automatically loaded.
  */
 final: prev: {
+    _codex-bin = final.callPackage ../codex-bin.nix {};
     _nemu = final.callPackage ../nemu.nix {};
     _hydra = final.callPackage ../hydra.nix {};
     _stmp = final.callPackage ../stmp.nix {};
