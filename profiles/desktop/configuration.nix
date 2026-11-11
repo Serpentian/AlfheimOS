@@ -26,6 +26,10 @@
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
+    # Log in on a TTY and start the desktop manually.
+    services.xserver.autorun = false;
+    services.xserver.displayManager.lightdm.enable = false;
+
     nixpkgs.overlays = import ../../pkgs/lib/overlays.nix;
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
