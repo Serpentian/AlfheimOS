@@ -209,6 +209,26 @@
         "type": "github"
       }
     },
+    "collie": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794340903,
+        "narHash": "sha256-1EKM1KtBuSiUtzdzTqcQMEIa8YVoxqX1Mxk/jdY2CJY=",
+        "owner": "AltanS",
+        "repo": "collie",
+        "rev": "58b42255f9985d3b9f78b2763015deea9ecdc256",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AltanS",
+        "repo": "collie",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -1181,6 +1201,7 @@
         "ags": "ags",
         "caelestia": "caelestia",
         "codex": "codex",
+        "collie": "collie",
         "home-manager": "home-manager",
         "hypr-dynamic-cursors": "hypr-dynamic-cursors",
         "hyprland": "hyprland",

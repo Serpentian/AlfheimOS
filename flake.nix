@@ -97,6 +97,10 @@
             url = "github:anomalyco/opencode";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        collie = {
+            url = "github:AltanS/collie";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         noctalia = {
             url = "github:noctalia-dev/noctalia";
             inputs.nixpkgs.follows = "nixpkgs";

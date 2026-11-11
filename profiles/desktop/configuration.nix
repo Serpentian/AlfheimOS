@@ -16,7 +16,7 @@
         ../../system/apps/thunar.nix
         # ../../system/apps/open-webui.nix
         ../../system/apps/guix.nix
-        ../../system/apps/ollama.nix
+        ../../system/llms
         ../../system/apps/platformio.nix
         ../../system/gaming/steam.nix
         # ../../system/gaming/aagl.nix

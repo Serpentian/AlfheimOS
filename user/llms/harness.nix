@@ -10,6 +10,7 @@
 
     home.packages = with pkgs; [
         # claude-code
+        deepseek-harness
         _codex-bin
     ];
 }

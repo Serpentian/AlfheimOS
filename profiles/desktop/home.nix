@@ -13,7 +13,7 @@
         ../../user/apps/mangohud.nix
         ../../user/apps/kdeconnect.nix
         ../../user/apps/ssh.nix
-        ../../user/apps/opencode.nix
+        ../../user/llms
         ../../user/gaming/nethack.nix
         ../../user/gaming/oss-games.nix
         ../../user/gaming/steam.nix
