@@ -96,7 +96,7 @@
         jq
 
         # inputs.late.packages.${pkgs.stdenv.hostPlatform.system}.late-sh
-        inputs.late.packages.${pkgs.stdenv.hostPlatform.system}.late
+        # inputs.late.packages.${pkgs.stdenv.hostPlatform.system}.late
     ];
 
     xdg.enable = true;
