@@ -46,7 +46,7 @@
         calc
         sysstat
         gnupg
-        libreoffice-fresh
+        libreoffice
         # obs-studio
         # tty-clock
         qbittorrent
@@ -95,8 +95,8 @@
 
         jq
 
-        # inputs.late.packages.${pkgs.system}.late-sh
-        inputs.late.packages.${pkgs.system}.late
+        # inputs.late.packages.${pkgs.stdenv.hostPlatform.system}.late-sh
+        inputs.late.packages.${pkgs.stdenv.hostPlatform.system}.late
     ];
 
     xdg.enable = true;

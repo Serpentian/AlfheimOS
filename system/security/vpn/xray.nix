@@ -1,7 +1,7 @@
 { pkgs, ...}:
 {
     environment.systemPackages = with pkgs; [
-        xorg.xhost # start with sudo
+        xhost # start with sudo
     ];
 
     programs.throne = {

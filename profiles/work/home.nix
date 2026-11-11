@@ -30,7 +30,7 @@
     nixpkgs.config.allowUnfree = true; # Sorry, Stallman(
 
     home.packages = with pkgs; [
-        libreoffice-fresh
+        libreoffice
         yubikey-manager
         obs-studio
         tty-clock
