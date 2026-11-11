@@ -38,7 +38,8 @@ in {
             ];
         };
         search = {
-            # force = true;
+            # Zen replaces this managed symlink whenever it updates search settings.
+            force = true;
             # default = "DuckDuckGo";
             # privateDefault = "DuckDuckGo";
             engines = {
