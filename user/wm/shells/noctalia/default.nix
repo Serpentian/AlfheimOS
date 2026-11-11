@@ -77,6 +77,10 @@ in {
                     open_near_click_clipboard = true;
                     open_near_click_control_center = true;
                 };
+                launcher = {
+                    categories = false;
+                    layout = "simple";
+                };
             };
             widget = {
                 launcher = {
